@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="evoshifting : Conseil en systèmes et logiciels informatiques. Cadrage de projets, écosystèmes SaaS et intégration de l'IA. Consultant freelance basé à Bordeaux et Paris.">
+  <meta name="keywords" content="IA, conseil, bordeaux, paris, freelance, projet, consultant, logiciels, systèmes informatiques, AMOA, Product Owner, PMO">
+  <meta name="author" content="Marc-Antoine Cailloux">
+  <title>evoshifting | Conseil en systèmes et logiciels informatiques</title>
+  
+  <style>
+    /* STYLES GÉNÉRAUX & CONFIGURATION */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+    }
+
+    .evo-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .evo-divider {
+      border: 0;
+      height: 1px;
+      background: #e0e0e0;
+      margin: 60px auto; 
+      width: 100%;       
+      display: block;
+    }
+
+    /* HERO SECTION */
+    .evo-hero {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+    .evo-lead {
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #68A67A; 
+      margin-bottom: 24px;
+    }
+    
+    /* BOUTONS PRINCIPAUX */
+    .evo-cta-wrapper {
+      margin-top: 30px;
+    }
+    .evo-btn {
+      display: inline-block;
+      background-color: #111111;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 36px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+    .evo-btn:hover {
+      background-color: #68A67A;
+    }
+
+    /* SECTION NOTRE APPROCHE (TITRE GLOBAL) */
+    .evo-features h2, .evo-trust h2, .evo-faq-section h2 {
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 45px;
+      color: #111111;
+    }
+
+    /* NOUVELLE CONFIGURATION : 3 CARRÉS ALIGNÉS HORIZONTALEMENT */
+    .evo-phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .evo-phase-card {
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 35px 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* En-tête interne du carré */
+    .evo-card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .evo-phase-number {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #68A67A;
+      border: 1px solid #68A67A;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      background-color: #f7fbf8;
+      flex-shrink: 0;
+    }
+
+    .evo-phase-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666666;
+      font-weight: 600;
+    }
+
+    .evo-phase-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      color: #111111;
+    }
+
+    /* Texte de description fluide (sans puces) */
+    .evo-phase-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444444;
+      margin: 0;
+    }
+
+    /* EFFET AU SURVOL SUR LES CARRÉS (DESKTOP) */
+    @media (min-width: 769px) {
+      .evo-phase-card:hover {
+        border-color: #68A67A;
+        box-shadow: 0 10px 25px rgba(104, 166, 122, 0.08);
+        background-color: #fcfdfe;
+      }
+    }
+
+    /* SECTION OFFRE IA (QUESTIONS / RÉPONSES) */
+    .evo-faq-section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .evo-faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .evo-faq-item {
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 25px 30px;
+    }
+    .evo-faq-item h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #111111;
+      margin: 0 0 12px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .evo-faq-item h3::before {
+      content: "•";
+      color: #68A67A;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .evo-faq-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555555;
+      margin: 0;
+      padding-left: 18px;
+    }
+    .evo-faq-item p strong {
+      color: #68A67A;
+    }
+
+    /* SECTION POURQUOI EVOSHIFTING (TRUST) */
+    .evo-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .evo-trust-item h4 {
+      font-size: 1.25rem;
+      color: #111111;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .evo-trust-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555555;
+      margin: 0;
+    }
+
+    /* BOTTOM CTA SECTION */
+    .evo-bottom-cta {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .evo-container { padding: 30px 15px; }
+      .evo-hero h1 { font-size: 2rem; }
+      .evo-lead { font-size: 1.25rem; }
+      
+      /* Passage des 3 carrés en mode vertical sur mobile pour l'accessibilité */
+      .evo-phase-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .evo-phase-card {
+        padding: 25px;
+      }
+      
+      .evo-trust-grid { grid-template-columns: 1fr; gap: 30px; }
+      .evo-faq-item { padding: 20px; }
+      .evo-divider { margin: 40px auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="evo-container">
+    
+    <!-- HERO SECTION -->
+    <section class="evo-hero">
+      <p class="evo-lead">
+        <strong>evoshifting sécurise le cadrage de vos projets, orchestre vos écosystèmes SaaS et intègre l'IA au cœur de vos processus opérationnels.</strong>
+      </p>
+      <div class="evo-cta-wrapper">
+        <a href="/contact" class="evo-btn">Échanger sur vos enjeux</a>
+      </div>
+    </section>
+
+    <hr class="evo-divider">
+
+    <!-- TRIPTYQUE SECTION (3 Carrés Horizontaux sans puces) -->
+    <section class="evo-features">
+      <h2>Une approche de bout en bout pour vos projets IT</h2>
+      
+      <div class="evo-phase-grid">
+        
+        <!-- Carré 1 -->
+        <div class="evo-phase-card">
+          <div class="evo-card-top">
+            <div class="evo-phase-number">01</div>
+            <div class="evo-phase-role">Posture Conseil / AMOA</div>
+          </div>
+          <h3>Cadrer l'opportunité</h3>
+          <p class="evo-phase-desc">
+            Études d'opportunité IA & Data, audit de maturité des SI complexes, recueil des besoins métiers et aide au choix de solutions SaaS.
+          </p>
+        </div>
+
+        <!-- Carré 2 -->
+        <div class="evo-phase-card">
+          <div class="evo-card-top">
+            <div class="evo-phase-number">02</div>
+            <div class="evo-phase-role">Posture Product Owner</div>
+          </div>
+          <h3>Piloter le produit</h3>
+          <p class="evo-phase-desc">
+            Interface fluide entre les directions métiers et les équipes techniques, conception fonctionnelle, gestion du backlog et priorisation par la valeur opérationnelle.
+          </p>
+        </div>
+
+        <!-- Carré 3 -->
+        <div class="evo-phase-card">
+          <div class="evo-card-top">
+            <div class="evo-phase-number">03</div>
+            <div class="evo-phase-role">Posture PMO</div>
+          </div>
+          <h3>Sécuriser le déploiement</h3>
+          <p class="evo-phase-desc">
+            Pilotage de projet de bout en bout (délais, budgets, risques), coordination des parties prenantes et des éditeurs, conduite du changement et acculturation IA.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bouton d'action / Lien fluide vers les Offres -->
+      <div class="evo-cta-wrapper" style="text-align: center; margin-top: 40px;">
+        <a href="/offres" class="evo-btn">Découvrir nos solutions & cas d'usage</a>
+      </div>
+    </section>
+
+    <hr class="evo-divider">
+
+    <!-- SECTION: OFFRE IA (QUESTIONS / RÉPONSES) -->
+    <section class="evo-faq-section">
+      <h2>IA & Transformation : les enjeux clés</h2>
+      <div class="evo-faq-grid">
+        
+        <div class="evo-faq-item">
+          <h3>Comment intégrer l’IA sans déstabiliser notre SI existant ?</h3>
+          <p><strong>Notre approche :</strong> Pas de refonte globale coûteuse. Nous intervenons sur l’alignement de vos flux en connectant des briques d’IA pragmatiques (LLM, agents d'automatisation) directement sur vos outils SaaS actuels (ERP, CRM, DAM PIM, OMS, WMS...) via des architectures d'API sécurisées.</p>
+        </div>
+
+        <div class="evo-faq-item">
+          <h3>Quels sont les cas d’usage IA prioritaires pour nos équipes ?</h3>
+          <p><strong>Notre approche :</strong> Nous ciblons en priorité les tâches manuelles et répétitives qui font perdre un temps précieux à vos collaborateurs. Par exemple : la création et l'adaptation automatique de contenus, le tri et le traitement intelligent de vos documents ou demandes entrantes, ou la mise en place d'assistants internes connectés à vos bases de données.</p>
+        </div>
+
+        <div class="evo-faq-item">
+          <h3>Combien de temps faut-il pour obtenir des résultats concrets avec l'IA ?</h3>
+          <p><strong>Notre approche :</strong> Nous privilégions la culture du "Quick Win". Plutôt que de lancer des chantiers interminables, nous concevons un premier pilote sur un périmètre restreint en quelques semaines pour prouver la valeur métier sur le terrain.</p>
+        </div>
+
+        <div class="evo-faq-item">
+          <h3>Pourquoi confier son projet IA à evoshifting plutôt qu'à une ESN classique ?</h3>
+          <p><strong>Notre approche :</strong> Parce que l'IA n'est qu'un outil au service d'un processus métier. Grâce à notre double culture technique et business, nous ne vendons pas de la technologie pour la technologie, mais un cadrage AMOA et un pilotage produit orientés exclusivement vers un ROI mesurable.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="evo-divider">
+
+    <!-- TRUST SECTION -->
+    <section class="evo-trust">
+      <h2>Pourquoi <strong>evo</strong>shifting ?</h2>
+      <div class="evo-trust-grid">
+        
+        <div class="evo-trust-item">
+          <h4>Indépendance de conseil & Réseau étendu</h4>
+          <p>Une neutralité totale vis-à-vis des éditeurs pour garantir des choix technologiques objets, appuyée par un vaste réseau d'experts pour sourcer les meilleures solutions du marché.</p>
+        </div>
+                
+        <div class="evo-trust-item">
+          <h4>Environnements complexes & Internationaux</h4>
+          <p>Une expertise éprouvée dans le pilotage d'écosystèmes hétérogènes et internationaux, structurant des flux de données massifs au sein d'organisations multi-acteurs.</p>
+        </div>
+                
+        <div class="evo-trust-item">
+          <h4>Pragmatisme & Accélération</h4>
+          <p>Parce qu'il existe toujours une solution, j'utilise l'IA et les leviers technologiques non comme des finalités, mais comme des accélérateurs concrets de votre ROI opérationnel.</p>
+        </div>
+        
+      </div>
+    </section>
+
+    <hr class="evo-divider">
+
+    <!-- BOTTOM CTA SECTION -->
+    <section class="evo-bottom-cta">
+      <div class="evo-cta-wrapper">
+        <a href="/contact" class="evo-btn">Échanger sur vos enjeux</a>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

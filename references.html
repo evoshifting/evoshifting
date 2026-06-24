@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Références et projets menés par Marc-Antoine Cailloux. Plus de 10 ans d'expérience en cadrage stratégique, déploiement et conseil IT (Bordeaux, Paris, freelance).">
+  <meta name="keywords" content="références, projets, IA, conseil, bordeaux, paris, freelance, consultant, déploiement, AMOA, PME, grands groupes">
+  <meta name="author" content="Marc-Antoine Cailloux">
+  <title>evoshifting | Références & Projets</title>
+  
+  <style>
+    /* DESIGN SYSTÈME DE LA PAGE RÉFÉRENCES */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+    .evo-container {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .evo-page-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .evo-page-header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin: 10px 0 20px 0;
+      color: #111;
+    }
+    .evo-lead {
+      font-size: 1.3rem;
+      color: #555;
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      line-height: 1.5;
+    }
+    .evo-tag {
+      display: inline-block;
+      color: #68A67A;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* CHIPS MARQUES */
+    .evo-experience-ticker {
+      text-align: left;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 35px 30px;
+      margin-top: 40px;
+      background-color: #fafafa;
+    }
+    .evo-ticker-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0 0 25px 0;
+      font-weight: 600;
+      border-left: 3px solid #68A67A;
+      padding-left: 15px;
+    }
+    .evo-geo-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .evo-geo-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .evo-flag {
+      font-size: 1.3rem;
+      background: #ffffff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid #eaeaea;
+      line-height: 1;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .evo-brand-chips {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: #444;
+      line-height: 1.8;
+      padding-top: 2px;
+    }
+    .evo-brand-chips span {
+      display: inline-block;
+      color: #222;
+    }
+
+    /* STRUCTURE DE LA GRILLE */
+    .evo-project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+    
+    /* CARTES USE CASE */
+    .evo-project-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .evo-project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .evo-project-badge {
+      align-self: flex-start;
+      background: #eef6f1;
+      color: #68A67A;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+    }
+    .evo-project-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: #111;
+      line-height: 1.3;
+    }
+    .evo-project-scope {
+      font-size: 0.88rem;
+      color: #666;
+      margin: 0 0 15px 0;
+      line-height: 1.4;
+    }
+    .evo-project-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+      margin: 0 0 25px 0;
+      flex-grow: 1;
+    }
+    
+    /* FOOTER & TAGS TECHNIQUES */
+    .evo-project-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 15px;
+    }
+    .evo-tech-tag {
+      font-size: 0.78rem;
+      background: #f4f4f4;
+      color: #555;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* BLOC D'ACTION FINAL (CTA) */
+    .evo-cta-block {
+      text-align: center;
+      margin-top: 70px;
+      padding: 50px 30px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #eaeaea;
+    }
+    .evo-cta-block h3 { font-size: 1.6rem; margin: 0 0 10px 0; }
+    .evo-cta-block p { font-size: 1.1rem; color: #555; margin: 0 0 25px 0; }
+    .evo-btn {
+      display: inline-block;
+      background-color: #111111;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 36px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+    .evo-btn:hover { background-color: #68A67A; }
+
+    /* ADAPTATION MOBILE */
+    @media (max-width: 768px) {
+      .evo-page-header h1 { font-size: 2rem; }
+      .evo-project-grid { grid-template-columns: 1fr; gap: 20px; }
+      .evo-container { padding: 40px 15px; }
+      .evo-experience-ticker { padding: 25px 20px; }
+      .evo-geo-row { flex-direction: column; gap: 10px; }
+      .evo-brand-chips { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="evo-container">
+  
+  <!-- EN-TÊTE DE LA PAGE -->
+  <section class="evo-page-header">
+    <p class="evo-lead">
+      Plus de 10 ans d'expérience terrain, missions de conseil, intégrations, AMOA, et avant-ventes. Accompagnement opérationnel PME, ETI et Grands Groupes, du cadrage stratégique au déploiement de solutions complexes.
+    </p>
+
+    <!-- BANDEAU DES MARQUES CONTEXTUELLES -->
+    <div class="evo-experience-ticker">
+      <div class="evo-geo-container">
+        <div class="evo-geo-row">
+          <span class="evo-flag">🇫🇷</span>
+          <div class="evo-brand-chips">
+            <span>Sephora</span> • <span>Les Mousquetaires</span> • <span>Electro Dépôt</span> • <span>Cdiscount</span> • <span>Vertbaudet</span> • <span>Alltricks</span> • <span>Bébéboutik</span> • <span>Colizey</span> • <span>Ramsay Santé</span> • <span>Comexposium</span> • <span>Ubaldi</span> • <span>Casino</span> • <span>Phone House</span> • <span>Rossignol</span> • <span>Salomon (AmerSports)</span> • <span>Bridor</span> • <span>Carrefour Voyages</span> • <span>Socomec</span> • <span>Nexans</span> • <span>SAFT</span> • <span>Sames</span> • <span>Onduline</span> • <span>Adova</span> • <span>Hamelin</span> • <span>Ixon</span> • <span>Izipizi</span>
+          </div>
+        </div>
+        
+        <div class="evo-geo-row">
+          <span class="evo-flag">🌍</span>
+          <div class="evo-brand-chips">
+            <span>Carrier 🇺🇸</span> • <span>Orange 🇪🇸</span> • <span>Marjane 🇲🇦</span> • <span>Grupo Éxito 🇨🇴</span> • <span>Manor 🇨🇭</span> • <span>Longines 🇨🇭</span> • <span>Tissot 🇨🇭</span> • <span>VF International 🇨🇭</span> • <span>Guillevin 🇨🇦</span> • <span>Refrigerative Supply 🇨🇦</span> • <span>Lego 🇩🇰</span> • <span>Schreder 🇧🇪</span> • <span>Nelson Garden 🇸🇪</span> • <span>Elho 🇳🇱</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRILLE DÉCOUPÉE EN 12 CARTES -->
+  <div class="evo-project-grid">
+    
+    <!-- CARTE 1 : ECOMMERCE & ROADMAP -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Product Management</div>
+      <h3>Plateformes eCommerce</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Grande distribution alimentaire & Retail</p>
+      <p class="evo-project-desc">
+        Définition de la vision produit globale, construction de feuilles de route stratégiques (roadmaps) et priorisation de backlogs complexes. Cadrage et conception fonctionnelle d'écosystèmes transactionnels (inventaire, CMS, gestion de paniers, SSO).
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">eCommerce</span>
+        <span class="evo-tech-tag">Roadmap</span>
+        <span class="evo-tech-tag">Backlog</span>
+      </div>
+    </div>
+
+    <!-- CARTE 2 : GESTION DU PAIEMENT -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Expertise Flux</div>
+      <h3>Systèmes de Paiement & Checkout</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Commerce connecté & Omnicanal</p>
+      <p class="evo-project-desc">
+        Conception fonctionnelle de l'étape critique du checkout et des tunnels de paiement. Intégration de solutions transactionnelles sécurisées, automatisation des flux de facturation et optimisation des cinématiques de validation des commandes clients.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Payment</span>
+        <span class="evo-tech-tag">Checkout</span>
+        <span class="evo-tech-tag">Facturation</span>
+      </div>
+    </div>
+
+    <!-- CARTE 3 : COUCHE APPLICATIVE OMS -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Architecture Métier</div>
+      <h3>Orchestration OMS Internationale</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Cosmétique, Beauté & Distribution</p>
+      <p class="evo-project-desc">
+        Intégration, paramétrage et optimisation de solutions d'Order Management System (IBM Sterling OMS). Modélisation des règles métiers complexes pour la gestion des commandes à l'international, l'allocation intelligente des stocks et les modes de livraison croisés.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">IBM Sterling</span>
+        <span class="evo-tech-tag">OMS</span>
+        <span class="evo-tech-tag">Logistique</span>
+      </div>
+    </div>
+
+    <!-- CARTE 4 : INNOVATION & ATELIERS -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Facilitation</div>
+      <h3>Design Thinking & Retail Innovant</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Grande distribution multinationale</p>
+      <p class="evo-project-desc">
+        Organisation, structuration et facilitation d'ateliers collaboratifs d'envergure réunissant jusqu'à 60 participants. Co-animation de programmes prospectifs visant à repenser les parcours en point de vente physique, définir les besoins technologiques sous-jacents et valider l'UX via du prototypage rapide.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Design Thinking</span>
+        <span class="evo-tech-tag">Ateliers</span>
+        <span class="evo-tech-tag">UX</span>
+      </div>
+    </div>
+
+    <!-- CARTE 5 : CONSEIL AVANT-VENTE -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">AMOA / Conseil</div>
+      <h3>Cadrage Avant-Vente & Appels d'Offres</h3>
+      <p class="evo-project-scope"><strong>Typologie :</strong> Édition de logiciels & Intégration</p>
+      <p class="evo-project-desc">
+        Accompagnement de plus de 80 dossiers complexes dans leurs phases de cadrage initial. Analyse des besoins métiers, pilotage des réponses aux appels d'offres d'envergure (RFP) et élaboration de recommandations stratégiques neutres sur l'architecture logicielle cible.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Cadrage</span>
+        <span class="evo-tech-tag">RFP</span>
+        <span class="evo-tech-tag">Architecture</span>
+      </div>
+    </div>
+
+    <!-- CARTE 6 : PRE-SALES & VALEUR -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Démonstration Technique</div>
+      <h3>Pre-Sales & Ingénierie de Solution</h3>
+      <p class="evo-project-scope"><strong>Typologie :</strong> Écosystèmes PIM, DAM & Marketplace</p>
+      <p class="evo-project-desc">
+        Intervention en tant que Sales Engineer / Consultant technique. Préparation et animation d'ateliers de démonstration logicielle complexes axés sur la valeur. Traduction des fonctionnalités d'outils types PIM ou DAM face à des décideurs DSI et métiers (C-Level).
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Pre-Sales</span>
+        <span class="evo-tech-tag">Démos</span>
+        <span class="evo-tech-tag">PIM / DAM</span>
+      </div>
+    </div>
+
+    <!-- CARTE 7 : STRATÉGIE OMNICANALE -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Gouvernance</div>
+      <h3>Cadrage Omnicanal & Supply Chain</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Tourisme, Loisirs & Retail</p>
+      <p class="evo-project-desc">
+        Modélisation et optimisation des parcours client omnicanaux. Alignement des processus logistiques, de la supply chain et des systèmes d'information pour décloisonner les étapes d'achat, de la réservation en ligne jusqu'au suivi de la relation client multicanal.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Omnicanal</span>
+        <span class="evo-tech-tag">Supply Chain</span>
+        <span class="evo-tech-tag">Processus</span>
+      </div>
+    </div>
+
+    <!-- CARTE 8 : DÉPLOIEMENT CRM -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Delivery</div>
+      <h3>Intégration & Déploiement CRM</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> Services, Tourisme & Industrie</p>
+      <p class="evo-project-desc">
+        Pilotage fonctionnel de projets d'intégration CRM basés sur les technologies du marché (Salesforce, Microsoft Dynamics 365). Animation des ateliers de spécifications, encadrement des phases de tests fonctionnels et sécurisation des jalons de mise en production (go-live).
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Salesforce</span>
+        <span class="evo-tech-tag">Dynamics 365</span>
+        <span class="evo-tech-tag">Go-Live</span>
+      </div>
+    </div>
+
+    <!-- CARTE 9 : CONDUITE DU CHANGEMENT (TRAIN THE TRAINER) -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Accompagnement</div>
+      <h3>Formation & Programme Train-the-Trainer</h3>
+      <p class="evo-project-scope"><strong>Typologie :</strong> Adoption Technologique</p>
+      <p class="evo-project-desc">
+        Conception de dispositifs d'accompagnement au changement pour grands comptes. Création complète de supports pédagogiques techniques et animation de sessions de formation dédiées aux référents internes (champions) afin de démultiplier la montée en compétences des équipes locales.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Formation</span>
+        <span class="evo-tech-tag">Adoption</span>
+        <span class="evo-tech-tag">Change Management</span>
+      </div>
+    </div>
+
+    <!-- CARTE 10 : COORDINATION TRANSVERSE -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Gouvernance / PMO</div>
+      <h3>Coordination IT & Métiers Transverse</h3>
+      <p class="evo-project-scope"><strong>Typologie :</strong> Projets multi-acteurs</p>
+      <p class="evo-project-desc">
+        Pilotage de la relation et alignement continu entre équipes métiers, équipes de développement technique, pôles d'architecture, cellules QA (Assurance Qualité) et partenaires ou éditeurs externes au sein d'environnements agiles.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Agilité</span>
+        <span class="evo-tech-tag">QA / Test</span>
+        <span class="evo-tech-tag">Coordination</span>
+      </div>
+    </div>
+
+    <!-- CARTE 11 : POST-DÉPLOIEMENT & RUN -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Optimisation</div>
+      <h3>Suivi Post-Déploiement & Performance</h3>
+      <p class="evo-project-scope"><strong>Typologie :</strong> Amélioration continue</p>
+      <p class="evo-project-desc">
+        Suivi des indicateurs de performance post-lancement, identification des irritants techniques ou opérationnels rencontrés par les utilisateurs, et mise en place d'actions d'optimisation continue pour sécuriser et pérenniser l'adoption des nouveaux outils numériques.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Run</span>
+        <span class="evo-tech-tag">KPIs</span>
+        <span class="evo-tech-tag">Résolution</span>
+      </div>
+    </div>
+
+    <!-- CARTE 12 : RECHERCHE & MARKETPLACE -->
+    <div class="evo-project-card">
+      <div class="evo-project-badge">Cadrage Fonctionnel</div>
+      <h3>Écosystèmes Moteur de Recherche & Marketplace</h3>
+      <p class="evo-project-scope"><strong>Secteur :</strong> B2B / B2C Distribution</p>
+      <p class="evo-project-desc">
+        Analyse et structuration fonctionnelle de moteurs de recherche internes pour l'optimisation de la pertinence produit. Cadrage opérationnel de solutions de places de marché (Marketplace) connectées aux briques de gestion des stocks.
+      </p>
+      <div class="evo-project-footer">
+        <span class="evo-tech-tag">Search</span>
+        <span class="evo-tech-tag">Marketplace</span>
+        <span class="evo-tech-tag">Flux</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOC ACTION DE FIN -->
+  <div class="evo-cta-block">
+    <h3>Votre contexte présente des enjeux de flux similaires ?</h3>
+    <p>Sécurisons ensemble vos choix applicatifs et la trajectoire de vos livraisons.</p>
+    <a href="/contact" class="evo-btn">Échanger sur vos enjeux</a>
+  </div>
+
+</div>
+
+</body>
+</html>
