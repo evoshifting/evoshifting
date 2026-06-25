@@ -8,22 +8,78 @@
     <meta name="author" content="Marc-Antoine Cailloux">
     <title>evoshifting | Contact & Co-construction</title>
     <style>
-        /* VARIABLES DE STYLE & RESET CONTEXTUEL */
+        /* TYPOGRAPHIE ET CONFIGURATION GENERALE */
+        body, input, select, textarea, button {
+            font-family: "Futura PT", "Futura", "Trebuchet MS", Arial, sans-serif;
+        }
+
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
+
+        /* HEADER PREMIUM UNIFORME */
+        .evo-site-header {
+            background-color: #111111;
+            border-bottom: 1px solid #222222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .evo-header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .evo-logo-link {
+            display: flex;
+            align-items: center;
+        }
+        .evo-header-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        .evo-header-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .evo-nav-link {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .evo-nav-link:hover {
+            color: #ffffff;
+        }
+        .evo-nav-cta {
+            background-color: #68A67A;
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .evo-nav-cta:hover {
+            background-color: #568d66;
+        }
+
+        /* CONTENEUR FORMULAIRE ADVANCED */
         .evo-advanced-contact {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: #2D3748;
             max-width: 1040px;
             margin: 0 auto;
             padding: 80px 24px;
             line-height: 1.5;
+            box-sizing: border-box;
         }
         /* HERO */
         .evo-contact-hero {
@@ -47,7 +103,7 @@
             margin: 0;
             letter-spacing: -0.5px;
         }
-        /* LAYOUT GRILLE (SIDEBAR À GAUCHE AU PLUS HAUT) */
+        /* LAYOUT GRILLE */
         .evo-contact-layout {
             display: grid;
             grid-template-columns: 320px 1fr;
@@ -79,10 +135,11 @@
             color: #1a202c;
             margin-bottom: 20px;
         }
-        /* BOUTONS RADIOS FAÇON BADGES INTERACTIFS */
+        
+        /* CORRECTION ET AGGRANDISSEMENT DE LA GRILLE DES BADGES (Anti-chevauchement / Anti-troncature) */
         .evo-badge-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 15px;
         }
         .evo-badge-radio {
@@ -167,7 +224,8 @@
             box-shadow: 0 0 0 3px rgba(104, 166, 122, 0.1);
         }
         .evo-mt-15 { margin-top: 15px; }
-        /* ACTION ET BLOC REMERCIEMENT */
+        
+        /* ACTION ET BOUTON ROBUSTE */
         .evo-action-container {
             display: flex;
             flex-direction: column;
@@ -186,6 +244,8 @@
             cursor: pointer;
             transition: background 0.2s;
             display: inline-block;
+            min-width: 160px;
+            text-align: center;
         }
         .evo-btn-primary-advance:hover {
             background: #568d66;
@@ -270,10 +330,11 @@
             border-top: 1px solid #2d3748;
             padding-top: 25px;
         }
-        .linkedin-block h5 {
+        .evo-linkedin-block h5 {
             font-size: 1rem;
             font-weight: 700;
             margin: 0 0 8px 0;
+            color: #ffffff;
         }
         .evo-sidebar-linkedin-btn {
             display: flex;
@@ -295,8 +356,108 @@
             background: #2d3748;
             border-color: #718096;
         }
+
+        /* FOOTER PREMIUM UNIFORME */
+        .evo-site-footer {
+            background-color: #111111;
+            color: #e2e8f0;
+            padding: 60px 0 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid #222222;
+        }
+        .evo-footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .evo-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .evo-footer-brand .evo-footer-logo {
+            height: 35px;
+            width: auto;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .evo-footer-tagline {
+            font-size: 0.9rem;
+            color: #a0aec0;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0;
+        }
+        .evo-footer-links-col h4, .evo-footer-info-col h4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .evo-footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .evo-footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        .evo-footer-links a:hover {
+            color: #ffffff;
+        }
+        .evo-footer-info-col p {
+            font-size: 0.9rem;
+            color: #a0aec0;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+        .evo-footer-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #ffffff;
+            background-color: #2d3748;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .evo-footer-linkedin:hover {
+            background-color: #4a5568;
+        }
+        .evo-footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 25px;
+            text-align: center;
+        }
+        .evo-footer-bottom p {
+            font-size: 0.85rem;
+            color: #718096;
+            margin: 0;
+        }
+
         /* RESPONSIVE DESIGN */
         @media (max-width: 900px) {
+            .evo-header-inner {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .evo-header-nav {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
             .evo-advanced-contact {
                 padding: 40px 16px;
             }
@@ -311,90 +472,32 @@
             .evo-form-card {
                 padding: 25px;
             }
-        }
-
-        /* HEADER & FOOTER GLOBAL STYLES */
-        .evo-header-nav {
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaeaea;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .evo-nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .evo-logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #111111;
-            text-decoration: none;
-        }
-        .evo-logo span {
-            color: #68A67A;
-        }
-        .evo-menu {
-            display: flex;
-            gap: 25px;
-        }
-        .evo-menu-link {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        .evo-menu-link:hover, .evo-menu-link.active {
-            color: #68A67A;
-        }
-        .evo-footer {
-            background-color: #111111;
-            color: #aaaaaa;
-            padding: 30px 20px;
-            margin-top: auto;
-        }
-        .evo-footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-        }
-        .evo-footer-credits a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            .evo-nav-container { flex-direction: column; gap: 15px; text-align: center; }
-            .evo-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .evo-footer-container { flex-direction: column; gap: 10px; text-align: center; }
+            .evo-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
 <body>
 
-<header class="evo-header-nav">
-  <div class="evo-nav-container">
-    <a href="index.html" class="evo-logo">evo<span>shifting</span></a>
-    <nav class="evo-menu">
-      <a href="index.html" class="evo-menu-link">Accueil</a>
-      <a href="offres.html" class="evo-menu-link">Offres</a>
-      <a href="portrait.html" class="evo-menu-link">Portrait</a>
-      <a href="references.html" class="evo-menu-link">Références</a>
-      <a href="contact.html" class="evo-menu-link active">Contact</a>
-    </nav>
-  </div>
+<header class="evo-site-header">
+    <div class="evo-header-inner">
+      <a href="index.html" class="evo-logo-link">
+        <img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting Logo" class="evo-header-logo">
+      </a>
+      <nav class="evo-header-nav">
+        <a href="index.html" class="evo-nav-link">Accueil</a>
+        <a href="offres.html" class="evo-nav-link">Solutions</a>
+        <a href="portrait.html" class="evo-nav-link">Portrait</a>
+        <a href="references.html" class="evo-nav-link">Références</a>
+        <a href="contact.html" class="evo-nav-link evo-nav-cta">Contact</a>
+      </nav>
+    </div>
 </header>
 
 <div class="evo-advanced-contact" id="contact">
     
-    <!-- EN-TÊTE ÉDITORIAL -->
     <div class="evo-contact-hero">
         <span class="evo-subtitle">Co-construction</span>
         <h2>Sécurisons votre trajectoire applicative</h2>
@@ -402,7 +505,6 @@
 
     <div class="evo-contact-layout">
         
-        <!-- ENCART DE RASSURANCE -->
         <div class="evo-sidebar-card">
             <div class="evo-card-block">
                 <h4>Confidentialité & Posture</h4>
@@ -427,11 +529,9 @@
             </div>
         </div>
         
-        <!-- LE FORMULAIRE DE QUALIFICATION -->
         <div class="evo-form-card">
             <form id="evoContactForm" action="#" method="POST">
                 
-                <!-- Étape 1 : Le besoin (Optionnel) -->
                 <div class="evo-form-section">
                     <label class="evo-section-label">1. Quel est votre enjeu principal ?</label>
                     <div class="evo-badge-grid">
@@ -473,7 +573,6 @@
                     </div>
                 </div>
 
-                <!-- Étape 2 : L'identité (Obligatoire sauf Téléphone) -->
                 <div class="evo-form-section">
                     <label class="evo-section-label">2. Vos coordonnées</label>
                     <div class="evo-fields-grid">
@@ -498,7 +597,6 @@
                         </div>
                     </div>
 
-                    <!-- Ligne ajoutée pour le téléphone -->
                     <div class="evo-fields-grid evo-mt-15">
                         <div class="evo-field-group">
                             <label for="adv-phone">Téléphone</label>
@@ -507,7 +605,6 @@
                     </div>
                 </div>
 
-                <!-- Étape 3 : Le Contexte (Optionnel) -->
                 <div class="evo-form-section">
                     <label class="evo-section-label">3. Votre projet</label>
                     <div class="evo-field-group">
@@ -516,11 +613,9 @@
                     </div>
                 </div>
 
-                <!-- BOUTON CTA & ZONE DE REMERCIEMENT -->
                 <div class="evo-action-container">
                     <button type="submit" class="evo-btn-primary-advance">Envoyer</button>
                     
-                    <!-- Le message de validation (Caché au départ via display: none) -->
                     <div id="evoThankYouMessage" class="evo-thankyou-note">
                         <span class="evo-check-icon">✓</span> Merci pour votre démarche. Je prends connaissance de vos éléments et vous recontacte sous 48h.
                     </div>
@@ -532,27 +627,42 @@
     </div>
 </div>
 
-<footer class="evo-footer">
-  <div class="evo-footer-container">
-    <div class="evo-footer-copy">
-      &copy; 2026 evoshifting. Tous droits réservés.
+<footer class="evo-site-footer">
+  <div class="evo-footer-inner">
+    <div class="evo-footer-grid">
+      <div class="evo-footer-brand">
+        <img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting Logo" class="evo-footer-logo">
+        <p class="evo-footer-tagline">Conseil en systèmes et logiciels informatiques. Cadrage de projets, écosystèmes SaaS et intégration de l'IA.</p>
+      </div>
+      <div class="evo-footer-links-col">
+        <h4>Navigation</h4>
+        <ul class="evo-footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="offres.html">Solutions & Cas d'usage</a></li>
+          <li><a href="portrait.html">Portrait</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="evo-footer-info-col">
+        <h4>Contact & Réseau</h4>
+        <p>Marc-Antoine Cailloux<br>Consultant Freelance<br>Bordeaux & Paris</p>
+        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank" class="evo-footer-linkedin">🔗 Profil LinkedIn</a>
+      </div>
     </div>
-    <div class="evo-footer-credits">
-      Consultant indépendant par <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">Marc-Antoine Cailloux</a>
+    <div class="evo-footer-bottom">
+      <p>&copy; 2026 evoshifting. Tous droits réservés. Marc-Antoine Cailloux.</p>
     </div>
   </div>
 </footer>
 
 <script>
-    // Interception de l'envoi pour éviter le rafraîchissement avec un '#' en fin d'URL
     document.getElementById('evoContactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Stoppe le bug de l'URL et le rechargement de page
+        event.preventDefault(); 
         
-        // Affiche la notification de succès de manière fluide
         const thankYouBlock = document.getElementById('evoThankYouMessage');
         thankYouBlock.style.display = 'flex';
         
-        // Vide les champs du formulaire après validation
         this.reset();
     });
 </script>
