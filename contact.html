@@ -1,471 +1,264 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactez evoshifting. Marc-Antoine Cailloux, consultant freelance IA et IT (Bordeaux, Paris). Échangeons sur vos projets, cadrage et trajectoire applicative.">
-    <meta name="keywords" content="contact, IA, conseil, bordeaux, paris, freelance, projet, consultant, AMOA, PMO, SI">
-    <meta name="author" content="Marc-Antoine Cailloux">
-    <title>evoshifting | Contact & Co-construction</title>
-    <style>
-        /* VARIABLES DE STYLE & RESET CONTEXTUEL */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        .evo-advanced-contact {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #2D3748;
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            line-height: 1.5;
-        }
-        /* HERO */
-        .evo-contact-hero {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-        }
-        .evo-subtitle {
-            color: #68A67A;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .evo-contact-hero h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1a202c;
-            margin: 0;
-            letter-spacing: -0.5px;
-        }
-        /* LAYOUT GRILLE (SIDEBAR À GAUCHE AU PLUS HAUT) */
-        .evo-contact-layout {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        /* FORM CARD */
-        .evo-form-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-        }
-        .evo-form-section {
-            border-bottom: 1px solid #edf2f7;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-        .evo-form-section:last-of-type {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 35px;
-        }
-        .evo-section-label {
-            display: block;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 20px;
-        }
-        /* BOUTONS RADIOS FAÇON BADGES INTERACTIFS */
-        .evo-badge-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .evo-badge-radio {
-            cursor: pointer;
-            position: relative;
-        }
-        .evo-badge-radio input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .evo-badge-content {
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            background: #f8fafc;
-            transition: all 0.2s ease;
-            height: 100%;
-            box-sizing: border-box;
-        }
-        .evo-badge-icon {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-        .evo-badge-content strong {
-            font-size: 0.95rem;
-            color: #2d3748;
-            margin-bottom: 4px;
-            display: block;
-        }
-        .evo-badge-content small {
-            font-size: 0.8rem;
-            color: #718096;
-            line-height: 1.3;
-        }
-        .evo-badge-radio:hover .evo-badge-content {
-            border-color: #cbd5e0;
-            background: #f1f5f9;
-        }
-        .evo-badge-radio input[type="radio"]:checked + .evo-badge-content {
-            border-color: #68A67A;
-            background: #f0f7f2;
-            box-shadow: 0 0 0 1px #68A67A;
-        }
-        /* CHAMPS CLASSIQUES */
-        .evo-fields-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .evo-field-group label {
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #4a5568;
-            margin-bottom: 6px;
-        }
-        .evo-form-card input[type="text"],
-        .evo-form-card input[type="email"],
-        .evo-form-card input[type="tel"],
-        .evo-form-card select,
-        .evo-form-card textarea {
-            width: 100%;
-            padding: 12px 16px;
-            font-size: 0.95rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            color: #2d3748;
-            background: #f8fafc;
-            box-sizing: border-box;
-            transition: all 0.2s;
-        }
-        .evo-form-card input:focus,
-        .evo-form-card select:focus,
-        .evo-form-card textarea:focus {
-            outline: none;
-            border-color: #68A67A;
-            background: #ffffff;
-            box-shadow: 0 0 0 3px rgba(104, 166, 122, 0.1);
-        }
-        .evo-mt-15 { margin-top: 15px; }
-        /* ACTION ET BLOC REMERCIEMENT */
-        .evo-action-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: flex-start;
-            margin-top: 20px;
-        }
-        .evo-btn-primary-advance {
-            background: #68A67A;
-            color: #ffffff;
-            border: none;
-            padding: 14px 45px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: inline-block;
-        }
-        .evo-btn-primary-advance:hover {
-            background: #568d66;
-        }
-        .evo-thankyou-note {
-            display: none;
-            font-size: 0.95rem;
-            color: #2D3748;
-            align-items: center;
-            gap: 10px;
-            background: #f0f7f2;
-            padding: 14px 20px;
-            border-radius: 8px;
-            border: 1px solid #d2ebd9;
-            font-weight: 500;
-            width: 100%;
-            box-sizing: border-box;
-            animation: evoSlideIn 0.3s ease-out forwards;
-        }
-        .evo-check-icon {
-            color: #68A67A;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        @keyframes evoSlideIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* SIDEBAR CARD */
-        .evo-sidebar-card {
-            background: #1a202c;
-            color: #ffffff;
-            border-radius: 16px;
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .evo-sidebar-card h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 0 0 8px 0;
-            color: #ffffff;
-        }
-        .evo-sidebar-card p {
-            font-size: 0.9rem;
-            color: #cbd5e0;
-            margin: 0;
-            line-height: 1.5;
-        }
-        /* ÉTAPES DE SUIVI */
-        .evo-step-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .evo-step-list li {
-            display: flex;
-            gap: 12px;
-            font-size: 0.9rem;
-            color: #cbd5e0;
-            align-items: center;
-        }
-        .evo-step-list span {
-            background: #4a5568;
-            color: #ffffff;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        /* LINKEDIN SIDEBAR */
-        .evo-linkedin-block {
-            border-top: 1px solid #2d3748;
-            padding-top: 25px;
-        }
-        .linkedin-block h5 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin: 0 0 8px 0;
-        }
-        .evo-sidebar-linkedin-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: transparent;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid #4a5568;
-            margin-top: 15px;
-            transition: all 0.2s;
-        }
-        .evo-sidebar-linkedin-btn:hover {
-            background: #2d3748;
-            border-color: #718096;
-        }
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .evo-advanced-contact {
-                padding: 40px 16px;
-            }
-            .evo-contact-layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .evo-fields-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .evo-form-card {
-                padding: 25px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez evoshifting. Marc-Antoine Cailloux, consultant freelance IA et IT (Bordeaux, Paris). Échangeons sur vos projets, cadrage et trajectoire applicative.">
+  <meta name="keywords" content="contact, IA, conseil, bordeaux, paris, freelance, projet, consultant, AMOA, PMO, SI">
+  <meta name="author" content="Marc-Antoine Cailloux">
+  <title>evoshifting | Contact & Co-construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #2D3748; background-color: #ffffff; }
+
+    /* HEADER */
+    .evo-header { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #eaeaea; }
+    .evo-header-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .evo-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .evo-logo img { height: 36px; width: auto; }
+    .evo-nav { display: flex; align-items: center; gap: 32px; }
+    .evo-nav a { font-size: 0.9rem; font-weight: 600; color: #333333; text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
+    .evo-nav a:hover { color: #68A67A; }
+    .evo-nav a.active { color: #68A67A; }
+    .evo-nav-contact { display: inline-block; background-color: #111111; color: #ffffff !important; text-decoration: none; padding: 10px 22px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; transition: background 0.2s ease; }
+    .evo-nav-contact:hover { background-color: #68A67A !important; }
+    .evo-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .evo-hamburger span { display: block; width: 24px; height: 2px; background: #111111; border-radius: 2px; }
+    .evo-mobile-nav { display: none; flex-direction: column; background: #ffffff; border-top: 1px solid #eaeaea; padding: 20px; gap: 16px; }
+    .evo-mobile-nav.open { display: flex; }
+    .evo-mobile-nav a { font-size: 1rem; font-weight: 600; color: #333333; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .evo-mobile-nav a:last-child { border-bottom: none; }
+    .evo-mobile-nav a:hover { color: #68A67A; }
+    @media (max-width: 768px) { .evo-nav { display: none; } .evo-hamburger { display: flex; } }
+
+    /* FOOTER */
+    .evo-footer { border-top: 1px solid #eaeaea; background: #ffffff; }
+    .evo-footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .evo-footer-links { display: flex; gap: 24px; align-items: center; }
+    .evo-footer-links a { color: #555555; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .evo-footer-links a:hover { color: #68A67A; }
+    .evo-footer-legal { font-size: 0.8rem; color: #999999; line-height: 1.5; }
+
+    /* PAGE */
+    .evo-advanced-contact { max-width: 1040px; margin: 0 auto; padding: 80px 24px; line-height: 1.5; }
+    .evo-contact-hero { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
+    .evo-subtitle { color: #68A67A; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
+    .evo-contact-hero h2 { font-size: 2.2rem; font-weight: 800; color: #1a202c; margin: 0; letter-spacing: -0.5px; }
+
+    .evo-contact-layout { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: start; }
+
+    /* FORM CARD */
+    .evo-form-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
+    .evo-form-section { border-bottom: 1px solid #edf2f7; padding-bottom: 30px; margin-bottom: 30px; }
+    .evo-form-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 35px; }
+    .evo-section-label { display: block; font-size: 1.1rem; font-weight: 700; color: #1a202c; margin-bottom: 20px; }
+    .evo-badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .evo-badge-radio { cursor: pointer; position: relative; }
+    .evo-badge-radio input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .evo-badge-content { display: flex; flex-direction: column; padding: 16px; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; transition: all 0.2s ease; height: 100%; }
+    .evo-badge-icon { font-size: 1.4rem; margin-bottom: 8px; }
+    .evo-badge-content strong { font-size: 0.95rem; color: #2d3748; margin-bottom: 4px; display: block; }
+    .evo-badge-content small { font-size: 0.8rem; color: #718096; line-height: 1.3; }
+    .evo-badge-radio:hover .evo-badge-content { border-color: #cbd5e0; background: #f1f5f9; }
+    .evo-badge-radio input[type="radio"]:checked + .evo-badge-content { border-color: #68A67A; background: #f0f7f2; box-shadow: 0 0 0 1px #68A67A; }
+    .evo-fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .evo-field-group label { display: block; font-size: 0.88rem; font-weight: 600; color: #4a5568; margin-bottom: 6px; }
+    .evo-form-card input[type="text"],
+    .evo-form-card input[type="email"],
+    .evo-form-card input[type="tel"],
+    .evo-form-card select,
+    .evo-form-card textarea { width: 100%; padding: 12px 16px; font-size: 0.95rem; border: 1px solid #cbd5e0; border-radius: 8px; color: #2d3748; background: #f8fafc; transition: all 0.2s; font-family: inherit; }
+    .evo-form-card input:focus, .evo-form-card select:focus, .evo-form-card textarea:focus { outline: none; border-color: #68A67A; background: #ffffff; box-shadow: 0 0 0 3px rgba(104,166,122,0.1); }
+    .evo-mt-15 { margin-top: 15px; }
+    .evo-action-container { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; margin-top: 20px; }
+    .evo-btn-primary-advance { background: #68A67A; color: #ffffff; border: none; padding: 14px 45px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: background 0.2s; display: inline-block; font-family: inherit; }
+    .evo-btn-primary-advance:hover { background: #568d66; }
+    .evo-thankyou-note { display: none; font-size: 0.95rem; color: #2D3748; align-items: center; gap: 10px; background: #f0f7f2; padding: 14px 20px; border-radius: 8px; border: 1px solid #d2ebd9; font-weight: 500; width: 100%; animation: evoSlideIn 0.3s ease-out forwards; }
+    .evo-check-icon { color: #68A67A; font-weight: bold; font-size: 1.2rem; }
+    @keyframes evoSlideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* SIDEBAR */
+    .evo-sidebar-card { background: #1a202c; color: #ffffff; border-radius: 16px; padding: 35px; display: flex; flex-direction: column; gap: 30px; }
+    .evo-sidebar-card h4 { font-size: 1.1rem; font-weight: 700; margin: 0 0 8px 0; color: #ffffff; }
+    .evo-sidebar-card p { font-size: 0.9rem; color: #cbd5e0; margin: 0; line-height: 1.5; }
+    .evo-step-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; }
+    .evo-step-list li { display: flex; gap: 12px; font-size: 0.9rem; color: #cbd5e0; align-items: center; }
+    .evo-step-list span { background: #4a5568; color: #ffffff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+    .evo-linkedin-block { border-top: 1px solid #2d3748; padding-top: 25px; }
+    .linkedin-block h5 { font-size: 1rem; font-weight: 700; margin: 0 0 8px 0; }
+    .evo-sidebar-linkedin-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; border: 1px solid #4a5568; margin-top: 15px; transition: all 0.2s; }
+    .evo-sidebar-linkedin-btn:hover { background: #2d3748; border-color: #718096; }
+
+    @media (max-width: 900px) {
+      .evo-advanced-contact { padding: 40px 16px; }
+      .evo-contact-layout { grid-template-columns: 1fr; gap: 30px; }
+      .evo-fields-grid { grid-template-columns: 1fr; gap: 15px; }
+      .evo-form-card { padding: 25px; }
+      .evo-footer-links { flex-direction: column; gap: 12px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="evo-advanced-contact" id="contact">
+  <!-- HEADER -->
+  <header class="evo-header">
+    <div class="evo-header-inner">
+      <a href="index.html" class="evo-logo">
+        <img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting">
+      </a>
+      <nav class="evo-nav">
+        <a href="offres.html">offres</a>
+        <a href="references.html">références</a>
+        <a href="portrait.html">portrait</a>
+        <a href="contact.html" class="evo-nav-contact active" style="background-color:#68A67A;">Contact</a>
+      </nav>
+      <button class="evo-hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="evo-mobile-nav" id="mobileNav">
+      <a href="offres.html">offres</a>
+      <a href="references.html">références</a>
+      <a href="portrait.html">portrait</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="evo-advanced-contact" id="contact">
     
-    <!-- EN-TÊTE ÉDITORIAL -->
     <div class="evo-contact-hero">
-        <span class="evo-subtitle">Co-construction</span>
-        <h2>Sécurisons votre trajectoire applicative</h2>
+      <span class="evo-subtitle">Co-construction</span>
+      <h2>Sécurisons votre trajectoire applicative</h2>
     </div>
 
     <div class="evo-contact-layout">
-        
-        <!-- ENCART DE RASSURANCE -->
-        <div class="evo-sidebar-card">
-            <div class="evo-card-block">
-                <h4>Confidentialité & Posture</h4>
-                <p>Les informations partagées restent strictement confidentielles et servent uniquement à préparer notre premier échange technique.</p>
-            </div>
-            
-            <div class="evo-card-block">
-                <h4>Prochaine étape</h4>
-                <ul class="evo-step-list">
-                    <li><span>1</span> Analyse de votre besoin sous 48h.</li>
-                    <li><span>2</span> Qualification téléphonique de 15-20 min.</li>
-                    <li><span>3</span> Proposition de trajectoire ou d'atelier.</li>
-                </ul>
-            </div>
-
-            <div class="evo-card-block evo-linkedin-block">
-                <h5>Besoin d'une approche directe ?</h5>
-                <p>Vous pouvez également consulter mon réseau ou m'ajouter pour initier une discussion informelle.</p>
-                <a href="https://www.linkedin.com/in/ma-clx/" target="_blank" class="evo-sidebar-linkedin-btn">
-                    <span>🔗</span> Profil LinkedIn
-                </a>
-            </div>
+      
+      <!-- SIDEBAR -->
+      <div class="evo-sidebar-card">
+        <div class="evo-card-block">
+          <h4>Confidentialité & Posture</h4>
+          <p>Les informations partagées restent strictement confidentielles et servent uniquement à préparer notre premier échange technique.</p>
         </div>
-        
-        <!-- LE FORMULAIRE DE QUALIFICATION -->
-        <div class="evo-form-card">
-            <form id="evoContactForm" action="#" method="POST">
-                
-                <!-- Étape 1 : Le besoin (Optionnel) -->
-                <div class="evo-form-section">
-                    <label class="evo-section-label">1. Quel est votre enjeu principal ?</label>
-                    <div class="evo-badge-grid">
-                        <label class="evo-badge-radio">
-                            <input type="radio" name="enjeu" value="cadrage">
-                            <span class="evo-badge-content">
-                                <span class="evo-badge-icon">🎯</span>
-                                <strong>Cadrage / Audit SI</strong>
-                                <small>Clarifier l'existant, flux & processus</small>
-                            </span>
-                        </label>
-
-                        <label class="evo-badge-radio">
-                            <input type="radio" name="enjeu" value="aide-choix">
-                            <span class="evo-badge-content">
-                                <span class="evo-badge-icon">🛠️</span>
-                                <strong>Aide au choix, RFI / RFP</strong>
-                                <small>ERP, E-commerce, CRM, PIM, DAM...</small>
-                            </span>
-                        </label>
-
-                        <label class="evo-badge-radio">
-                            <input type="radio" name="enjeu" value="product-owner">
-                            <span class="evo-badge-content">
-                                <span class="evo-badge-icon">🔀</span>
-                                <strong>Product Ownership</strong>
-                                <small>Alignement IT/Métier & Delivery</small>
-                            </span>
-                        </label>
-                        
-                        <label class="evo-badge-radio">
-                            <input type="radio" name="enjeu" value="pmo">
-                            <span class="evo-badge-content">
-                                <span class="evo-badge-icon">📊</span>
-                                <strong>PMO / Pilotage</strong>
-                                <small>Gouvernance globale & suivi des risques</small>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Étape 2 : L'identité (Obligatoire sauf Téléphone) -->
-                <div class="evo-form-section">
-                    <label class="evo-section-label">2. Vos coordonnées</label>
-                    <div class="evo-fields-grid">
-                        <div class="evo-field-group">
-                            <label for="adv-name">Nom / Prénom *</label>
-                            <input type="text" id="adv-name" name="name_firstname" required placeholder="Ex: Martin Alex">
-                        </div>
-                        <div class="evo-field-group">
-                            <label for="adv-company">Entreprise *</label>
-                            <input type="text" id="adv-company" name="company" required placeholder="Ex: Nom de votre structure">
-                        </div>
-                    </div>
-                    
-                    <div class="evo-fields-grid evo-mt-15">
-                        <div class="evo-field-group">
-                            <label for="adv-role">Rôle / Fonction *</label>
-                            <input type="text" id="adv-role" name="role" required placeholder="Ex: Directeur SI, Responsable Digital...">
-                        </div>
-                        <div class="evo-field-group">
-                            <label for="adv-email">Email *</label>
-                            <input type="email" id="adv-email" name="email" required placeholder="Ex: a.martin@entreprise.com">
-                        </div>
-                    </div>
-
-                    <!-- Ligne ajoutée pour le téléphone -->
-                    <div class="evo-fields-grid evo-mt-15">
-                        <div class="evo-field-group">
-                            <label for="adv-phone">Téléphone</label>
-                            <input type="tel" id="adv-phone" name="phone" placeholder="Ex: 06 00 00 00 00">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Étape 3 : Le Contexte (Optionnel) -->
-                <div class="evo-form-section">
-                    <label class="evo-section-label">3. Votre projet</label>
-                    <div class="evo-field-group">
-                        <label for="adv-message">Description rapide de vos besoins</label>
-                        <textarea id="adv-message" name="message" rows="5" placeholder="Quel est le périmètre global de votre démarche ? Quels sont les principaux verrous ?"></textarea>
-                    </div>
-                </div>
-
-                <!-- BOUTON CTA & ZONE DE REMERCIEMENT -->
-                <div class="evo-action-container">
-                    <button type="submit" class="evo-btn-primary-advance">Envoyer</button>
-                    
-                    <!-- Le message de validation (Caché au départ via display: none) -->
-                    <div id="evoThankYouMessage" class="evo-thankyou-note">
-                        <span class="evo-check-icon">✓</span> Merci pour votre démarche. Je prends connaissance de vos éléments et vous recontacte sous 48h.
-                    </div>
-                </div>
-
-            </form>
+        <div class="evo-card-block">
+          <h4>Prochaine étape</h4>
+          <ul class="evo-step-list">
+            <li><span>1</span> Analyse de votre besoin sous 48h.</li>
+            <li><span>2</span> Qualification téléphonique de 15-20 min.</li>
+            <li><span>3</span> Proposition de trajectoire ou d'atelier.</li>
+          </ul>
         </div>
+        <div class="evo-card-block evo-linkedin-block">
+          <h5>Besoin d'une approche directe ?</h5>
+          <p>Vous pouvez également consulter mon réseau ou m'ajouter pour initier une discussion informelle.</p>
+          <a href="https://www.linkedin.com/in/ma-clx/" target="_blank" class="evo-sidebar-linkedin-btn">
+            <span>🔗</span> Profil LinkedIn
+          </a>
+        </div>
+      </div>
+      
+      <!-- FORM -->
+      <div class="evo-form-card">
+        <form id="evoContactForm" action="#" method="POST">
+          <div class="evo-form-section">
+            <label class="evo-section-label">1. Quel est votre enjeu principal ?</label>
+            <div class="evo-badge-grid">
+              <label class="evo-badge-radio">
+                <input type="radio" name="enjeu" value="cadrage">
+                <span class="evo-badge-content"><span class="evo-badge-icon">🎯</span><strong>Cadrage / Audit SI</strong><small>Clarifier l'existant, flux & processus</small></span>
+              </label>
+              <label class="evo-badge-radio">
+                <input type="radio" name="enjeu" value="aide-choix">
+                <span class="evo-badge-content"><span class="evo-badge-icon">🛠️</span><strong>Aide au choix, RFI / RFP</strong><small>ERP, E-commerce, CRM, PIM, DAM...</small></span>
+              </label>
+              <label class="evo-badge-radio">
+                <input type="radio" name="enjeu" value="product-owner">
+                <span class="evo-badge-content"><span class="evo-badge-icon">🔀</span><strong>Product Ownership</strong><small>Alignement IT/Métier & Delivery</small></span>
+              </label>
+              <label class="evo-badge-radio">
+                <input type="radio" name="enjeu" value="pmo">
+                <span class="evo-badge-content"><span class="evo-badge-icon">📊</span><strong>PMO / Pilotage</strong><small>Gouvernance globale & suivi des risques</small></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="evo-form-section">
+            <label class="evo-section-label">2. Vos coordonnées</label>
+            <div class="evo-fields-grid">
+              <div class="evo-field-group">
+                <label for="adv-name">Nom / Prénom *</label>
+                <input type="text" id="adv-name" name="name_firstname" required placeholder="Ex: Martin Alex">
+              </div>
+              <div class="evo-field-group">
+                <label for="adv-company">Entreprise *</label>
+                <input type="text" id="adv-company" name="company" required placeholder="Ex: Nom de votre structure">
+              </div>
+            </div>
+            <div class="evo-fields-grid evo-mt-15">
+              <div class="evo-field-group">
+                <label for="adv-role">Rôle / Fonction *</label>
+                <input type="text" id="adv-role" name="role" required placeholder="Ex: Directeur SI, Responsable Digital...">
+              </div>
+              <div class="evo-field-group">
+                <label for="adv-email">Email *</label>
+                <input type="email" id="adv-email" name="email" required placeholder="Ex: a.martin@entreprise.com">
+              </div>
+            </div>
+            <div class="evo-fields-grid evo-mt-15">
+              <div class="evo-field-group">
+                <label for="adv-phone">Téléphone</label>
+                <input type="tel" id="adv-phone" name="phone" placeholder="Ex: 06 00 00 00 00">
+              </div>
+            </div>
+          </div>
+
+          <div class="evo-form-section">
+            <label class="evo-section-label">3. Votre projet</label>
+            <div class="evo-field-group">
+              <label for="adv-message">Description rapide de vos besoins</label>
+              <textarea id="adv-message" name="message" rows="5" placeholder="Quel est le périmètre global de votre démarche ? Quels sont les principaux verrous ?"></textarea>
+            </div>
+          </div>
+
+          <div class="evo-action-container">
+            <button type="submit" class="evo-btn-primary-advance">Envoyer</button>
+            <div id="evoThankYouMessage" class="evo-thankyou-note">
+              <span class="evo-check-icon">✓</span> Merci pour votre démarche. Je prends connaissance de vos éléments et vous recontacte sous 48h.
+            </div>
+          </div>
+        </form>
+      </div>
 
     </div>
-</div>
+  </div>
 
-<script>
-    // Interception de l'envoi pour éviter le rafraîchissement avec un '#' en fin d'URL
+  <!-- FOOTER -->
+  <footer class="evo-footer">
+    <div class="evo-footer-inner">
+      <div class="evo-footer-links">
+        <a href="http://wa.me/33625544444" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <p class="evo-footer-legal">evoshifting – SASU au capital de 1 500 € – RCS Bordeaux 992 753 632 – Conseil en systèmes et logiciels informatiques (APE 6202A)</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
     document.getElementById('evoContactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Stoppe le bug de l'URL et le rechargement de page
-        
-        // Affiche la notification de succès de manière fluide
-        const thankYouBlock = document.getElementById('evoThankYouMessage');
-        thankYouBlock.style.display = 'flex';
-        
-        // Vide les champs du formulaire après validation
-        this.reset();
+      event.preventDefault();
+      const thankYouBlock = document.getElementById('evoThankYouMessage');
+      thankYouBlock.style.display = 'flex';
+      this.reset();
     });
-</script>
-
+  </script>
 </body>
 </html>

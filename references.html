@@ -3,96 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Références et projets menés par Marc-Antoine Cailloux.[cite: 8]">
-  <title>evoshifting | Références & Projets[cite: 8]</title>
-  
+  <meta name="description" content="Références et projets menés par Marc-Antoine Cailloux. Plus de 10 ans d'expérience en cadrage stratégique, déploiement et conseil IT (Bordeaux, Paris, freelance).">
+  <meta name="keywords" content="références, projets, IA, conseil, bordeaux, paris, freelance, consultant, déploiement, AMOA, PME, grands groupes">
+  <meta name="author" content="Marc-Antoine Cailloux">
+  <title>evoshifting | Références & Projets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #111111;
-      --accent: #68A67A;
-      --bg: #ffffff;
-      --text: #2D3748;
-      --border: #eaeaea;
-      --font-main: "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif;
-    }
-    body { margin: 0; padding: 0; font-family: var(--font-main); background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
-    .evo-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-    
-    /* HEADER & FOOTER */
-    .evo-global-header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; padding: 15px 20px; }
-    .evo-header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .evo-logo { font-size: 1.6rem; text-decoration: none; color: var(--primary); letter-spacing: -0.5px; }
-    .evo-logo strong { font-weight: 700; }
-    .evo-nav { display: flex; gap: 25px; }
-    .evo-nav a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: color 0.2s; }
-    .evo-nav a:hover { color: var(--accent); }
-    .evo-global-footer { background: #f9f9f9; border-top: 1px solid var(--border); padding: 50px 20px 30px; margin-top: 60px; }
-    .evo-footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-    .evo-footer-links { display: flex; gap: 20px; }
-    .evo-footer-links a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-    .evo-footer-links a:hover { color: var(--accent); }
-    .evo-footer-copy { font-size: 0.85rem; color: #888; margin-top: 10px; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background-color: #ffffff; }
 
-    /* PAGE STYLES */
+    /* HEADER */
+    .evo-header { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #eaeaea; }
+    .evo-header-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .evo-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .evo-logo img { height: 36px; width: auto; }
+    .evo-nav { display: flex; align-items: center; gap: 32px; }
+    .evo-nav a { font-size: 0.9rem; font-weight: 600; color: #333333; text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
+    .evo-nav a:hover { color: #68A67A; }
+    .evo-nav a.active { color: #68A67A; }
+    .evo-nav-contact { display: inline-block; background-color: #111111; color: #ffffff !important; text-decoration: none; padding: 10px 22px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; transition: background 0.2s ease; }
+    .evo-nav-contact:hover { background-color: #68A67A !important; }
+    .evo-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .evo-hamburger span { display: block; width: 24px; height: 2px; background: #111111; border-radius: 2px; }
+    .evo-mobile-nav { display: none; flex-direction: column; background: #ffffff; border-top: 1px solid #eaeaea; padding: 20px; gap: 16px; }
+    .evo-mobile-nav.open { display: flex; }
+    .evo-mobile-nav a { font-size: 1rem; font-weight: 600; color: #333333; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .evo-mobile-nav a:last-child { border-bottom: none; }
+    .evo-mobile-nav a:hover { color: #68A67A; }
+    @media (max-width: 768px) { .evo-nav { display: none; } .evo-hamburger { display: flex; } }
+
+    /* FOOTER */
+    .evo-footer { border-top: 1px solid #eaeaea; background: #ffffff; }
+    .evo-footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .evo-footer-links { display: flex; gap: 24px; align-items: center; }
+    .evo-footer-links a { color: #555555; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .evo-footer-links a:hover { color: #68A67A; }
+    .evo-footer-legal { font-size: 0.8rem; color: #999999; line-height: 1.5; }
+
+    /* PAGE */
+    .evo-container { font-family: inherit; color: #1a1a1a; max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
     .evo-page-header { text-align: center; margin-bottom: 50px; }
     .evo-lead { font-size: 1.3rem; color: #555; max-width: 850px; margin: 0 auto 40px auto; line-height: 1.5; }
-    .evo-experience-ticker { text-align: left; border: 1px solid var(--border); border-radius: 8px; padding: 35px 30px; margin-top: 40px; background-color: #fafafa; }
+    .evo-tag-green { display: inline-block; color: #68A67A; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+    .evo-experience-ticker { text-align: left; border: 1px solid #eaeaea; border-radius: 8px; padding: 35px 30px; margin-top: 40px; background-color: #fafafa; }
+    .evo-ticker-label { font-size: 0.9rem; color: #555; margin: 0 0 25px 0; font-weight: 600; border-left: 3px solid #68A67A; padding-left: 15px; }
     .evo-geo-container { display: flex; flex-direction: column; gap: 20px; }
     .evo-geo-row { display: flex; align-items: flex-start; gap: 20px; }
-    .evo-flag { font-size: 1.3rem; background: #ffffff; padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-    .evo-brand-chips { font-size: 0.98rem; font-weight: 500; color: #444; line-height: 1.8; }
-    
+    .evo-flag { font-size: 1.3rem; background: #ffffff; padding: 5px 10px; border-radius: 6px; border: 1px solid #eaeaea; line-height: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .evo-brand-chips { font-size: 0.98rem; font-weight: 500; color: #444; line-height: 1.8; padding-top: 2px; }
+    .evo-brand-chips span { display: inline-block; color: #222; }
+
     .evo-project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 50px; }
-    .evo-project-card { background: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .evo-project-card { background: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #eaeaea; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .evo-project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    .evo-project-badge { align-self: flex-start; background: #eef6f1; color: var(--accent); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 15px; }
-    .evo-project-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 10px 0; color: var(--primary); line-height: 1.3; }
-    .evo-project-scope { font-size: 0.88rem; color: #666; margin: 0 0 15px 0; }
+    .evo-project-badge { align-self: flex-start; background: #eef6f1; color: #68A67A; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.5px; margin-bottom: 15px; }
+    .evo-project-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 10px 0; color: #111; line-height: 1.3; }
+    .evo-project-scope { font-size: 0.88rem; color: #666; margin: 0 0 15px 0; line-height: 1.4; }
     .evo-project-desc { font-size: 0.95rem; line-height: 1.6; color: #444; margin: 0 0 25px 0; flex-grow: 1; }
     .evo-project-footer { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid #f0f0f0; padding-top: 15px; }
     .evo-tech-tag { font-size: 0.78rem; background: #f4f4f4; color: #555; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
 
-    .evo-cta-block { text-align: center; margin-top: 70px; padding: 50px 30px; background: #f9f9f9; border-radius: 8px; border: 1px solid var(--border); }
+    .evo-cta-block { text-align: center; margin-top: 70px; padding: 50px 30px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eaeaea; }
     .evo-cta-block h3 { font-size: 1.6rem; margin: 0 0 10px 0; }
     .evo-cta-block p { font-size: 1.1rem; color: #555; margin: 0 0 25px 0; }
-    .evo-btn { display: inline-block; background-color: var(--primary); color: #ffffff !important; text-decoration: none; padding: 16px 36px; font-weight: 600; border-radius: 4px; transition: background 0.2s ease; }
-    .evo-btn:hover { background-color: var(--accent); }
+    .evo-btn { display: inline-block; background-color: #111111; color: #ffffff !important; text-decoration: none; padding: 16px 36px; font-weight: 600; border-radius: 4px; transition: background 0.2s ease; font-family: inherit; }
+    .evo-btn:hover { background-color: #68A67A; }
 
     @media (max-width: 768px) {
-      .evo-nav { display: none; }
-      .evo-project-grid { grid-template-columns: 1fr; }
+      .evo-page-header h1 { font-size: 2rem; }
+      .evo-project-grid { grid-template-columns: 1fr; gap: 20px; }
+      .evo-container { padding: 40px 15px; }
+      .evo-experience-ticker { padding: 25px 20px; }
       .evo-geo-row { flex-direction: column; gap: 10px; }
+      .evo-brand-chips { font-size: 0.95rem; }
+      .evo-footer-links { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
-  <header class="evo-global-header">
+  <header class="evo-header">
     <div class="evo-header-inner">
-      <a href="index.html" class="evo-logo"><strong>evo</strong>shifting</a>
+      <a href="index.html" class="evo-logo">
+        <img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting">
+      </a>
       <nav class="evo-nav">
-        <a href="index.html">Accueil</a>
-        <a href="portrait.html">Portrait</a>
-        <a href="references.html">Références</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
+        <a href="offres.html">offres</a>
+        <a href="references.html" class="active">références</a>
+        <a href="portrait.html">portrait</a>
+        <a href="contact.html" class="evo-nav-contact">Contact</a>
       </nav>
+      <button class="evo-hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <nav class="evo-mobile-nav" id="mobileNav">
+      <a href="offres.html">offres</a>
+      <a href="references.html">références</a>
+      <a href="portrait.html">portrait</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <div class="evo-container">
+    
     <section class="evo-page-header">
-      <p class="evo-lead">Plus de 10 ans d'expérience terrain, missions de conseil, intégrations, AMOA, et avant-ventes. Accompagnement opérationnel PME, ETI et Grands Groupes, du cadrage stratégique au déploiement de solutions complexes.[cite: 8]</p>
+      <p class="evo-lead">Plus de 10 ans d'expérience terrain, missions de conseil, intégrations, AMOA, et avant-ventes. Accompagnement opérationnel PME, ETI et Grands Groupes, du cadrage stratégique au déploiement de solutions complexes.</p>
+
       <div class="evo-experience-ticker">
+        <p class="evo-ticker-label">Expériences & Contextes clients</p>
         <div class="evo-geo-container">
           <div class="evo-geo-row">
-            <span class="evo-flag">🇫🇷[cite: 8]</span>
-            <div class="evo-brand-chips"><span>Sephora</span> • <span>Les Mousquetaires</span> • <span>Electro Dépôt</span> • <span>Cdiscount</span> • <span>Vertbaudet</span> • <span>Alltricks</span> • <span>Bébéboutik</span> • <span>Colizey</span> • <span>Ramsay Santé</span> • <span>Comexposium</span> • <span>Ubaldi</span> • <span>Casino</span> • <span>Phone House</span> • <span>Rossignol</span> • <span>Salomon</span> • <span>Bridor</span> • <span>Carrefour Voyages</span> • <span>Socomec</span> • <span>Nexans</span> • <span>SAFT</span> • <span>Sames</span> • <span>Onduline</span> • <span>Adova</span> • <span>Hamelin</span> • <span>Ixon</span> • <span>Izipizi[cite: 8]</span></div>
+            <span class="evo-flag">🇫🇷</span>
+            <div class="evo-brand-chips">
+              <span>Sephora</span> • <span>Les Mousquetaires</span> • <span>Electro Dépôt</span> • <span>Cdiscount</span> • <span>Vertbaudet</span> • <span>Alltricks</span> • <span>Bébéboutik</span> • <span>Colizey</span> • <span>Ramsay Santé</span> • <span>Comexposium</span> • <span>Ubaldi</span> • <span>Casino</span> • <span>Phone House</span> • <span>Rossignol</span> • <span>Salomon (AmerSports)</span> • <span>Bridor</span> • <span>Carrefour Voyages</span> • <span>Socomec</span> • <span>Nexans</span> • <span>SAFT</span> • <span>Sames</span> • <span>Onduline</span> • <span>Adova</span> • <span>Hamelin</span> • <span>Ixon</span> • <span>Izipizi</span>
+            </div>
           </div>
           <div class="evo-geo-row">
-            <span class="evo-flag">🌍[cite: 8]</span>
-            <div class="evo-brand-chips"><span>Carrier 🇺🇸</span> • <span>Orange 🇪🇸</span> • <span>Marjane 🇲🇦</span> • <span>Grupo Éxito 🇨🇴</span> • <span>Manor 🇨🇭</span> • <span>Longines 🇨🇭</span> • <span>Tissot 🇨🇭</span> • <span>VF International 🇨🇭</span> • <span>Guillevin 🇨🇦</span> • <span>Refrigerative Supply 🇨🇦</span> • <span>Lego 🇩🇰</span> • <span>Schreder 🇧🇪</span> • <span>Nelson Garden 🇸🇪</span> • <span>Elho 🇳🇱[cite: 8]</span></div>
+            <span class="evo-flag">🌍</span>
+            <div class="evo-brand-chips">
+              <span>Carrier 🇺🇸</span> • <span>Orange 🇪🇸</span> • <span>Marjane 🇲🇦</span> • <span>Grupo Éxito 🇨🇴</span> • <span>Manor 🇨🇭</span> • <span>Longines 🇨🇭</span> • <span>Tissot 🇨🇭</span> • <span>VF International 🇨🇭</span> • <span>Guillevin 🇨🇦</span> • <span>Refrigerative Supply 🇨🇦</span> • <span>Lego 🇩🇰</span> • <span>Schreder 🇧🇪</span> • <span>Nelson Garden 🇸🇪</span> • <span>Elho 🇳🇱</span>
+            </div>
           </div>
         </div>
       </div>
@@ -100,42 +135,118 @@
 
     <div class="evo-project-grid">
       <div class="evo-project-card">
-        <div class="evo-project-badge">Product Management[cite: 8]</div>
-        <h3>Plateformes eCommerce[cite: 8]</h3>
-        <p class="evo-project-scope"><strong>Secteur :</strong> Grande distribution alimentaire & Retail[cite: 8]</p>
-        <p class="evo-project-desc">Définition de la vision produit globale, construction de feuilles de route stratégiques (roadmaps) et priorisation de backlogs complexes. Cadrage et conception fonctionnelle d'écosystèmes transactionnels.[cite: 8]</p>
-        <div class="evo-project-footer"><span class="evo-tech-tag">eCommerce[cite: 8]</span><span class="evo-tech-tag">Roadmap[cite: 8]</span></div>
+        <div class="evo-project-badge">Product Management</div>
+        <h3>Plateformes eCommerce</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Grande distribution alimentaire & Retail</p>
+        <p class="evo-project-desc">Définition de la vision produit globale, construction de feuilles de route stratégiques (roadmaps) et priorisation de backlogs complexes. Cadrage et conception fonctionnelle d'écosystèmes transactionnels (inventaire, CMS, gestion de paniers, SSO).</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">eCommerce</span><span class="evo-tech-tag">Roadmap</span><span class="evo-tech-tag">Backlog</span></div>
       </div>
-      <!-- Additional Cards mapped similarly... -->
       <div class="evo-project-card">
-        <div class="evo-project-badge">Architecture Métier[cite: 8]</div>
-        <h3>Orchestration OMS Internationale[cite: 8]</h3>
-        <p class="evo-project-scope"><strong>Secteur :</strong> Cosmétique, Beauté & Distribution[cite: 8]</p>
-        <p class="evo-project-desc">Intégration, paramétrage et optimisation de solutions d'Order Management System (IBM Sterling OMS). Modélisation des règles métiers complexes pour la gestion des commandes à l'international.[cite: 8]</p>
-        <div class="evo-project-footer"><span class="evo-tech-tag">IBM Sterling[cite: 8]</span><span class="evo-tech-tag">OMS[cite: 8]</span></div>
+        <div class="evo-project-badge">Expertise Flux</div>
+        <h3>Systèmes de Paiement & Checkout</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Commerce connecté & Omnicanal</p>
+        <p class="evo-project-desc">Conception fonctionnelle de l'étape critique du checkout et des tunnels de paiement. Intégration de solutions transactionnelles sécurisées, automatisation des flux de facturation et optimisation des cinématiques de validation des commandes clients.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Payment</span><span class="evo-tech-tag">Checkout</span><span class="evo-tech-tag">Facturation</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Architecture Métier</div>
+        <h3>Orchestration OMS Internationale</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Cosmétique, Beauté & Distribution</p>
+        <p class="evo-project-desc">Intégration, paramétrage et optimisation de solutions d'Order Management System (IBM Sterling OMS). Modélisation des règles métiers complexes pour la gestion des commandes à l'international, l'allocation intelligente des stocks et les modes de livraison croisés.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">IBM Sterling</span><span class="evo-tech-tag">OMS</span><span class="evo-tech-tag">Logistique</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Facilitation</div>
+        <h3>Design Thinking & Retail Innovant</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Grande distribution multinationale</p>
+        <p class="evo-project-desc">Organisation, structuration et facilitation d'ateliers collaboratifs d'envergure réunissant jusqu'à 60 participants. Co-animation de programmes prospectifs visant à repenser les parcours en point de vente physique, définir les besoins technologiques sous-jacents et valider l'UX via du prototypage rapide.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Design Thinking</span><span class="evo-tech-tag">Ateliers</span><span class="evo-tech-tag">UX</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">AMOA / Conseil</div>
+        <h3>Cadrage Avant-Vente & Appels d'Offres</h3>
+        <p class="evo-project-scope"><strong>Typologie :</strong> Édition de logiciels & Intégration</p>
+        <p class="evo-project-desc">Accompagnement de plus de 80 dossiers complexes dans leurs phases de cadrage initial. Analyse des besoins métiers, pilotage des réponses aux appels d'offres d'envergure (RFP) et élaboration de recommandations stratégiques neutres sur l'architecture logicielle cible.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Cadrage</span><span class="evo-tech-tag">RFP</span><span class="evo-tech-tag">Architecture</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Démonstration Technique</div>
+        <h3>Pre-Sales & Ingénierie de Solution</h3>
+        <p class="evo-project-scope"><strong>Typologie :</strong> Écosystèmes PIM, DAM & Marketplace</p>
+        <p class="evo-project-desc">Intervention en tant que Sales Engineer / Consultant technique. Préparation et animation d'ateliers de démonstration logicielle complexes axés sur la valeur. Traduction des fonctionnalités d'outils types PIM ou DAM face à des décideurs DSI et métiers (C-Level).</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Pre-Sales</span><span class="evo-tech-tag">Démos</span><span class="evo-tech-tag">PIM / DAM</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Gouvernance</div>
+        <h3>Cadrage Omnicanal & Supply Chain</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Tourisme, Loisirs & Retail</p>
+        <p class="evo-project-desc">Modélisation et optimisation des parcours client omnicanaux. Alignement des processus logistiques, de la supply chain et des systèmes d'information pour décloisonner les étapes d'achat, de la réservation en ligne jusqu'au suivi de la relation client multicanal.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Omnicanal</span><span class="evo-tech-tag">Supply Chain</span><span class="evo-tech-tag">Processus</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Delivery</div>
+        <h3>Intégration & Déploiement CRM</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> Services, Tourisme & Industrie</p>
+        <p class="evo-project-desc">Pilotage fonctionnel de projets d'intégration CRM basés sur les technologies du marché (Salesforce, Microsoft Dynamics 365). Animation des ateliers de spécifications, encadrement des phases de tests fonctionnels et sécurisation des jalons de mise en production (go-live).</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Salesforce</span><span class="evo-tech-tag">Dynamics 365</span><span class="evo-tech-tag">Go-Live</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Accompagnement</div>
+        <h3>Formation & Programme Train-the-Trainer</h3>
+        <p class="evo-project-scope"><strong>Typologie :</strong> Adoption Technologique</p>
+        <p class="evo-project-desc">Conception de dispositifs d'accompagnement au changement pour grands comptes. Création complète de supports pédagogiques techniques et animation de sessions de formation dédiées aux référents internes (champions) afin de démultiplier la montée en compétences des équipes locales.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Formation</span><span class="evo-tech-tag">Adoption</span><span class="evo-tech-tag">Change Management</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Gouvernance / PMO</div>
+        <h3>Coordination IT & Métiers Transverse</h3>
+        <p class="evo-project-scope"><strong>Typologie :</strong> Projets multi-acteurs</p>
+        <p class="evo-project-desc">Pilotage de la relation et alignement continu entre équipes métiers, équipes de développement technique, pôles d'architecture, cellules QA (Assurance Qualité) et partenaires ou éditeurs externes au sein d'environnements agiles.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Agilité</span><span class="evo-tech-tag">QA / Test</span><span class="evo-tech-tag">Coordination</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Optimisation</div>
+        <h3>Suivi Post-Déploiement & Performance</h3>
+        <p class="evo-project-scope"><strong>Typologie :</strong> Amélioration continue</p>
+        <p class="evo-project-desc">Suivi des indicateurs de performance post-lancement, identification des irritants techniques ou opérationnels rencontrés par les utilisateurs, et mise en place d'actions d'optimisation continue pour sécuriser et pérenniser l'adoption des nouveaux outils numériques.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Run</span><span class="evo-tech-tag">KPIs</span><span class="evo-tech-tag">Résolution</span></div>
+      </div>
+      <div class="evo-project-card">
+        <div class="evo-project-badge">Cadrage Fonctionnel</div>
+        <h3>Écosystèmes Moteur de Recherche & Marketplace</h3>
+        <p class="evo-project-scope"><strong>Secteur :</strong> B2B / B2C Distribution</p>
+        <p class="evo-project-desc">Analyse et structuration fonctionnelle de moteurs de recherche internes pour l'optimisation de la pertinence produit. Cadrage opérationnel de solutions de places de marché (Marketplace) connectées aux briques de gestion des stocks.</p>
+        <div class="evo-project-footer"><span class="evo-tech-tag">Search</span><span class="evo-tech-tag">Marketplace</span><span class="evo-tech-tag">Flux</span></div>
       </div>
     </div>
 
     <div class="evo-cta-block">
-      <h3>Votre contexte présente des enjeux de flux similaires ?[cite: 8]</h3>
-      <p>Sécurisons ensemble vos choix applicatifs et la trajectoire de vos livraisons.[cite: 8]</p>
-      <a href="contact.html" class="evo-btn">Échanger sur vos enjeux[cite: 8]</a>
+      <h3>Votre contexte présente des enjeux de flux similaires ?</h3>
+      <p>Sécurisons ensemble vos choix applicatifs et la trajectoire de vos livraisons.</p>
+      <a href="contact.html" class="evo-btn">Échanger sur vos enjeux</a>
     </div>
+
   </div>
 
   <!-- FOOTER -->
-  <footer class="evo-global-footer">
+  <footer class="evo-footer">
     <div class="evo-footer-inner">
-      <div class="evo-logo"><strong>evo</strong>shifting</div>
       <div class="evo-footer-links">
-        <a href="index.html">Accueil</a>
-        <a href="portrait.html">Portrait</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">LinkedIn</a>
+        <a href="http://wa.me/33625544444" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
-      <div class="evo-footer-copy">© 2026 evoshifting - Marc-Antoine Cailloux. Tous droits réservés.</div>
+      <p class="evo-footer-legal">evoshifting – SASU au capital de 1 500 € – RCS Bordeaux 992 753 632 – Conseil en systèmes et logiciels informatiques (APE 6202A)</p>
     </div>
   </footer>
 
+  <script>
+    function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  </script>
 </body>
 </html>
