@@ -3,194 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez evoshifting. Marc-Antoine Cailloux, consultant freelance IA et IT.[cite: 6]">
-  <title>evoshifting | Contact & Co-construction[cite: 6]</title>
+  <title>evoshifting | Contact</title>
   
   <style>
+    /* =========================================
+       1. VARIABLES ET TYPOGRAPHIE
+       ========================================= */
     :root {
       --primary: #111111;
       --accent: #68A67A;
       --bg: #ffffff;
-      --text: #2D3748;
+      --text: #333333;
       --border: #eaeaea;
-      --font-main: "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif;
     }
-    body { margin: 0; padding: 0; font-family: var(--font-main); background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
     
-    /* HEADER & FOOTER */
-    .evo-global-header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; padding: 15px 20px; }
-    .evo-header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .evo-logo { font-size: 1.6rem; text-decoration: none; color: var(--primary); letter-spacing: -0.5px; }
-    .evo-logo strong { font-weight: 700; }
-    .evo-nav { display: flex; gap: 25px; }
-    .evo-nav a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: color 0.2s; }
-    .evo-nav a:hover { color: var(--accent); }
-    .evo-global-footer { background: #f9f9f9; border-top: 1px solid var(--border); padding: 50px 20px 30px; margin-top: 60px; }
-    .evo-footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-    .evo-footer-links { display: flex; gap: 20px; }
-    .evo-footer-links a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-    .evo-footer-links a:hover { color: var(--accent); }
-    .evo-footer-copy { font-size: 0.85rem; color: #888; margin-top: 10px; }
-
-    /* PAGE STYLES */
-    .evo-advanced-contact { max-width: 1100px; margin: 0 auto; padding: 60px 20px; line-height: 1.5; }
-    .evo-contact-hero { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
-    .evo-subtitle { color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
-    .evo-contact-hero h2 { font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0; }
-    
-    .evo-contact-layout { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: start; }
-    
-    .evo-sidebar-card { background: var(--primary); color: #ffffff; border-radius: 12px; padding: 35px; display: flex; flex-direction: column; gap: 30px; }
-    .evo-sidebar-card h4 { font-size: 1.1rem; font-weight: 700; margin: 0 0 8px 0; color: #ffffff; }
-    .evo-sidebar-card p { font-size: 0.9rem; color: #cbd5e0; margin: 0; }
-    .evo-step-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; }
-    .evo-step-list li { display: flex; gap: 12px; font-size: 0.9rem; color: #cbd5e0; align-items: center; }
-    .evo-step-list span { background: #333; color: #ffffff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
-    .evo-sidebar-linkedin-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; border: 1px solid #4a5568; margin-top: 15px; transition: all 0.2s; }
-    .evo-sidebar-linkedin-btn:hover { background: #333; }
-
-    .evo-form-card { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
-    .evo-form-section { border-bottom: 1px solid #edf2f7; padding-bottom: 30px; margin-bottom: 30px; }
-    .evo-form-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 35px; }
-    .evo-section-label { display: block; font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
-    
-    .evo-badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-    .evo-badge-radio { cursor: pointer; position: relative; }
-    .evo-badge-radio input[type="radio"] { position: absolute; opacity: 0; }
-    .evo-badge-content { display: flex; flex-direction: column; padding: 16px; border: 2px solid var(--border); border-radius: 8px; background: #fafafa; transition: all 0.2s ease; height: 100%; box-sizing: border-box; }
-    .evo-badge-radio:hover .evo-badge-content { border-color: #cbd5e0; }
-    .evo-badge-radio input[type="radio"]:checked + .evo-badge-content { border-color: var(--accent); background: #f0f7f2; }
-    .evo-badge-content strong { font-size: 0.95rem; color: var(--primary); margin-bottom: 4px; }
-    .evo-badge-content small { font-size: 0.8rem; color: #718096; }
-
-    .evo-fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-    .evo-field-group label { display: block; font-size: 0.88rem; font-weight: 600; color: #4a5568; margin-bottom: 6px; }
-    .evo-form-card input, .evo-form-card textarea { width: 100%; padding: 12px 16px; font-size: 0.95rem; border: 1px solid #cbd5e0; border-radius: 8px; color: var(--text); background: #f8fafc; box-sizing: border-box; transition: all 0.2s; font-family: var(--font-main); }
-    .evo-form-card input:focus, .evo-form-card textarea:focus { outline: none; border-color: var(--accent); background: #ffffff; }
-
-    .evo-btn-primary-advance { background: var(--primary); color: #ffffff; border: none; padding: 14px 45px; font-size: 1rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
-    .evo-btn-primary-advance:hover { background: var(--accent); }
-
-    .evo-thankyou-note { display: none; font-size: 0.95rem; color: var(--text); align-items: center; gap: 10px; background: #f0f7f2; padding: 14px 20px; border-radius: 8px; border: 1px solid #d2ebd9; font-weight: 500; width: 100%; box-sizing: border-box; margin-top: 15px; }
-
-    @media (max-width: 900px) {
-      .evo-nav { display: none; }
-      .evo-contact-layout { grid-template-columns: 1fr; }
-      .evo-fields-grid { grid-template-columns: 1fr; }
+    * {
+      box-sizing: border-box;
+      font-family: "Futura PT", "Futura", "Trebuchet MS", sans-serif;
     }
-  </style>
-</head>
-<body>
 
-  <!-- HEADER -->
-  <header class="evo-global-header">
-    <div class="evo-header-inner">
-      <a href="index.html" class="evo-logo"><strong>evo</strong>shifting</a>
-      <nav class="evo-nav">
-        <a href="index.html">Accueil</a>
-        <a href="portrait.html">Portrait</a>
-        <a href="references.html">Références</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <div class="evo-advanced-contact" id="contact">
-    <div class="evo-contact-hero">
-      <span class="evo-subtitle">Co-construction[cite: 6]</span>
-      <h2>Sécurisons votre trajectoire applicative[cite: 6]</h2>
-    </div>
+    /* =========================================
+       2. LE HEADER (IDENTIQUE PARTOUT)
+       ========================================= */
+    .site-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    <div class="evo-contact-layout">
-      <div class="evo-sidebar-card">
-        <div>
-          <h4>Confidentialité & Posture[cite: 6]</h4>
-          <p>Les informations partagées restent strictement confidentielles et servent uniquement à préparer notre premier échange technique.[cite: 6]</p>
-        </div>
-        <div>
-          <h4>Prochaine étape[cite: 6]</h4>
-          <ul class="evo-step-list">
-            <li><span>1</span> Analyse de votre besoin sous 48h.[cite: 6]</li>
-            <li><span>2</span> Qualification téléphonique de 15-20 min.[cite: 6]</li>
-            <li><span>3</span> Proposition de trajectoire ou d'atelier.[cite: 6]</li>
-          </ul>
-        </div>
-        <div style="border-top: 1px solid #2d3748; padding-top: 25px;">
-          <h4>Besoin d'une approche directe ?[cite: 6]</h4>
-          <p>Vous pouvez également consulter mon réseau ou m'ajouter pour initier une discussion informelle.[cite: 6]</p>
-          <a href="https://www.linkedin.com/in/ma-clx/" target="_blank" class="evo-sidebar-linkedin-btn">🔗 Profil LinkedIn[cite: 6]</a>
-        </div>
-      </div>
-      
-      <div class="evo-form-card">
-        <form id="evoContactForm" action="#" method="POST">
-          <div class="evo-form-section">
-            <label class="evo-section-label">1. Quel est votre enjeu principal ?[cite: 6]</label>
-            <div class="evo-badge-grid">
-              <label class="evo-badge-radio">
-                <input type="radio" name="enjeu" value="cadrage">
-                <span class="evo-badge-content"><strong>Cadrage / Audit SI[cite: 6]</strong><small>Clarifier l'existant, flux & processus[cite: 6]</small></span>
-              </label>
-              <label class="evo-badge-radio">
-                <input type="radio" name="enjeu" value="aide-choix">
-                <span class="evo-badge-content"><strong>Aide au choix, RFI / RFP[cite: 6]</strong><small>ERP, E-commerce, CRM, PIM...[cite: 6]</small></span>
-              </label>
-              <!-- Others options condensed for brevity -->
-            </div>
-          </div>
+    .header-logo img {
+      height: 40px; 
+      width: auto;
+      display: block;
+    }
 
-          <div class="evo-form-section">
-            <label class="evo-section-label">2. Vos coordonnées[cite: 6]</label>
-            <div class="evo-fields-grid">
-              <div class="evo-field-group"><label>Nom / Prénom *[cite: 6]</label><input type="text" required></div>
-              <div class="evo-field-group"><label>Entreprise *[cite: 6]</label><input type="text" required></div>
-              <div class="evo-field-group"><label>Rôle / Fonction *[cite: 6]</label><input type="text" required></div>
-              <div class="evo-field-group"><label>Email *[cite: 6]</label><input type="email" required></div>
-              <div class="evo-field-group" style="grid-column: span 2;"><label>Téléphone[cite: 6]</label><input type="tel"></div>
-            </div>
-          </div>
+    .header-nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
 
-          <div class="evo-form-section">
-            <label class="evo-section-label">3. Votre projet[cite: 6]</label>
-            <div class="evo-field-group">
-              <label>Description rapide de vos besoins[cite: 6]</label>
-              <textarea rows="5" placeholder="Quel est le périmètre global de votre démarche ?[cite: 6]"></textarea>
-            </div>
-          </div>
+    .header-nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s ease;
+    }
 
-          <div>
-            <button type="submit" class="evo-btn-primary-advance">Envoyer[cite: 6]</button>
-            <div id="evoThankYouMessage" class="evo-thankyou-note">
-              ✓ Merci pour votre démarche. Je prends connaissance de vos éléments et vous recontacte sous 48h.[cite: 6]
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+    .header-nav a:hover, 
+    .header-nav a.active {
+      color: var(--accent);
+    }
 
-  <script>
-    document.getElementById('evoContactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        document.getElementById('evoThankYouMessage').style.display = 'flex';
-        this.reset();
-    });
-  </script>
+    /* =========================================
+       3. CONTENU SPECIFIQUE A LA PAGE (CONTACT)
+       ========================================= */
+    .main-content {
+      flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      width: 100%;
+    }
 
-  <!-- FOOTER -->
-  <footer class="evo-global-footer">
-    <div class="evo-footer-inner">
-      <div class="evo-logo"><strong>evo</strong>shifting</div>
-      <div class="evo-footer-links">
-        <a href="index.html">Accueil</a>
-        <a href="portrait.html">Portrait</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">LinkedIn</a>
-      </div>
-      <div class="evo-footer-copy">© 2026 evoshifting - Marc-Antoine Cailloux. Tous droits réservés.</div>
-    </div>
-  </footer>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+    }
 
-</body>
-</html>
+    .contact-info h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .contact-info p {
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary
