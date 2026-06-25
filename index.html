@@ -16,6 +16,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #1a1a1a;
       background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .evo-container {
@@ -236,9 +239,85 @@
       .evo-faq-item { padding: 20px; }
       .evo-divider { margin: 40px auto; }
     }
+
+    /* HEADER & FOOTER GLOBAL STYLES */
+    .evo-header-nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeaea;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .evo-nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .evo-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #111111;
+      text-decoration: none;
+    }
+    .evo-logo span {
+      color: #68A67A;
+    }
+    .evo-menu {
+      display: flex;
+      gap: 25px;
+    }
+    .evo-menu-link {
+      text-decoration: none;
+      color: #555555;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .evo-menu-link:hover, .evo-menu-link.active {
+      color: #68A67A;
+    }
+    .evo-footer {
+      background-color: #111111;
+      color: #aaaaaa;
+      padding: 30px 20px;
+      margin-top: auto;
+    }
+    .evo-footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .evo-footer-credits a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .evo-nav-container { flex-direction: column; gap: 15px; text-align: center; }
+      .evo-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
+      .evo-footer-container { flex-direction: column; gap: 10px; text-align: center; }
+    }
   </style>
 </head>
 <body>
+
+  <header class="evo-header-nav">
+    <div class="evo-nav-container">
+      <a href="index.html" class="evo-logo">evo<span>shifting</span></a>
+      <nav class="evo-menu">
+        <a href="index.html" class="evo-menu-link active">Accueil</a>
+        <a href="offres.html" class="evo-menu-link">Offres</a>
+        <a href="portrait.html" class="evo-menu-link">Portrait</a>
+        <a href="references.html" class="evo-menu-link">Références</a>
+        <a href="contact.html" class="evo-menu-link">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <div class="evo-container">
     
@@ -248,7 +327,7 @@
         <strong>evoshifting sécurise le cadrage de vos projets, orchestre vos écosystèmes SaaS et intègre l'IA au cœur de vos processus opérationnels.</strong>
       </p>
       <div class="evo-cta-wrapper">
-        <a href="/contact" class="evo-btn">Échanger sur vos enjeux</a>
+        <a href="contact.html" class="evo-btn">Échanger sur vos enjeux</a>
       </div>
     </section>
 
@@ -300,7 +379,7 @@
 
       <!-- Bouton d'action / Lien fluide vers les Offres -->
       <div class="evo-cta-wrapper" style="text-align: center; margin-top: 40px;">
-        <a href="/offres" class="evo-btn">Découvrir nos solutions & cas d'usage</a>
+        <a href="offres.html" class="evo-btn">Découvrir nos solutions & cas d'usage</a>
       </div>
     </section>
 
@@ -364,11 +443,22 @@
     <!-- BOTTOM CTA SECTION -->
     <section class="evo-bottom-cta">
       <div class="evo-cta-wrapper">
-        <a href="/contact" class="evo-btn">Échanger sur vos enjeux</a>
+        <a href="contact.html" class="evo-btn">Échanger sur vos enjeux</a>
       </div>
     </section>
 
   </div>
+
+  <footer class="evo-footer">
+    <div class="evo-footer-container">
+      <div class="evo-footer-copy">
+        &copy; 2026 evoshifting. Tous droits réservés.
+      </div>
+      <div class="evo-footer-credits">
+        Consultant indépendant par <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">Marc-Antoine Cailloux</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
