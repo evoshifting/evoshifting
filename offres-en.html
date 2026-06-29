@@ -3,122 +3,266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover evoshifting solutions: Product Management, AI, e-commerce, omnichannel and governance. Freelance expert in Bordeaux and Paris.">
+  <meta name="description" content="Discover evoshifting services: Product Management, AI, e-commerce, omnichannel and governance.">
   <title>evoshifting | Our Services & Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;}
-    body{margin:0;padding:0;font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;background:#fff;}
-    a{font-family:inherit;}
-    
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #fff; }
+    a { font-family: inherit; }
+
     /* ── HEADER ── */
-    .evo-header { position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid #eaeaea; }
-    .evo-header-inner { max-width:1100px; margin:0 auto; padding:0 24px; height:80px; display:grid; grid-template-columns:120px 1fr 120px; align-items:center; }
-    .evo-header-left { display:flex; align-items:center; }
-    .evo-header-center { display:flex; justify-content:center; align-items:center; }
-    .evo-header-right { display:flex; justify-content:flex-end; align-items:center; gap:12px; }
-    .evo-logo img { height:47px; width:auto; display:block; }
-    .evo-hamburger { display:flex; flex-direction:column; gap:6px; cursor:pointer; padding:6px; background:none; border:none; }
-    .evo-hamburger span { display:block; width:26px; height:2px; background:#111; border-radius:2px; transition:all .3s ease; }
-    .evo-nav-contact { display:inline-block; background:#111; color:#fff !important; text-decoration:none; padding:10px 22px; font-weight:700; font-size:.88rem; border-radius:4px; transition:background .2s; white-space:nowrap; }
-    .evo-nav-contact:hover { background:#68A67A !important; }
-    .evo-nav-contact.active-page { background:#68A67A !important; }
-    .evo-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:200; }
-    .evo-overlay.open { display:block; }
-    .evo-drawer { position:fixed; top:0; left:0; width:280px; height:100dvh; background:#fff; z-index:201; transform:translateX(-100%); transition:transform .32s cubic-bezier(.4,0,.2,1); display:flex; flex-direction:column; box-shadow:4px 0 24px rgba(0,0,0,.10); }
-    .evo-drawer.open { transform:translateX(0); }
-    .evo-drawer-head { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; border-bottom:1px solid #eaeaea; }
-    .evo-drawer-head img { height:32px; width:auto; }
-    .evo-drawer-close { background:none; border:none; cursor:pointer; font-size:1.5rem; color:#888; line-height:1; padding:2px 6px; }
-    .evo-drawer-close:hover { color:#111; }
-    .evo-drawer-nav { display:flex; flex-direction:column; padding:10px 0; }
-    .evo-drawer-nav a { font-size:1.05rem; font-weight:600; color:#222; text-decoration:none; padding:15px 24px; border-bottom:1px solid #f2f2f2; transition:color .2s,background .2s; }
-    .evo-drawer-nav a:last-child { border-bottom:none; }
-    .evo-drawer-nav a:hover, .evo-drawer-nav a.active { color:#68A67A; background:#f7fbf8; }
-    
+    .evo-header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #eaeaea; }
+    .evo-header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 80px; display: grid; grid-template-columns: 120px 1fr 120px; align-items: center; }
+    .evo-header-left { display: flex; align-items: center; }
+    .evo-header-center { display: flex; justify-content: center; align-items: center; }
+    .evo-header-right { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+    .evo-logo img { height: 47px; width: auto; display: block; }
+    .evo-hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; padding: 6px; background: none; border: none; }
+    .evo-hamburger span { display: block; width: 26px; height: 2px; background: #111; border-radius: 2px; }
+    .evo-nav-contact { display: inline-block; background: #111; color: #fff !important; text-decoration: none; padding: 10px 22px; font-weight: 700; font-size: .88rem; border-radius: 4px; transition: background .2s; white-space: nowrap; }
+    .evo-nav-contact:hover { background: #68A67A !important; }
+    .evo-nav-contact.active-page { background: #68A67A !important; }
+
+    /* ── DRAWER ── */
+    .evo-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 200; }
+    .evo-overlay.open { display: block; }
+    .evo-drawer { position: fixed; top: 0; left: 0; width: 280px; height: 100dvh; background: #fff; z-index: 201; transform: translateX(-100%); transition: transform .32s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; box-shadow: 4px 0 24px rgba(0,0,0,.10); }
+    .evo-drawer.open { transform: translateX(0); }
+    .evo-drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid #eaeaea; }
+    .evo-drawer-head img { height: 32px; width: auto; }
+    .evo-drawer-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #888; line-height: 1; padding: 2px 6px; }
+    .evo-drawer-close:hover { color: #111; }
+    .evo-drawer-nav { display: flex; flex-direction: column; padding: 10px 0; }
+    .evo-drawer-nav a { font-size: 1.05rem; font-weight: 600; color: #222; text-decoration: none; padding: 15px 24px; border-bottom: 1px solid #f2f2f2; transition: color .2s, background .2s; }
+    .evo-drawer-nav a:last-child { border-bottom: none; }
+    .evo-drawer-nav a:hover, .evo-drawer-nav a.active { color: #68A67A; background: #f7fbf8; }
+    .evo-drawer-nav a.diag-link { color: #68A67A; font-weight: 700; }
+    .evo-drawer-nav a.diag-link:hover { background: #f0f7f2; }
+
     /* ── LANG TOGGLE ── */
-    .evo-lang-toggle { display:flex; align-items:center; gap:2px; background:#f4f4f4; border-radius:6px; padding:3px; }
-    .evo-lang-btn { font-size:.78rem; font-weight:700; padding:5px 10px; border:none; border-radius:4px; cursor:pointer; background:transparent; color:#666; transition:all .2s; font-family:inherit; letter-spacing:.3px; }
-    .evo-lang-btn.active { background:#111; color:#fff; }
-    .evo-lang-btn:hover:not(.active) { color:#111; }
-    
+    .evo-lang-toggle { display: flex; align-items: center; gap: 2px; background: #f4f4f4; border-radius: 6px; padding: 3px; }
+    .evo-lang-btn { font-size: .78rem; font-weight: 700; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; background: transparent; color: #666; transition: all .2s; font-family: inherit; letter-spacing: .3px; }
+    .evo-lang-btn.active { background: #111; color: #fff; }
+    .evo-lang-btn:hover:not(.active) { color: #111; }
+
     /* ── FOOTER ── */
-    .evo-footer { border-top:1px solid #eaeaea; background:#fff; }
-    .evo-footer-inner { max-width:1100px; margin:0 auto; padding:40px 20px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; }
-    .evo-footer-links { display:flex; gap:24px; align-items:center; }
-    .evo-footer-links a { color:#555; text-decoration:none; font-size:.9rem; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .evo-footer-links a:hover { color:#68A67A; }
-    .evo-footer-legal { font-size:.8rem; color:#999; line-height:1.5; }
-    @media(max-width:600px){ .evo-footer-links{flex-direction:column;gap:12px;} }
-    
-    .evo-container{{max-width:1100px;margin:0 auto;padding:60px 20px;}}
-    .evo-hero{{text-align:center;max-width:850px;margin:0 auto 60px;padding-top:20px;}}
-    .evo-hero h1{{font-size:2.4rem;font-weight:700;line-height:1.25;margin-bottom:20px;color:#111;}}
-    .evo-hero p{{font-size:1.2rem;color:#555;line-height:1.6;}}
-    .evo-phase-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:start;}}
-    .evo-phase-block{{background:#fff;border:1px solid #eaeaea;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.02);overflow:hidden;transition:border-color .3s,box-shadow .3s;display:flex;flex-direction:column;}}
-    .evo-phase-header{{padding:40px 30px;display:flex;flex-direction:column;align-items:flex-start;background:#fff;transition:background .3s;min-height:170px;position:relative;}}
-    .evo-phase-number{{font-size:1.1rem;font-weight:700;color:#68A67A;border:1px solid #68A67A;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50px;background:#f7fbf8;margin-bottom:20px;}}
-    .evo-phase-header h2{{font-size:1.4rem;font-weight:700;margin:0 0 8px;color:#111;line-height:1.3;}}
-    .evo-phase-role{{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#666;font-weight:600;}}
-    .evo-phase-indicator{{position:absolute;bottom:20px;right:25px;font-size:.9rem;color:#bbb;transition:transform .4s,color .4s;}}
-    .evo-phase-content{{max-height:0;opacity:0;visibility:hidden;overflow:hidden;transition:max-height .6s cubic-bezier(.4,0,.2,1),opacity .4s,visibility .4s;background:#fafafa;}}
-    @media(min-width:769px){{.evo-phase-block:hover{{border-color:#68A67A;box-shadow:0 12px 30px rgba(104,166,122,.1);}}.evo-phase-block:hover .evo-phase-header{{background:#fcfdfe;}}.evo-phase-block:hover .evo-phase-indicator{{transform:rotate(180deg);color:#68A67A;}}.evo-phase-block:hover .evo-phase-content{{max-height:2000px;opacity:1;visibility:visible;border-top:1px solid #eaeaea;}}}}
-    .evo-sub-column{{display:flex;flex-direction:column;gap:20px;padding:30px 20px;}}
-    .evo-spec-card{{background:#fff;padding:24px;border-radius:6px;border:1px solid #eef0ee;}}
-    .evo-spec-title{{font-size:1.15rem;font-weight:700;color:#111;margin:0 0 4px;}}
-    .evo-spec-context{{font-size:.8rem;font-style:italic;color:#777;margin-bottom:12px;}}
-    .evo-spec-desc{{font-size:.9rem;line-height:1.55;color:#444;margin:0 0 16px;}}
-    .evo-spec-tags{{display:flex;flex-wrap:wrap;gap:6px;}}
-    .evo-tag{{font-size:.7rem;font-weight:600;background:#f2f7f4;color:#4e825e;padding:3px 8px;border-radius:4px;border:1px solid #e1ebe5;}}
-    .evo-bottom-cta{{text-align:center;padding:50px 40px;background:#fcfdfc;border:1px dashed #d4e3d9;border-radius:8px;margin-top:60px;}}
-    .evo-bottom-cta h3{{font-size:1.5rem;margin:0 0 12px;color:#111;}}
-    .evo-bottom-cta p{{font-size:1.05rem;color:#555;margin-bottom:25px;}}
-    .evo-btn{{display:inline-block;background:#111;color:#fff !important;text-decoration:none;padding:16px 36px;font-weight:700;border-radius:4px;transition:background .2s;font-family:inherit;}}
-    .evo-btn:hover{{background:#68A67A;}}
-    @media(max-width:768px){{.evo-container{{padding:40px 15px;}}.evo-hero h1{{font-size:1.9rem;}}.evo-phase-grid{{grid-template-columns:1fr;gap:20px;}}.evo-phase-header{{padding:25px;min-height:auto;}}.evo-phase-content{{max-height:none!important;opacity:1!important;visibility:visible!important;border-top:1px solid #eaeaea;}}.evo-sub-column{{padding:20px 15px;gap:16px;}}.evo-phase-indicator{{display:none;}}}}
-    
-  /* ── CHATBOT FLOTTANT ── */
-  #evo-chat-btn{position:fixed;bottom:28px;right:28px;z-index:1000;width:58px;height:58px;border-radius:50%;background:#111;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
-  #evo-chat-btn:hover{background:#68A67A;transform:scale(1.07);}
-  #evo-chat-btn svg{width:26px;height:26px;}
-  #evo-chat-bubble{position:fixed;bottom:98px;right:28px;z-index:999;background:#111;color:#fff;font-family:'Nunito Sans',sans-serif;font-size:.85rem;padding:10px 14px;border-radius:12px 12px 0 12px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:opacity .4s;pointer-events:none;}
-  #evo-chat-window{position:fixed;bottom:98px;right:28px;z-index:1000;width:370px;height:520px;max-height:80vh;background:#fff;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;}
-  .evo-chat-header{background:#111;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0;}
-  .evo-chat-avatar{width:36px;height:36px;border-radius:50%;background:#68A67A;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-  .evo-chat-header-info{flex:1;}
-  .evo-chat-header-name{font-weight:700;font-size:.95rem;}
-  .evo-chat-header-status{font-size:.75rem;color:#a0aec0;display:flex;align-items:center;gap:5px;}
-  .evo-chat-header-status::before{content:'';display:inline-block;width:7px;height:7px;background:#68A67A;border-radius:50%;}
-  .evo-chat-close{background:none;border:none;color:#aaa;cursor:pointer;font-size:1.3rem;line-height:1;padding:2px 4px;}
-  .evo-chat-close:hover{color:#fff;}
-  .evo-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth;}
-  .evo-msg{max-width:82%;display:flex;flex-direction:column;gap:3px;}
-  .evo-msg.bot{align-self:flex-start;}
-  .evo-msg.user{align-self:flex-end;}
-  .evo-msg-bubble{padding:10px 14px;border-radius:14px;font-size:.9rem;line-height:1.5;word-break:break-word;}
-  .evo-msg.bot .evo-msg-bubble{background:#f4f4f4;color:#1a1a1a;border-bottom-left-radius:4px;}
-  .evo-msg.user .evo-msg-bubble{background:#111;color:#fff;border-bottom-right-radius:4px;}
-  .evo-msg-time{font-size:.7rem;color:#aaa;padding:0 4px;}
-  .evo-msg.user .evo-msg-time{text-align:right;}
-  .evo-typing{align-self:flex-start;background:#f4f4f4;padding:12px 16px;border-radius:14px 14px 14px 4px;display:none;margin:0 16px 8px;}
-  .evo-typing span{display:inline-block;width:7px;height:7px;background:#aaa;border-radius:50%;margin:0 2px;animation:evoDot 1.2s infinite;}
-  .evo-typing span:nth-child(2){animation-delay:.2s;}
-  .evo-typing span:nth-child(3){animation-delay:.4s;}
-  @keyframes evoDot{0%,80%,100%{transform:translateY(0);opacity:.4;}40%{transform:translateY(-5px);opacity:1;}}
-  .evo-chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 12px;}
-  .evo-suggestion{font-size:.78rem;padding:6px 11px;border-radius:20px;border:1px solid #e2e8f0;background:#f8fafc;color:#444;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;}
-  .evo-suggestion:hover{border-color:#68A67A;color:#68A67A;background:#f0f7f2;}
-  .evo-chat-input-area{border-top:1px solid #eaeaea;padding:12px 14px;display:flex;gap:8px;align-items:flex-end;flex-shrink:0;}
-  #evo-chat-input{flex:1;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;outline:none;line-height:1.4;max-height:100px;overflow-y:auto;color:#1a1a1a;transition:border-color .2s;}
-  #evo-chat-input:focus{border-color:#68A67A;}
-  #evo-chat-send{width:38px;height:38px;border-radius:10px;border:none;background:#111;color:#fff;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-  #evo-chat-send:hover{background:#68A67A;}
-  #evo-chat-send:disabled{opacity:.4;cursor:not-allowed;}
-  @media(max-width:480px){#evo-chat-window{width:calc(100vw - 20px);right:10px;bottom:80px;}#evo-chat-btn{bottom:16px;right:16px;}#evo-chat-bubble{right:80px;}}
-    @keyframes evoDot{0%,80%,100%{transform:translateY(0);opacity:.4;}40%{transform:translateY(-5px);opacity:1;}}
+    .evo-footer { border-top: 1px solid #eaeaea; background: #fff; }
+    .evo-footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .evo-footer-links { display: flex; gap: 24px; align-items: center; }
+    .evo-footer-links a { color: #555; text-decoration: none; font-size: .9rem; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .evo-footer-links a:hover { color: #68A67A; }
+    .evo-footer-legal { font-size: .8rem; color: #999; line-height: 1.5; }
+    @media(max-width: 600px) { .evo-footer-links { flex-direction: column; gap: 12px; } }
+
+    /* ── CHATBOT ── */
+    #evo-chat-btn { position: fixed; bottom: 28px; right: 28px; z-index: 1000; width: 58px; height: 58px; border-radius: 50%; background: #111; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; transition: background .2s, transform .2s; }
+    #evo-chat-btn:hover { background: #68A67A; transform: scale(1.07); }
+    #evo-chat-btn svg { width: 26px; height: 26px; }
+    #evo-chat-window { position: fixed; bottom: 98px; right: 28px; z-index: 1000; width: 370px; height: 560px; max-height: 82vh; background: #fff; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,.18); display: none; flex-direction: column; overflow: hidden; font-family: 'Nunito Sans', sans-serif; }
+    .evo-chat-header { background: #111; color: #fff; padding: 14px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .evo-chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: #68A67A; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .evo-chat-header-info { flex: 1; }
+    .evo-chat-header-name { font-weight: 700; font-size: .95rem; }
+    .evo-chat-header-status { font-size: .72rem; color: #a0aec0; display: flex; align-items: center; gap: 5px; }
+    .evo-chat-header-status::before { content: ''; display: inline-block; width: 7px; height: 7px; background: #68A67A; border-radius: 50%; }
+    .evo-chat-close { background: none; border: none; color: #aaa; cursor: pointer; font-size: 1.3rem; line-height: 1; padding: 2px 4px; }
+    .evo-chat-close:hover { color: #fff; }
+    .evo-chat-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+    .evo-chat-messages::-webkit-scrollbar { width: 3px; }
+    .evo-chat-messages::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
+    .evo-msg { max-width: 84%; display: flex; flex-direction: column; gap: 3px; }
+    .evo-msg.bot { align-self: flex-start; }
+    .evo-msg.user { align-self: flex-end; }
+    .evo-msg-bubble { padding: 10px 14px; border-radius: 14px; font-size: .88rem; line-height: 1.5; word-break: break-word; }
+    .evo-msg.bot .evo-msg-bubble { background: #f4f4f4; color: #1a1a1a; border-bottom-left-radius: 4px; }
+    .evo-msg.user .evo-msg-bubble { background: #111; color: #fff; border-bottom-right-radius: 4px; }
+    .evo-msg-time { font-size: .68rem; color: #aaa; padding: 0 4px; }
+    .evo-msg.user .evo-msg-time { text-align: right; }
+    .evo-typing { align-self: flex-start; background: #f4f4f4; padding: 11px 16px; border-radius: 14px 14px 14px 4px; display: none; }
+    .evo-typing span { display: inline-block; width: 6px; height: 6px; background: #aaa; border-radius: 50%; margin: 0 2px; animation: evoDot 1.2s infinite; }
+    .evo-typing span:nth-child(2) { animation-delay: .2s; }
+    .evo-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes evoDot { 0%,80%,100%{ transform:translateY(0); opacity:.4; } 40%{ transform:translateY(-5px); opacity:1; } }
+    .evo-chat-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 14px 10px; }
+    .evo-suggestion { font-size: .75rem; padding: 5px 10px; border-radius: 20px; border: 1px solid #e2e8f0; background: #f8fafc; color: #444; cursor: pointer; transition: all .15s; font-family: inherit; }
+    .evo-suggestion:hover { border-color: #68A67A; color: #68A67A; background: #f0f7f2; }
+    /* Email capture bar */
+    .evo-chat-email-bar { border-top: 1px solid #eaeaea; padding: 10px 14px; background: #f8fafc; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .evo-chat-email-bar input { flex: 1; border: 1px solid #cbd5e0; border-radius: 8px; padding: 8px 12px; font-size: .85rem; font-family: inherit; outline: none; color: #1a1a1a; background: #fff; }
+    .evo-chat-email-bar input:focus { border-color: #68A67A; }
+    .evo-chat-email-bar button { background: #68A67A; color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-size: .8rem; font-weight: 700; cursor: pointer; font-family: inherit; white-space: nowrap; }
+    .evo-chat-email-bar button:hover { background: #568d66; }
+    .evo-chat-email-sent { font-size: .78rem; color: #68A67A; padding: 8px 14px; text-align: center; flex-shrink: 0; display: none; }
+    .evo-chat-input-area { border-top: 1px solid #eaeaea; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; }
+    #evo-chat-input { flex: 1; border: 1px solid #e2e8f0; border-radius: 10px; padding: 9px 13px; font-size: .88rem; font-family: inherit; resize: none; outline: none; line-height: 1.4; max-height: 90px; overflow-y: auto; color: #1a1a1a; transition: border-color .2s; }
+    #evo-chat-input:focus { border-color: #68A67A; }
+    #evo-chat-send { width: 36px; height: 36px; border-radius: 8px; border: none; background: #111; color: #fff; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    #evo-chat-send:hover { background: #68A67A; }
+    #evo-chat-send:disabled { opacity: .4; cursor: not-allowed; }
+    #evo-chat-send svg { width: 14px; height: 14px; }
+
+    /* ── DIAGNOSTIC PILL ── */
+    #evo-diag-pill { position: fixed; bottom: 28px; left: 28px; z-index: 1000; display: flex; align-items: center; gap: 10px; background: #111; color: #fff; padding: 14px 20px; border-radius: 50px; cursor: pointer; border: none; font-family: inherit; font-size: .88rem; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,.25); transition: background .2s, transform .2s; animation: evoPulse 2s ease-in-out 3; }
+    #evo-diag-pill:hover { background: #68A67A; transform: scale(1.04); }
+    #evo-diag-pill .pill-icon { font-size: 1.1rem; }
+    @keyframes evoPulse { 0%,100%{ box-shadow:0 4px 20px rgba(0,0,0,.25); } 50%{ box-shadow:0 4px 28px rgba(104,166,122,.5); } }
+    @media(max-width: 480px) {
+      #evo-chat-window { width: calc(100vw - 20px); right: 10px; bottom: 80px; }
+      #evo-chat-btn { bottom: 16px; right: 16px; }
+      #evo-diag-pill { bottom: 16px; left: 10px; font-size: .78rem; padding: 11px 14px; }
+    }
+
+
+    .evo-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .evo-divider { border: 0; height: 1px; background: #e0e0e0; margin: 60px auto; width: 100%; display: block; }
+    .evo-btn { display: inline-block; background: #111; color: #fff !important; text-decoration: none; padding: 15px 34px; font-weight: 700; border-radius: 4px; transition: background .2s; font-family: inherit; border: none; cursor: pointer; font-size: .95rem; }
+    .evo-btn:hover { background: #68A67A; }
+    .evo-phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .evo-phase-card { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; padding: 35px 30px; box-shadow: 0 4px 12px rgba(0,0,0,.02); display: flex; flex-direction: column; transition: border-color .3s, box-shadow .3s, background .3s; }
+    .evo-card-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .evo-phase-number { font-size: 1.1rem; font-weight: 700; color: #68A67A; border: 1px solid #68A67A; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50px; background: #f7fbf8; flex-shrink: 0; }
+    .evo-phase-role { font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 600; }
+    .evo-phase-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 12px; color: #111; }
+    .evo-phase-desc { font-size: .95rem; line-height: 1.6; color: #444; margin: 0; }
+    @media(min-width:769px) { .evo-phase-card:hover { border-color: #68A67A; box-shadow: 0 10px 25px rgba(104,166,122,.08); background: #fcfdfe; } }
+    .evo-faq-section { max-width: 900px; margin: 0 auto; }
+    .evo-faq-grid { display: flex; flex-direction: column; gap: 22px; }
+    .evo-faq-item { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; padding: 24px 28px; }
+    .evo-faq-item h3 { font-size: 1.15rem; font-weight: 700; color: #111; margin: 0 0 10px; display: flex; align-items: flex-start; gap: 10px; }
+    .evo-faq-item h3::before { content: "•"; color: #68A67A; font-size: 1.4rem; line-height: 1; }
+    .evo-faq-item p { font-size: .95rem; line-height: 1.6; color: #555; margin: 0; padding-left: 18px; }
+    .evo-faq-item p strong { color: #68A67A; }
+    .evo-trust-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 36px; }
+    .evo-trust-item h4 { font-size: 1.2rem; color: #111; margin: 0 0 10px; font-weight: 700; }
+    .evo-trust-item p { font-size: .95rem; line-height: 1.6; color: #555; margin: 0; }
+    .evo-section-h2 { text-align: center; font-size: 1.85rem; font-weight: 700; margin-bottom: 42px; color: #111; }
+    .evo-cta-center { text-align: center; padding: 20px 0; }
+    /* Offres page */
+    .evo-phase-block { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.02); overflow: hidden; transition: border-color .3s, box-shadow .3s; display: flex; flex-direction: column; }
+    .evo-phase-header { padding: 36px 28px; display: flex; flex-direction: column; align-items: flex-start; background: #fff; transition: background .3s; min-height: 160px; position: relative; cursor: default; }
+    .evo-phase-number-lg { font-size: 1.1rem; font-weight: 700; color: #68A67A; border: 1px solid #68A67A; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50px; background: #f7fbf8; margin-bottom: 18px; }
+    .evo-phase-header h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 6px; color: #111; line-height: 1.3; }
+    .evo-phase-role-lg { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 600; }
+    .evo-phase-indicator { position: absolute; bottom: 18px; right: 22px; font-size: .88rem; color: #ccc; transition: transform .4s, color .4s; }
+    .evo-phase-content { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transition: max-height .6s cubic-bezier(.4,0,.2,1), opacity .4s, visibility .4s; background: #fafafa; }
+    @media(min-width:769px) {
+      .evo-phase-block:hover { border-color: #68A67A; box-shadow: 0 12px 30px rgba(104,166,122,.1); }
+      .evo-phase-block:hover .evo-phase-header { background: #fcfdfe; }
+      .evo-phase-block:hover .evo-phase-indicator { transform: rotate(180deg); color: #68A67A; }
+      .evo-phase-block:hover .evo-phase-content { max-height: 2000px; opacity: 1; visibility: visible; border-top: 1px solid #eaeaea; }
+    }
+    .evo-sub-col { display: flex; flex-direction: column; gap: 18px; padding: 26px 18px; }
+    .evo-spec-card { background: #fff; padding: 22px; border-radius: 6px; border: 1px solid #eef0ee; }
+    .evo-spec-title { font-size: 1.1rem; font-weight: 700; color: #111; margin: 0 0 4px; }
+    .evo-spec-ctx { font-size: .78rem; font-style: italic; color: #777; margin-bottom: 10px; }
+    .evo-spec-desc { font-size: .88rem; line-height: 1.55; color: #444; margin: 0 0 14px; }
+    .evo-spec-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .evo-tag { font-size: .7rem; font-weight: 600; background: #f2f7f4; color: #4e825e; padding: 2px 8px; border-radius: 4px; border: 1px solid #e1ebe5; }
+    /* Références */
+    .evo-ticker { border: 1px solid #eaeaea; border-radius: 8px; padding: 32px 28px; background: #fafafa; margin-bottom: 48px; }
+    .evo-ticker-label { font-size: .88rem; color: #555; margin: 0 0 22px; font-weight: 600; border-left: 3px solid #68A67A; padding-left: 14px; }
+    .evo-geo-rows { display: flex; flex-direction: column; gap: 18px; }
+    .evo-geo-row { display: flex; align-items: flex-start; gap: 16px; }
+    .evo-flag { font-size: 1.25rem; background: #fff; padding: 4px 9px; border-radius: 6px; border: 1px solid #eaeaea; line-height: 1; flex-shrink: 0; }
+    .evo-brands { font-size: .95rem; font-weight: 500; color: #444; line-height: 1.8; }
+    .evo-proj-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(310px,1fr)); gap: 22px; }
+    .evo-proj-card { background: #fff; padding: 26px; border-radius: 8px; border: 1px solid #eaeaea; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+    .evo-proj-card:hover { transform: translateY(-2px); box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+    .evo-proj-badge { align-self: flex-start; background: #eef6f1; color: #68A67A; font-size: .7rem; font-weight: 700; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; letter-spacing: .5px; margin-bottom: 12px; }
+    .evo-proj-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px; color: #111; line-height: 1.3; }
+    .evo-proj-scope { font-size: .84rem; color: #666; margin: 0 0 12px; }
+    .evo-proj-desc { font-size: .9rem; line-height: 1.6; color: #444; margin: 0 0 20px; flex-grow: 1; }
+    .evo-proj-tags { display: flex; flex-wrap: wrap; gap: 5px; border-top: 1px solid #f0f0f0; padding-top: 12px; }
+    .evo-tech-tag { font-size: .75rem; background: #f4f4f4; color: #555; padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+    /* Portrait */
+    .evo-profile-grid { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+    .evo-avatar { width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; border: 1px solid #eaeaea; }
+    .evo-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .evo-bio h2 { font-size: .82rem; text-transform: uppercase; letter-spacing: 1.5px; color: #68A67A; margin: 0 0 8px; }
+    .evo-bio p { font-size: 1.05rem; line-height: 1.65; color: #444; margin: 0 0 18px; }
+    .evo-skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 24px; }
+    .evo-skill-card { background: #f9f9f9; padding: 30px 26px; border-radius: 8px; border: 1px solid #eaeaea; }
+    .evo-skill-card h4 { font-size: 1.2rem; font-weight: 700; color: #111; margin: 0 0 12px; }
+    .evo-skill-card p { font-size: .95rem; line-height: 1.6; color: #444; margin: 0; }
+    .evo-skill-card ul { margin: 0; padding-left: 18px; color: #444; line-height: 1.7; font-size: .95rem; }
+    .evo-skill-card ul li { margin-bottom: 6px; }
+    .evo-testi-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 24px; }
+    .evo-testi-card { background: #fff; padding: 28px 24px; border-radius: 8px; border: 1px solid #eaeaea; box-shadow: 0 4px 12px rgba(0,0,0,.03); display: flex; flex-direction: column; }
+    .evo-testi-text { font-size: .9rem; line-height: 1.6; color: #555; font-style: italic; margin-bottom: 20px; flex-grow: 1; }
+    .evo-testi-author { font-weight: 700; color: #111; font-size: 1rem; margin-bottom: 3px; }
+    .evo-testi-role { font-size: .72rem; color: #68A67A; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }
+    /* Contact */
+    .evo-contact-wrap { max-width: 1000px; margin: 0 auto; padding: 70px 24px; }
+    .evo-contact-hero { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    .evo-contact-hero .sub { color: #68A67A; font-size: .73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
+    .evo-contact-hero h2 { font-size: 2.1rem; font-weight: 800; color: #1a202c; margin: 0; letter-spacing: -.4px; }
+    .evo-contact-layout { display: grid; grid-template-columns: 300px 1fr; gap: 36px; align-items: start; }
+    .evo-sidebar { background: #1a202c; color: #fff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 26px; }
+    .evo-sidebar h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 7px; }
+    .evo-sidebar p { font-size: .88rem; color: #cbd5e0; margin: 0; line-height: 1.5; }
+    .evo-step-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .evo-step-list li { display: flex; gap: 10px; font-size: .88rem; color: #cbd5e0; align-items: center; }
+    .evo-step-num { background: #4a5568; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; flex-shrink: 0; }
+    .evo-li-sep { border-top: 1px solid #2d3748; padding-top: 22px; }
+    .evo-li-sep h5 { font-size: .95rem; font-weight: 700; margin: 0 0 7px; color: #fff; }
+    .evo-li-btn { display: flex; align-items: center; justify-content: center; gap: 7px; background: transparent; color: #fff; text-decoration: none; padding: 11px; border-radius: 8px; font-weight: 600; font-size: .88rem; border: 1px solid #4a5568; margin-top: 12px; transition: all .2s; }
+    .evo-li-btn:hover { background: #2d3748; border-color: #718096; }
+    .evo-form-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 36px; box-shadow: 0 8px 24px rgba(0,0,0,.02); }
+    .evo-form-section { border-bottom: 1px solid #edf2f7; padding-bottom: 26px; margin-bottom: 26px; }
+    .evo-form-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 30px; }
+    .evo-form-section-label { display: block; font-size: 1.05rem; font-weight: 700; color: #1a202c; margin-bottom: 18px; }
+    .evo-badge-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 12px; }
+    .evo-badge-radio { cursor: pointer; position: relative; }
+    .evo-badge-radio input[type=checkbox] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .evo-badge-content { display: flex; flex-direction: column; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; transition: all .2s; height: 100%; position: relative; }
+    .evo-badge-chk { position: absolute; top: 9px; right: 9px; width: 18px; height: 18px; border: 2px solid #cbd5e0; border-radius: 4px; background: #fff; display: flex; align-items: center; justify-content: center; font-size: .7rem; color: transparent; transition: all .2s; font-weight: 700; }
+    .evo-badge-icon { font-size: 1.35rem; margin-bottom: 7px; }
+    .evo-badge-content strong { font-size: .9rem; color: #2d3748; margin-bottom: 3px; display: block; }
+    .evo-badge-content small { font-size: .77rem; color: #718096; line-height: 1.3; }
+    .evo-badge-radio:hover .evo-badge-content { border-color: #b0d4bc; background: #f1f5f9; }
+    .evo-badge-radio input[type=checkbox]:checked + .evo-badge-content { border-color: #68A67A; background: #f0f7f2; box-shadow: 0 0 0 1px #68A67A; }
+    .evo-badge-radio input[type=checkbox]:checked + .evo-badge-content .evo-badge-chk { background: #68A67A; border-color: #68A67A; color: #fff; }
+    .evo-fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .evo-field-grp label { display: block; font-size: .84rem; font-weight: 600; color: #4a5568; margin-bottom: 5px; }
+    .evo-form-card input[type=text], .evo-form-card input[type=email], .evo-form-card input[type=tel], .evo-form-card textarea { width: 100%; padding: 11px 14px; font-size: .9rem; border: 1px solid #cbd5e0; border-radius: 8px; color: #2d3748; background: #f8fafc; transition: all .2s; font-family: inherit; }
+    .evo-form-card input:focus, .evo-form-card textarea:focus { outline: none; border-color: #68A67A; background: #fff; box-shadow: 0 0 0 3px rgba(104,166,122,.1); }
+    .evo-field-err { font-size: .78rem; color: #e53e3e; margin-top: 4px; display: none; }
+    .evo-form-card input.invalid { border-color: #e53e3e; background: #fff5f5; }
+    .evo-submit-btn { background: #68A67A; color: #fff; border: none; padding: 13px 42px; font-size: .95rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background .2s, opacity .2s; font-family: inherit; }
+    .evo-submit-btn:hover { background: #568d66; }
+    .evo-submit-btn:disabled { opacity: .55; cursor: not-allowed; }
+    .evo-thankyou { display: none; font-size: .92rem; color: #2D3748; align-items: center; gap: 9px; background: #f0f7f2; padding: 13px 18px; border-radius: 8px; border: 1px solid #d2ebd9; font-weight: 500; width: 100%; }
+    .evo-check { color: #68A67A; font-weight: bold; font-size: 1.2rem; }
+    /* Prefilled highlight */
+    .evo-prefilled-notice { background: #f0f7f2; border: 1px solid #d2ebd9; border-radius: 8px; padding: 11px 16px; margin-bottom: 20px; font-size: .85rem; color: #2d6a3f; display: none; }
+    @media(max-width: 900px) {
+      .evo-contact-wrap { padding: 40px 16px; }
+      .evo-contact-layout { grid-template-columns: 1fr; gap: 24px; }
+      .evo-fields-grid { grid-template-columns: 1fr; gap: 12px; }
+      .evo-form-card { padding: 24px; }
+    }
+    @media(max-width: 768px) {
+      .evo-container { padding: 36px 15px; }
+      .evo-phase-grid { grid-template-columns: 1fr; gap: 14px; }
+      .evo-phase-card { padding: 24px; }
+      .evo-trust-grid { grid-template-columns: 1fr; gap: 24px; }
+      .evo-faq-item { padding: 18px; }
+      .evo-divider { margin: 40px auto; }
+      .evo-section-h2 { font-size: 1.65rem; }
+      .evo-proj-grid { grid-template-columns: 1fr; }
+      .evo-profile-grid { grid-template-columns: 1fr; gap: 28px; }
+      .evo-avatar { max-width: 220px; margin: 0 auto; }
+      .evo-skills-grid, .evo-testi-grid { grid-template-columns: 1fr; }
+      .evo-phase-block { grid-column: span 1; }
+      .evo-phase-content { max-height: none !important; opacity: 1 !important; visibility: visible !important; border-top: 1px solid #eaeaea; }
+      .evo-phase-indicator { display: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -130,15 +274,16 @@
       <button class="evo-drawer-close" onclick="closeDrawer()">✕</button>
     </div>
     <nav class="evo-drawer-nav">
-      <a href="./offres-en.html" class="active">offers</a>
+      <a href="./offres-en.html"class='active'>offers</a>
       <a href="./references-en.html">references</a>
       <a href="./portrait-en.html">about</a>
+      <a href="./diagnostic-en.html" class="diag-link">⚡ Free AI Diagnostic</a>
     </nav>
   </div>
   <header class="evo-header">
     <div class="evo-header-inner">
       <div class="evo-header-left">
-        <button class="evo-hamburger" onclick="openDrawer()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <button class="evo-hamburger" onclick="openDrawer()"><span></span><span></span><span></span></button>
       </div>
       <div class="evo-header-center">
         <a href="./index-en.html" class="evo-logo"><img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting"></a>
@@ -155,44 +300,116 @@
 
 
   <div class="evo-container">
-    <section class="evo-hero">
-      <h1>Our Services & Business Solutions</h1>
-      <p>Hover over one of our three horizontal pillars to reveal its business use cases and applications.</p>
+    <section style="text-align:center;max-width:820px;margin:0 auto 52px;">
+      <h1 style="font-size:2.3rem;font-weight:800;color:#111;margin:0 0 14px;letter-spacing:-.4px;">Our Services & Business Solutions</h1>
+      <p style="font-size:1.05rem;color:#555;line-height:1.6;margin:0;">Hover over one of our three intervention pillars to reveal its business use cases and applications.</p>
     </section>
-    <main class="evo-phase-grid">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
       <div class="evo-phase-block">
-        <div class="evo-phase-header"><div class="evo-phase-number">01</div><h2>Scope the opportunity</h2><div class="evo-phase-role">Consulting / AMOA</div><div class="evo-phase-indicator">▼</div></div>
-        <div class="evo-phase-content"><div class="evo-sub-column">
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Design Thinking & Innovative Retail</h3><div class="evo-spec-context">Sector: Multinational mass retail</div><p class="evo-spec-desc">Organization, structuring and facilitation of large-scale collaborative workshops. Co-facilitation of forward-looking programs to rethink customer journeys and validate UX through prototyping.</p><div class="evo-spec-tags"><span class="evo-tag">Design Thinking</span><span class="evo-tag">Workshops</span><span class="evo-tag">UX / Journeys</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Pre-Sales Scoping & RFPs</h3><div class="evo-spec-context">Type: Software publishing & Integration</div><p class="evo-spec-desc">Support during initial diagnostic phases. In-depth business needs analysis, full management of RFP responses and strategic architecture recommendations.</p><div class="evo-spec-tags"><span class="evo-tag">IT Scoping</span><span class="evo-tag">RFP</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Pre-Sales & Solution Engineering</h3><div class="evo-spec-context">Type: PIM, DAM & Marketplace ecosystems</div><p class="evo-spec-desc">Acting as a technical-commercial bridge. Preparation and facilitation of complex software demonstrations focused on product data flow value for C-Level decision makers.</p><div class="evo-spec-tags"><span class="evo-tag">Pre-Sales</span><span class="evo-tag">Demos</span><span class="evo-tag">PIM / DAM</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Search Engines & Marketplace</h3><div class="evo-spec-context">Sector: B2B / B2C Distribution</div><p class="evo-spec-desc">Functional analysis and structuring of internal search engines to optimize semantic relevance. Operational scoping of marketplace platforms connected to live inventory.</p><div class="evo-spec-tags"><span class="evo-tag">Search & AI</span><span class="evo-tag">Marketplace</span></div></div>
-        </div></div>
+        <div class="evo-phase-header">
+          <div class="evo-phase-number-lg">01</div>
+          <h2>Scope the opportunity</h2>
+          <div class="evo-phase-role-lg">Consulting / AMOA</div>
+          <div class="evo-phase-indicator">▼</div>
+        </div>
+        <div class="evo-phase-content">
+          <div class="evo-sub-col">
+            <div class="evo-spec-card">
+          <div class="evo-spec-title">Design Thinking & Innovative Retail</div>
+          <div class="evo-spec-ctx">Sector: Multinational mass retail</div>
+          <p class="evo-spec-desc">Organization and facilitation of large-scale collaborative workshops. Co-facilitation of forward-looking programs to rethink customer journeys and validate UX through prototyping.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Design Thinking</span><span class="evo-tag">Workshops</span><span class="evo-tag">UX / Journeys</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Pre-Sales Scoping & RFPs</div>
+          <div class="evo-spec-ctx">Type: Software publishing & Integration</div>
+          <p class="evo-spec-desc">Support during initial diagnostic phases. In-depth business needs analysis, full RFP management and strategic architecture recommendations.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">IT Scoping</span><span class="evo-tag">RFP</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Pre-Sales & Solution Engineering</div>
+          <div class="evo-spec-ctx">Type: PIM, DAM & Marketplace ecosystems</div>
+          <p class="evo-spec-desc">Preparation and facilitation of complex software demonstrations focused on product data value for C-Level decision makers.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Pre-Sales</span><span class="evo-tag">Demos</span><span class="evo-tag">PIM / DAM</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Search Engines & Marketplace</div>
+          <div class="evo-spec-ctx">Sector: B2B / B2C Distribution</div>
+          <p class="evo-spec-desc">Functional analysis of internal search engines to optimize semantic relevance. Operational scoping of marketplace platforms connected to live inventory.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Search & AI</span><span class="evo-tag">Marketplace</span></div>
+        </div>
+          </div>
+        </div>
       </div>
       <div class="evo-phase-block">
-        <div class="evo-phase-header"><div class="evo-phase-number">02</div><h2>Drive the product</h2><div class="evo-phase-role">Product Owner</div><div class="evo-phase-indicator">▼</div></div>
-        <div class="evo-phase-content"><div class="evo-sub-column">
-          <div class="evo-spec-card"><h3 class="evo-spec-title">eCommerce Platforms</h3><div class="evo-spec-context">Sector: Food retail & Retail</div><p class="evo-spec-desc">Global product vision definition, functional roadmap development and development backlog arbitration. Scoping of native transactional ecosystems.</p><div class="evo-spec-tags"><span class="evo-tag">eCommerce</span><span class="evo-tag">Roadmap</span><span class="evo-tag">Scrum Backlog</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Payment Systems & Checkout</h3><div class="evo-spec-context">Sector: Connected commerce & Omnichannel</div><p class="evo-spec-desc">Advanced functional design of the checkout step. Integration of secure payment components, billing automation and transactional friction reduction.</p><div class="evo-spec-tags"><span class="evo-tag">PSP / Payment</span><span class="evo-tag">Checkout API</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">International OMS Orchestration</h3><div class="evo-spec-context">Sector: Cosmetics, Beauty & Luxury</div><p class="evo-spec-desc">Integration and configuration of Order Management System solutions (IBM Sterling OMS). Modeling of complex allocation rules, distributed routing and multi-country logistics.</p><div class="evo-spec-tags"><span class="evo-tag">IBM Sterling OMS</span><span class="evo-tag">Logistics sourcing</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Omnichannel & Supply Chain Scoping</h3><div class="evo-spec-context">Sector: Tourism, Leisure & Retail</div><p class="evo-spec-desc">Modeling of seamless unified journeys. Technical alignment of supply chain and IT systems to interconnect digital ordering and physical fulfillment.</p><div class="evo-spec-tags"><span class="evo-tag">Omnichannel</span><span class="evo-tag">Supply Chain</span></div></div>
-        </div></div>
+        <div class="evo-phase-header">
+          <div class="evo-phase-number-lg">02</div>
+          <h2>Drive the product</h2>
+          <div class="evo-phase-role-lg">Product Owner</div>
+          <div class="evo-phase-indicator">▼</div>
+        </div>
+        <div class="evo-phase-content">
+          <div class="evo-sub-col">
+            <div class="evo-spec-card">
+          <div class="evo-spec-title">eCommerce Platforms</div>
+          <div class="evo-spec-ctx">Sector: Food retail & Retail</div>
+          <p class="evo-spec-desc">Global product vision, functional roadmap development and backlog arbitration. Scoping of native transactional ecosystems.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">eCommerce</span><span class="evo-tag">Roadmap</span><span class="evo-tag">Scrum Backlog</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Payment Systems & Checkout</div>
+          <div class="evo-spec-ctx">Sector: Connected commerce & Omnichannel</div>
+          <p class="evo-spec-desc">Advanced functional design of the checkout step. Secure payment components integration and transactional friction reduction.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">PSP / Payment</span><span class="evo-tag">Checkout API</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">International OMS Orchestration</div>
+          <div class="evo-spec-ctx">Sector: Cosmetics, Beauty & Luxury</div>
+          <p class="evo-spec-desc">IBM Sterling OMS integration and configuration. Modeling of complex allocation rules, distributed routing and multi-country logistics.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">IBM Sterling OMS</span><span class="evo-tag">Logistics sourcing</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Omnichannel & Supply Chain Scoping</div>
+          <div class="evo-spec-ctx">Sector: Tourism, Leisure & Retail</div>
+          <p class="evo-spec-desc">Modeling of seamless unified journeys. Technical alignment of supply chain and IT systems.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Omnichannel</span><span class="evo-tag">Supply Chain</span></div>
+        </div>
+          </div>
+        </div>
       </div>
       <div class="evo-phase-block">
-        <div class="evo-phase-header"><div class="evo-phase-number">03</div><h2>Secure the deployment</h2><div class="evo-phase-role">PMO</div><div class="evo-phase-indicator">▼</div></div>
-        <div class="evo-phase-content"><div class="evo-sub-column">
-          <div class="evo-spec-card"><h3 class="evo-spec-title">CRM Integration & Deployment</h3><div class="evo-spec-context">Sector: Services, Tourism & Industry</div><p class="evo-spec-desc">Functional project management of CRM deployments (Salesforce, Microsoft Dynamics 365). Workshop facilitation, test wave supervision and Go-Live risk management.</p><div class="evo-spec-tags"><span class="evo-tag">Salesforce</span><span class="evo-tag">Dynamics 365</span><span class="evo-tag">QA</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Training & Adoption Programs</h3><div class="evo-spec-context">Type: Change management</div><p class="evo-spec-desc">Creation of custom educational kits and Train-the-Trainer session facilitation. Documentation structuring to multiply local technological autonomy and adoption.</p><div class="evo-spec-tags"><span class="evo-tag">Training</span><span class="evo-tag">Change</span><span class="evo-tag">User Adoption</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Cross-functional IT & Business Coordination</h3><div class="evo-spec-context">Type: Multi-stakeholder ecosystems</div><p class="evo-spec-desc">Steering and synchronization of business teams, development units, IT architecture and external vendors/integrators within agile frameworks.</p><div class="evo-spec-tags"><span class="evo-tag">Governance</span><span class="evo-tag">Agile Project</span></div></div>
-          <div class="evo-spec-card"><h3 class="evo-spec-title">Post-Deployment Follow-up & Hypercare</h3><div class="evo-spec-context">Type: Performance optimization</div><p class="evo-spec-desc">In-depth analysis of post-launch usage KPIs. Identification and resolution of operational pain points to sustain the ROI of new tools.</p><div class="evo-spec-tags"><span class="evo-tag">Hypercare / Run</span><span class="evo-tag">Operational KPIs</span></div></div>
-        </div></div>
+        <div class="evo-phase-header">
+          <div class="evo-phase-number-lg">03</div>
+          <h2>Secure the deployment</h2>
+          <div class="evo-phase-role-lg">PMO</div>
+          <div class="evo-phase-indicator">▼</div>
+        </div>
+        <div class="evo-phase-content">
+          <div class="evo-sub-col">
+            <div class="evo-spec-card">
+          <div class="evo-spec-title">CRM Integration & Deployment</div>
+          <div class="evo-spec-ctx">Sector: Services, Tourism & Industry</div>
+          <p class="evo-spec-desc">Functional management of CRM deployments (Salesforce, Dynamics 365). Specification workshops, test supervision and Go-Live risk management.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Salesforce</span><span class="evo-tag">Dynamics 365</span><span class="evo-tag">QA</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Training & Adoption Programs</div>
+          <div class="evo-spec-ctx">Type: Change management</div>
+          <p class="evo-spec-desc">Creation of custom Train-the-Trainer kits. Documentation to multiply technological adoption across teams.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Training</span><span class="evo-tag">Change</span><span class="evo-tag">User Adoption</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Cross-functional IT & Business Coordination</div>
+          <div class="evo-spec-ctx">Type: Multi-stakeholder ecosystems</div>
+          <p class="evo-spec-desc">Synchronization of business teams, development units, IT architecture and external vendors within agile frameworks.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Governance</span><span class="evo-tag">Agile Project</span></div>
+        </div><div class="evo-spec-card">
+          <div class="evo-spec-title">Post-Deployment Follow-up & Hypercare</div>
+          <div class="evo-spec-ctx">Type: Performance optimization</div>
+          <p class="evo-spec-desc">In-depth analysis of post-launch KPIs. Identification and resolution of operational pain points to sustain ROI.</p>
+          <div class="evo-spec-tags"><span class="evo-tag">Hypercare / Run</span><span class="evo-tag">Operational KPIs</span></div>
+        </div>
+          </div>
+        </div>
       </div>
-    </main>
-    <section class="evo-bottom-cta">
-      <h3>A project to structure, a SaaS ecosystem or an AI component to integrate?</h3>
-      <p>Let's secure together the functional and operational trajectory of your IT solutions.</p>
+    </div>
+    <div style="text-align:center;padding:48px 36px;background:#fcfdfc;border:1px dashed #d4e3d9;border-radius:8px;margin-top:52px;">
+      <h3 style="font-size:1.45rem;margin:0 0 10px;color:#111;">A project to structure, a SaaS ecosystem or an AI component to integrate?</h3>
+      <p style="font-size:1rem;color:#555;margin-bottom:22px;">Let's secure together the functional and operational trajectory of your IT solutions.</p>
       <a href="./contact-en.html" class="evo-btn">Discuss your challenges</a>
-    </section>
+    </div>
   </div>
 
   <footer class="evo-footer">
@@ -205,11 +422,19 @@
     </div>
   </footer>
 
-  <div id="evo-chat-bubble" style="position:fixed;bottom:98px;right:28px;z-index:999;background:#111;color:#fff;font-family:'Nunito Sans',sans-serif;font-size:.85rem;padding:10px 14px;border-radius:12px 12px 0 12px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:opacity .4s;pointer-events:none;">Any questions about our services?&nbsp;💬</div>
-  <button id="evo-chat-btn" aria-label="evoshifting assistant" onclick="evoChatToggle()" style="position:fixed;bottom:28px;right:28px;z-index:1000;width:58px;height:58px;border-radius:50%;background:#111;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;">
+  <!-- DIAGNOSTIC PILL -->
+  <button id="evo-diag-pill" onclick="window.location='./diagnostic-en.html'">
+    <span class="pill-icon">⚡</span>
+    <span>Free AI Diagnostic</span>
+  </button>
+
+  <!-- CHATBOT BUTTON -->
+  <button id="evo-chat-btn" onclick="evoChatToggle()" aria-label="Assistant">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   </button>
-  <div id="evo-chat-window" role="dialog" aria-label="evoshifting assistant">
+
+  <!-- CHATBOT WINDOW -->
+  <div id="evo-chat-window">
     <div class="evo-chat-header">
       <div class="evo-chat-avatar">⚡</div>
       <div class="evo-chat-header-info">
@@ -220,44 +445,165 @@
     </div>
     <div class="evo-chat-messages" id="evoChatMessages">
       <div class="evo-msg bot">
-        <div class="evo-msg-bubble">Hello 👋 I'm the evoshifting assistant. Ask me anything about our services, client references or our AI approach.</div>
-        <div class="evo-msg-time">now</div>
+        <div class="evo-msg-bubble">Hello 👋 I'm the evoshifting assistant. Ask me anything about our services, references or AI approach.</div>
+        <div class="evo-msg-time" id="evoChatWelcomeTime"></div>
       </div>
     </div>
-    <div class="evo-typing" id="evoChatTyping"><span></span><span></span><span></span></div>
+    <div class="evo-typing" id="evoChatTyping">
+      <span></span><span></span><span></span>
+    </div>
     <div class="evo-chat-suggestions" id="evoChatSuggestions">
       <button class="evo-suggestion" onclick="evoSuggest(this)">What are your services?</button>
-      <button class="evo-suggestion" onclick="evoSuggest(this)">Integrate AI without rebuilding everything?</button>
+      <button class="evo-suggestion" onclick="evoSuggest(this)">Integrate AI without rebuilding?</button>
       <button class="evo-suggestion" onclick="evoSuggest(this)">Client references?</button>
       <button class="evo-suggestion" onclick="evoSuggest(this)">Timelines & fees?</button>
+      <button class="evo-suggestion" onclick="window.location='./diagnostic-en.html'">Take my AI diagnostic</button>
     </div>
+    <!-- Email capture bar -->
+    <div class="evo-chat-email-bar" id="evoChatEmailBar">
+      <input type="email" id="evoChatEmailInput" placeholder="Your email for follow-up">
+      <button onclick="evoChatCaptureEmail()">Send</button>
+    </div>
+    <div class="evo-chat-email-sent" id="evoChatEmailSent">✓ Received! Marc-Antoine will reach out within 48h.</div>
+    <!-- Input -->
     <div class="evo-chat-input-area">
-      <textarea id="evo-chat-input" placeholder="Your question…" rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();evoChatSend();}"></textarea>
-      <button id="evo-chat-send" onclick="evoChatSend()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      </button>
+      <textarea id="evo-chat-input" placeholder="Your question…" rows="1"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();evoChatSend();}"></textarea>
+      <button id="evo-chat-send" onclick="evoChatSend()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
     </div>
   </div>
+
   <script>
-    const drawer=document.getElementById('evoDrawer');
-    const overlay=document.getElementById('evoOverlay');
-    function openDrawer(){drawer.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
-    function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
-    overlay.addEventListener('click',closeDrawer);
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
-  </script>
-  <script>
-    var EVO_SYSTEM="You are the AI assistant for evoshifting, the IT systems and software consulting firm of Marc-Antoine Cailloux. evoshifting is a freelance consulting firm based in Bordeaux and Paris. Founder: Marc-Antoine Cailloux, 10+ years of experience at the intersection of business units and IT departments. Specialties: IT project scoping, SaaS ecosystem orchestration, AI integration into operational processes. 3 pillars: 1) Consulting/AMOA - Scope the opportunity: AI & Data opportunity studies, IT audit, business needs gathering, SaaS solution selection. 2) Product Owner - Drive the product: business/tech interface, functional design, backlog management, value-based prioritization. 3) PMO - Secure the deployment: end-to-end project management, stakeholder coordination, change management, AI adoption. Expertise: PIM, DAM, ERP, CRM (Salesforce, Dynamics 365), OMS (IBM Sterling), eCommerce, Marketplace, payment systems, generative AI, LLM, automation agents, Agile, SAFe. References FR: Sephora, Les Mousquetaires, Electro Depot, Cdiscount, Vertbaudet, Ramsay Sante, Rossignol, Salomon, Casino, Nexans, SAFT. References INTL: Carrier (USA), Manor, Longines, Tissot, VF International (CH), Lego (DK), Grupo Exito (CO), Marjane (MA). Philosophy: Quick Win (pilots in a few weeks), vendor neutrality, dual tech+business culture, measurable ROI. Contact: contact@evoshifting.com. Tone: professional yet accessible, concise answers 3-5 sentences, respond in English by default, direct toward contact for concrete projects, do not invent prices or references.";
-    var EVO_WORKER="https://anthropic.evoshifting.workers.dev";
-    var EVO_HISTORY=[];
-    setTimeout(function(){var b=document.getElementById('evo-chat-bubble');if(b){b.style.opacity='0';setTimeout(function(){b.style.display='none';},400);}},4000);
-    function evoChatToggle(){var w=document.getElementById('evo-chat-window');var b=document.getElementById('evo-chat-bubble');if(!w)return;if(b)b.style.display='none';if(w.style.display==='flex'){w.style.display='none';}else{w.style.display='flex';var inp=document.getElementById('evo-chat-input');if(inp)inp.focus();}}
-    function evoSuggest(btn){document.getElementById('evo-chat-input').value=btn.textContent;document.getElementById('evoChatSuggestions').style.display='none';evoChatSend();}
-    function evoTime(){return new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
-    function evoAddMsg(text,role){var c=document.getElementById('evoChatMessages');var d=document.createElement('div');d.className='evo-msg '+role;var f=text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');d.innerHTML='<div class="evo-msg-bubble">'+f+'</div><div class="evo-msg-time">'+evoTime()+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
-    function evoSetTyping(show){var t=document.getElementById('evoChatTyping');t.style.display=show?'block':'none';if(show)document.getElementById('evoChatMessages').scrollTop=99999;}
-    async function evoChatSend(){var input=document.getElementById('evo-chat-input');var text=input.value.trim();if(!text)return;input.value='';input.style.height='auto';document.getElementById('evo-chat-send').disabled=true;document.getElementById('evoChatSuggestions').style.display='none';evoAddMsg(text,'user');EVO_HISTORY.push({role:'user',content:text});evoSetTyping(true);try{var res=await fetch(EVO_WORKER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:EVO_SYSTEM,messages:EVO_HISTORY})});var data=await res.json();var reply=data.content&&data.content[0]?data.content[0].text:'Sorry, an error occurred. Please contact us directly.';evoSetTyping(false);evoAddMsg(reply,'bot');EVO_HISTORY.push({role:'assistant',content:reply});}catch(e){evoSetTyping(false);evoAddMsg('I am temporarily unavailable. Please contact us at contact@evoshifting.com','bot');}document.getElementById('evo-chat-send').disabled=false;var inp2=document.getElementById('evo-chat-input');if(inp2)inp2.focus();}
-    var _inp=document.getElementById('evo-chat-input');if(_inp){_inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px';});}
+    // ── Drawer ──
+    const _drawer = document.getElementById('evoDrawer');
+    const _overlay = document.getElementById('evoOverlay');
+    function openDrawer() { _drawer.classList.add('open'); _overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { _drawer.classList.remove('open'); _overlay.classList.remove('open'); document.body.style.overflow = ''; }
+    _overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // ── Chatbot state ──
+    const EVO_SYSTEM = "You are the AI assistant for evoshifting, Marc-Antoine Cailloux's IT consulting firm. Specialties: IT project scoping, SaaS ecosystems, AI integration. 3 pillars: AMOA (scoping), Product Owner (delivery), PMO (deployment). Expertise: PIM, DAM, ERP, CRM (Salesforce, Dynamics 365), OMS (IBM Sterling), eCommerce, AI/LLM, Agile. References: Sephora, Cdiscount, Rossignol, Lego, Longines, Carrier (USA), and 50+ more. Philosophy: Quick Win, vendor neutrality, measurable ROI. Contact: contact@evoshifting.com. Tone: professional, concise 3-5 sentences, English. If the prospect mentions a concrete need, offer to connect them with Marc-Antoine. After several exchanges, you can offer to capture their email for a personalised follow-up.";
+    const EVO_WORKER = "https://anthropic.evoshifting.workers.dev";
+    const EVO_FORMSPREE = "https://formspree.io/f/xrewpqbb";
+    let EVO_HISTORY = [];
+    let evoChatMsgCount = 0;
+    let evoDiagContext = null; // contexte injecté depuis le diagnostic
+
+    // Welcome time
+    const _wt = document.getElementById('evoChatWelcomeTime');
+    if (_wt) _wt.textContent = new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+
+    // ── Toggle chat window ──
+    function evoChatToggle() {
+      const w = document.getElementById('evo-chat-window');
+      const isOpen = w.style.display === 'flex';
+      w.style.display = isOpen ? 'none' : 'flex';
+      if (!isOpen) document.getElementById('evo-chat-input').focus();
+    }
+
+    // ── Inject diagnostic context ──
+    function evojInjectDiagContext(ctx) {
+      evoDiagContext = ctx;
+      // Ajouter un message système invisible
+      EVO_HISTORY.push({ role: 'user', content: 'Contexte du diagnostic effectué par ce prospect (pour personnaliser ta réponse, ne pas mentionner explicitement que tu as ces infos sauf si on te le demande) : ' + JSON.stringify(ctx) });
+      EVO_HISTORY.push({ role: 'assistant', content: 'Bien noté, je vais adapter mes réponses à ce contexte.' });
+    }
+
+    // ── Suggestions ──
+    function evoSuggest(btn) {
+      document.getElementById('evo-chat-input').value = btn.textContent;
+      document.getElementById('evoChatSuggestions').style.display = 'none';
+      evoChatSend();
+    }
+
+    // ── Time ──
+    function evoTime() {
+      return new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+    }
+
+    // ── Add message ──
+    function evoAddMsg(text, role) {
+      const c = document.getElementById('evoChatMessages');
+      const d = document.createElement('div');
+      d.className = 'evo-msg ' + role;
+      const f = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+      d.innerHTML = '<div class="evo-msg-bubble">' + f + '</div><div class="evo-msg-time">' + evoTime() + '</div>';
+      c.appendChild(d);
+      c.scrollTop = c.scrollHeight;
+    }
+
+    // ── Typing ──
+    function evoSetTyping(show) {
+      const t = document.getElementById('evoChatTyping');
+      t.style.display = show ? 'block' : 'none';
+      if (show) document.getElementById('evoChatMessages').scrollTop = 99999;
+    }
+
+    // ── Send message ──
+    async function evoChatSend() {
+      const input = document.getElementById('evo-chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      input.style.height = 'auto';
+      document.getElementById('evo-chat-send').disabled = true;
+      document.getElementById('evoChatSuggestions').style.display = 'none';
+      evoAddMsg(text, 'user');
+      EVO_HISTORY.push({role:'user', content: text});
+      evoChatMsgCount++;
+      evoSetTyping(true);
+      try {
+        const res = await fetch(EVO_WORKER, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({model:'claude-sonnet-4-6', max_tokens:800, system:EVO_SYSTEM, messages:EVO_HISTORY})
+        });
+        const data = await res.json();
+        const reply = data.content && data.content[0] ? data.content[0].text : 'Sorry, an error occurred.';
+        evoSetTyping(false);
+        evoAddMsg(reply, 'bot');
+        EVO_HISTORY.push({role:'assistant', content: reply});
+      } catch(e) {
+        evoSetTyping(false);
+        evoAddMsg('Service temporarily unavailable. Contact us at contact@evoshifting.com', 'bot');
+      }
+      document.getElementById('evo-chat-send').disabled = false;
+      const inp = document.getElementById('evo-chat-input');
+      if (inp) inp.focus();
+    }
+
+    // ── Email capture ──
+    async function evoChatCaptureEmail() {
+      const emailInput = document.getElementById('evoChatEmailInput');
+      const email = emailInput.value.trim();
+      if (!email || !email.includes('@')) { emailInput.focus(); return; }
+
+      // Résumé des 6 derniers messages
+      const summary = EVO_HISTORY.slice(-6).map(m => m.role.toUpperCase() + ': ' + m.content).join('\n');
+
+      const fd = new FormData();
+      fd.append('_subject', '💬 Chatbot — evoshifting');
+      fd.append('email_prospect', email);
+      fd.append('source', 'Chatbot');
+      fd.append('langue', 'EN');
+      fd.append('resume_conversation', summary);
+      fd.append('_replyto', email);
+
+      try {
+        await fetch(EVO_FORMSPREE, {method:'POST', body:fd, headers:{'Accept':'application/json'}});
+      } catch(e) {}
+
+      document.getElementById('evoChatEmailBar').style.display = 'none';
+      document.getElementById('evoChatEmailSent').style.display = 'block';
+    }
+
+    // ── Auto-resize textarea ──
+    const _inp = document.getElementById('evo-chat-input');
+    if (_inp) _inp.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 90) + 'px';
+    });
   </script>
 </body>
 </html>

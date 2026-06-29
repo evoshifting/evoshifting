@@ -9,89 +9,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
+
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; }
-    body { margin:0; padding:0; font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:#1a1a1a; background:#fff; }
+    body { margin: 0; padding: 0; font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #fff; }
     a { font-family: inherit; }
-    
+
     /* ── HEADER ── */
-    .evo-header {
-      position: sticky; top: 0; z-index: 100;
-      background: #fff; border-bottom: 1px solid #eaeaea;
-    }
-    .evo-header-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 24px;
-      height: 80px;
-      display: grid;
-      grid-template-columns: 120px 1fr 120px;
-      align-items: center;
-    }
-    .evo-header-left  { display: flex; align-items: center; }
+    .evo-header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #eaeaea; }
+    .evo-header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 80px; display: grid; grid-template-columns: 120px 1fr 120px; align-items: center; }
+    .evo-header-left { display: flex; align-items: center; }
     .evo-header-center { display: flex; justify-content: center; align-items: center; }
-    .evo-header-right { display: flex; justify-content: flex-end; align-items: center; }
-
-    /* Logo centré, 30 % plus grand que 36 px = ~47 px */
+    .evo-header-right { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
     .evo-logo img { height: 47px; width: auto; display: block; }
-
-    /* Burger */
-    .evo-hamburger {
-      display: flex; flex-direction: column; gap: 6px;
-      cursor: pointer; padding: 6px; background: none; border: none;
-    }
-    .evo-hamburger span {
-      display: block; width: 26px; height: 2px;
-      background: #111; border-radius: 2px;
-      transition: all .3s ease;
-    }
-
-    /* Bouton Contact */
-    .evo-nav-contact {
-      display: inline-block; background: #111; color: #fff !important;
-      text-decoration: none; padding: 10px 22px;
-      font-weight: 700; font-size: .88rem;
-      border-radius: 4px; transition: background .2s; white-space: nowrap;
-    }
+    .evo-hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; padding: 6px; background: none; border: none; }
+    .evo-hamburger span { display: block; width: 26px; height: 2px; background: #111; border-radius: 2px; }
+    .evo-nav-contact { display: inline-block; background: #111; color: #fff !important; text-decoration: none; padding: 10px 22px; font-weight: 700; font-size: .88rem; border-radius: 4px; transition: background .2s; white-space: nowrap; }
     .evo-nav-contact:hover { background: #68A67A !important; }
     .evo-nav-contact.active-page { background: #68A67A !important; }
 
     /* ── DRAWER ── */
-    .evo-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,.35); z-index: 200;
-    }
+    .evo-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 200; }
     .evo-overlay.open { display: block; }
-    .evo-drawer {
-      position: fixed; top: 0; left: 0;
-      width: 280px; height: 100dvh;
-      background: #fff; z-index: 201;
-      transform: translateX(-100%);
-      transition: transform .32s cubic-bezier(.4,0,.2,1);
-      display: flex; flex-direction: column;
-      box-shadow: 4px 0 24px rgba(0,0,0,.10);
-    }
+    .evo-drawer { position: fixed; top: 0; left: 0; width: 280px; height: 100dvh; background: #fff; z-index: 201; transform: translateX(-100%); transition: transform .32s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; box-shadow: 4px 0 24px rgba(0,0,0,.10); }
     .evo-drawer.open { transform: translateX(0); }
-    .evo-drawer-head {
-      display: flex; align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px; border-bottom: 1px solid #eaeaea;
-    }
+    .evo-drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid #eaeaea; }
     .evo-drawer-head img { height: 32px; width: auto; }
-    .evo-drawer-close {
-      background: none; border: none; cursor: pointer;
-      font-size: 1.5rem; color: #888; line-height: 1; padding: 2px 6px;
-    }
+    .evo-drawer-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #888; line-height: 1; padding: 2px 6px; }
     .evo-drawer-close:hover { color: #111; }
     .evo-drawer-nav { display: flex; flex-direction: column; padding: 10px 0; }
-    .evo-drawer-nav a {
-      font-size: 1.05rem; font-weight: 600; color: #222;
-      text-decoration: none; padding: 15px 24px;
-      border-bottom: 1px solid #f2f2f2;
-      transition: color .2s, background .2s;
-    }
+    .evo-drawer-nav a { font-size: 1.05rem; font-weight: 600; color: #222; text-decoration: none; padding: 15px 24px; border-bottom: 1px solid #f2f2f2; transition: color .2s, background .2s; }
     .evo-drawer-nav a:last-child { border-bottom: none; }
-    .evo-drawer-nav a:hover,
-    .evo-drawer-nav a.active { color: #68A67A; background: #f7fbf8; }
+    .evo-drawer-nav a:hover, .evo-drawer-nav a.active { color: #68A67A; background: #f7fbf8; }
+    .evo-drawer-nav a.diag-link { color: #68A67A; font-weight: 700; }
+    .evo-drawer-nav a.diag-link:hover { background: #f0f7f2; }
 
-    
+    /* ── LANG TOGGLE ── */
+    .evo-lang-toggle { display: flex; align-items: center; gap: 2px; background: #f4f4f4; border-radius: 6px; padding: 3px; }
+    .evo-lang-btn { font-size: .78rem; font-weight: 700; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; background: transparent; color: #666; transition: all .2s; font-family: inherit; letter-spacing: .3px; }
+    .evo-lang-btn.active { background: #111; color: #fff; }
+    .evo-lang-btn:hover:not(.active) { color: #111; }
+
     /* ── FOOTER ── */
     .evo-footer { border-top: 1px solid #eaeaea; background: #fff; }
     .evo-footer-inner { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
@@ -99,235 +57,240 @@
     .evo-footer-links a { color: #555; text-decoration: none; font-size: .9rem; display: flex; align-items: center; gap: 6px; transition: color .2s; }
     .evo-footer-links a:hover { color: #68A67A; }
     .evo-footer-legal { font-size: .8rem; color: #999; line-height: 1.5; }
-    @media(max-width:600px){ .evo-footer-links { flex-direction: column; gap: 12px; } }
+    @media(max-width: 600px) { .evo-footer-links { flex-direction: column; gap: 12px; } }
 
-    
-    .evo-container { max-width:1100px; margin:0 auto; padding:60px 20px; }
-    .evo-divider { border:0; height:1px; background:#e0e0e0; margin:60px auto; width:100%; display:block; }
-    .evo-hero { text-align:center; max-width:850px; margin:0 auto; padding-top:20px; }
-    .evo-lead { font-size:1.45rem; font-weight:500; line-height:1.5; color:#68A67A; margin-bottom:24px; }
-    .evo-cta-wrapper { margin-top:30px; }
-    .evo-btn { display:inline-block; background:#111; color:#fff !important; text-decoration:none; padding:16px 36px; font-weight:700; border-radius:4px; transition:background .2s; font-family:inherit; }
-    .evo-btn:hover { background:#68A67A; }
-    .evo-features h2,.evo-trust h2,.evo-faq-section h2 { text-align:center; font-size:1.9rem; font-weight:700; margin-bottom:45px; color:#111; }
-    .evo-phase-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .evo-phase-card { background:#fff; border:1px solid #eaeaea; border-radius:8px; padding:35px 30px; box-shadow:0 4px 12px rgba(0,0,0,.02); display:flex; flex-direction:column; transition:border-color .3s,box-shadow .3s,background .3s; }
-    .evo-card-top { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
-    .evo-phase-number { font-size:1.1rem; font-weight:700; color:#68A67A; border:1px solid #68A67A; width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:50px; background:#f7fbf8; flex-shrink:0; }
-    .evo-phase-role { font-size:.8rem; text-transform:uppercase; letter-spacing:1px; color:#666; font-weight:600; }
-    .evo-phase-card h3 { font-size:1.35rem; font-weight:700; margin:0 0 14px; color:#111; }
-    .evo-phase-desc { font-size:1rem; line-height:1.6; color:#444; margin:0; }
-    @media(min-width:769px){ .evo-phase-card:hover { border-color:#68A67A; box-shadow:0 10px 25px rgba(104,166,122,.08); background:#fcfdfe; } }
-    .evo-faq-section { max-width:900px; margin:0 auto; }
-    .evo-faq-grid { display:flex; flex-direction:column; gap:24px; }
-    .evo-faq-item { background:#fff; border:1px solid #eaeaea; border-radius:8px; padding:25px 30px; }
-    .evo-faq-item h3 { font-size:1.2rem; font-weight:700; color:#111; margin:0 0 12px; display:flex; align-items:flex-start; gap:10px; }
-    .evo-faq-item h3::before { content:"•"; color:#68A67A; font-size:1.5rem; line-height:1; }
-    .evo-faq-item p { font-size:1rem; line-height:1.6; color:#555; margin:0; padding-left:18px; }
-    .evo-faq-item p strong { color:#68A67A; }
-    .evo-trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px; }
-    .evo-trust-item h4 { font-size:1.25rem; color:#111; margin:0 0 12px; font-weight:700; }
-    .evo-trust-item p { font-size:1rem; line-height:1.6; color:#555; margin:0; }
-    .evo-bottom-cta { text-align:center; padding:20px 0; }
-    @media(max-width:768px){
-      .evo-container{padding:30px 15px;}
-      .evo-lead{font-size:1.25rem;}
-      .evo-phase-grid{grid-template-columns:1fr;gap:16px;}
-      .evo-phase-card{padding:25px;}
-      .evo-trust-grid{grid-template-columns:1fr;gap:30px;}
-      .evo-faq-item{padding:20px;}
-      .evo-divider{margin:40px auto;}
+    /* ── CHATBOT ── */
+    #evo-chat-btn { position: fixed; bottom: 28px; right: 28px; z-index: 1000; width: 58px; height: 58px; border-radius: 50%; background: #111; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; transition: background .2s, transform .2s; }
+    #evo-chat-btn:hover { background: #68A67A; transform: scale(1.07); }
+    #evo-chat-btn svg { width: 26px; height: 26px; }
+    #evo-chat-window { position: fixed; bottom: 98px; right: 28px; z-index: 1000; width: 370px; height: 560px; max-height: 82vh; background: #fff; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,.18); display: none; flex-direction: column; overflow: hidden; font-family: 'Nunito Sans', sans-serif; }
+    .evo-chat-header { background: #111; color: #fff; padding: 14px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .evo-chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: #68A67A; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .evo-chat-header-info { flex: 1; }
+    .evo-chat-header-name { font-weight: 700; font-size: .95rem; }
+    .evo-chat-header-status { font-size: .72rem; color: #a0aec0; display: flex; align-items: center; gap: 5px; }
+    .evo-chat-header-status::before { content: ''; display: inline-block; width: 7px; height: 7px; background: #68A67A; border-radius: 50%; }
+    .evo-chat-close { background: none; border: none; color: #aaa; cursor: pointer; font-size: 1.3rem; line-height: 1; padding: 2px 4px; }
+    .evo-chat-close:hover { color: #fff; }
+    .evo-chat-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+    .evo-chat-messages::-webkit-scrollbar { width: 3px; }
+    .evo-chat-messages::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
+    .evo-msg { max-width: 84%; display: flex; flex-direction: column; gap: 3px; }
+    .evo-msg.bot { align-self: flex-start; }
+    .evo-msg.user { align-self: flex-end; }
+    .evo-msg-bubble { padding: 10px 14px; border-radius: 14px; font-size: .88rem; line-height: 1.5; word-break: break-word; }
+    .evo-msg.bot .evo-msg-bubble { background: #f4f4f4; color: #1a1a1a; border-bottom-left-radius: 4px; }
+    .evo-msg.user .evo-msg-bubble { background: #111; color: #fff; border-bottom-right-radius: 4px; }
+    .evo-msg-time { font-size: .68rem; color: #aaa; padding: 0 4px; }
+    .evo-msg.user .evo-msg-time { text-align: right; }
+    .evo-typing { align-self: flex-start; background: #f4f4f4; padding: 11px 16px; border-radius: 14px 14px 14px 4px; display: none; }
+    .evo-typing span { display: inline-block; width: 6px; height: 6px; background: #aaa; border-radius: 50%; margin: 0 2px; animation: evoDot 1.2s infinite; }
+    .evo-typing span:nth-child(2) { animation-delay: .2s; }
+    .evo-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes evoDot { 0%,80%,100%{ transform:translateY(0); opacity:.4; } 40%{ transform:translateY(-5px); opacity:1; } }
+    .evo-chat-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 14px 10px; }
+    .evo-suggestion { font-size: .75rem; padding: 5px 10px; border-radius: 20px; border: 1px solid #e2e8f0; background: #f8fafc; color: #444; cursor: pointer; transition: all .15s; font-family: inherit; }
+    .evo-suggestion:hover { border-color: #68A67A; color: #68A67A; background: #f0f7f2; }
+    /* Email capture bar */
+    .evo-chat-email-bar { border-top: 1px solid #eaeaea; padding: 10px 14px; background: #f8fafc; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .evo-chat-email-bar input { flex: 1; border: 1px solid #cbd5e0; border-radius: 8px; padding: 8px 12px; font-size: .85rem; font-family: inherit; outline: none; color: #1a1a1a; background: #fff; }
+    .evo-chat-email-bar input:focus { border-color: #68A67A; }
+    .evo-chat-email-bar button { background: #68A67A; color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-size: .8rem; font-weight: 700; cursor: pointer; font-family: inherit; white-space: nowrap; }
+    .evo-chat-email-bar button:hover { background: #568d66; }
+    .evo-chat-email-sent { font-size: .78rem; color: #68A67A; padding: 8px 14px; text-align: center; flex-shrink: 0; display: none; }
+    .evo-chat-input-area { border-top: 1px solid #eaeaea; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; }
+    #evo-chat-input { flex: 1; border: 1px solid #e2e8f0; border-radius: 10px; padding: 9px 13px; font-size: .88rem; font-family: inherit; resize: none; outline: none; line-height: 1.4; max-height: 90px; overflow-y: auto; color: #1a1a1a; transition: border-color .2s; }
+    #evo-chat-input:focus { border-color: #68A67A; }
+    #evo-chat-send { width: 36px; height: 36px; border-radius: 8px; border: none; background: #111; color: #fff; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    #evo-chat-send:hover { background: #68A67A; }
+    #evo-chat-send:disabled { opacity: .4; cursor: not-allowed; }
+    #evo-chat-send svg { width: 14px; height: 14px; }
+
+    /* ── DIAGNOSTIC PILL ── */
+    #evo-diag-pill { position: fixed; bottom: 28px; left: 28px; z-index: 1000; display: flex; align-items: center; gap: 10px; background: #111; color: #fff; padding: 14px 20px; border-radius: 50px; cursor: pointer; border: none; font-family: inherit; font-size: .88rem; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,.25); transition: background .2s, transform .2s; animation: evoPulse 2s ease-in-out 3; }
+    #evo-diag-pill:hover { background: #68A67A; transform: scale(1.04); }
+    #evo-diag-pill .pill-icon { font-size: 1.1rem; }
+    @keyframes evoPulse { 0%,100%{ box-shadow:0 4px 20px rgba(0,0,0,.25); } 50%{ box-shadow:0 4px 28px rgba(104,166,122,.5); } }
+    @media(max-width: 480px) {
+      #evo-chat-window { width: calc(100vw - 20px); right: 10px; bottom: 80px; }
+      #evo-chat-btn { bottom: 16px; right: 16px; }
+      #evo-diag-pill { bottom: 16px; left: 10px; font-size: .78rem; padding: 11px 14px; }
     }
 
 
-  /* ── CHATBOT FLOTTANT ── */
-  #evo-chat-btn {
-    position: fixed; bottom: 28px; right: 28px; z-index: 1000;
-    width: 58px; height: 58px; border-radius: 50%;
-    background: #111111; border: none; cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s, transform .2s;
-  }
-  #evo-chat-btn:hover { background: #68A67A; transform: scale(1.07); }
-  #evo-chat-btn svg { width: 26px; height: 26px; }
-
-  #evo-chat-bubble {
-    position: fixed; bottom: 98px; right: 28px; z-index: 999;
-    background: #111; color: #fff; font-family: 'Nunito Sans', sans-serif;
-    font-size: .85rem; padding: 10px 14px; border-radius: 12px 12px 0 12px;
-    white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,.2);
-    animation: evoBubble 0.4s ease forwards;
-    pointer-events: none;
-  }
-  @keyframes evoBubble {
-    from { opacity:0; transform:translateY(6px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
-
-  #evo-chat-window {
-    position: fixed; bottom: 98px; right: 28px; z-index: 1000;
-    width: 370px; height: 520px; max-height: 80vh;
-    background: #ffffff; border-radius: 16px;
-    box-shadow: 0 12px 48px rgba(0,0,0,.18);
-    display: none; flex-direction: column; overflow: hidden;
-    font-family: 'Nunito Sans', sans-serif;
-    animation: evoChatOpen .25s cubic-bezier(.4,0,.2,1);
-  }
-  #evo-chat-window.open { display: flex; }
-  @keyframes evoChatOpen {
-    from { opacity:0; transform:translateY(16px) scale(.97); }
-    to   { opacity:1; transform:translateY(0) scale(1); }
-  }
-
-  .evo-chat-header {
-    background: #111111; color: #fff; padding: 16px 18px;
-    display: flex; align-items: center; gap: 12px; flex-shrink: 0;
-  }
-  .evo-chat-avatar {
-    width: 36px; height: 36px; border-radius: 50%;
-    background: #68A67A; display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; flex-shrink: 0;
-  }
-  .evo-chat-header-info { flex: 1; }
-  .evo-chat-header-name { font-weight: 700; font-size: .95rem; }
-  .evo-chat-header-status { font-size: .75rem; color: #a0aec0; display: flex; align-items: center; gap: 5px; }
-  .evo-chat-header-status::before { content:''; display:inline-block; width:7px; height:7px; background:#68A67A; border-radius:50%; }
-  .evo-chat-close {
-    background: none; border: none; color: #aaa; cursor: pointer;
-    font-size: 1.3rem; line-height: 1; padding: 2px 4px;
-  }
-  .evo-chat-close:hover { color: #fff; }
-
-  .evo-chat-messages {
-    flex: 1; overflow-y: auto; padding: 16px; display: flex;
-    flex-direction: column; gap: 12px; scroll-behavior: smooth;
-  }
-  .evo-chat-messages::-webkit-scrollbar { width: 4px; }
-  .evo-chat-messages::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
-
-  .evo-msg { max-width: 82%; display: flex; flex-direction: column; gap: 3px; }
-  .evo-msg.bot { align-self: flex-start; }
-  .evo-msg.user { align-self: flex-end; }
-  .evo-msg-bubble {
-    padding: 10px 14px; border-radius: 14px;
-    font-size: .9rem; line-height: 1.5; word-break: break-word;
-  }
-  .evo-msg.bot .evo-msg-bubble {
-    background: #f4f4f4; color: #1a1a1a; border-bottom-left-radius: 4px;
-  }
-  .evo-msg.user .evo-msg-bubble {
-    background: #111111; color: #ffffff; border-bottom-right-radius: 4px;
-  }
-  .evo-msg-time { font-size: .7rem; color: #aaa; padding: 0 4px; }
-  .evo-msg.user .evo-msg-time { text-align: right; }
-
-  .evo-typing {
-    align-self: flex-start; background: #f4f4f4;
-    padding: 12px 16px; border-radius: 14px 14px 14px 4px;
-    display: none;
-  }
-  .evo-typing span {
-    display: inline-block; width: 7px; height: 7px;
-    background: #aaa; border-radius: 50%; margin: 0 2px;
-    animation: evoDot 1.2s infinite;
-  }
-  .evo-typing span:nth-child(2) { animation-delay: .2s; }
-  .evo-typing span:nth-child(3) { animation-delay: .4s; }
-  @keyframes evoDot {
-    0%,80%,100% { transform:translateY(0); opacity:.4; }
-    40% { transform:translateY(-5px); opacity:1; }
-  }
-
-  .evo-chat-suggestions {
-    display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px;
-  }
-  .evo-suggestion {
-    font-size: .78rem; padding: 6px 11px; border-radius: 20px;
-    border: 1px solid #e2e8f0; background: #f8fafc; color: #444;
-    cursor: pointer; transition: all .15s; font-family: inherit;
-    white-space: nowrap;
-  }
-  .evo-suggestion:hover { border-color: #68A67A; color: #68A67A; background: #f0f7f2; }
-
-  .evo-chat-input-area {
-    border-top: 1px solid #eaeaea; padding: 12px 14px;
-    display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
-  }
-  #evo-chat-input {
-    flex: 1; border: 1px solid #e2e8f0; border-radius: 10px;
-    padding: 10px 14px; font-size: .9rem; font-family: inherit;
-    resize: none; outline: none; line-height: 1.4;
-    max-height: 100px; overflow-y: auto; color: #1a1a1a;
-    transition: border-color .2s;
-  }
-  #evo-chat-input:focus { border-color: #68A67A; }
-  #evo-chat-send {
-    width: 38px; height: 38px; border-radius: 10px; border: none;
-    background: #111; color: #fff; cursor: pointer; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s;
-  }
-  #evo-chat-send:hover { background: #68A67A; }
-  #evo-chat-send:disabled { opacity: .4; cursor: not-allowed; }
-  #evo-chat-send svg { width: 16px; height: 16px; }
-
-  @media (max-width: 480px) {
-    #evo-chat-window { width: calc(100vw - 20px); right: 10px; bottom: 80px; }
-    #evo-chat-btn { bottom: 16px; right: 16px; }
-  }
-
-
-    /* ── LANG TOGGLE ── */
-    .evo-lang-toggle {
-      display: flex; align-items: center; gap: 2px;
-      background: #f4f4f4; border-radius: 6px; padding: 3px;
+    .evo-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .evo-divider { border: 0; height: 1px; background: #e0e0e0; margin: 60px auto; width: 100%; display: block; }
+    .evo-btn { display: inline-block; background: #111; color: #fff !important; text-decoration: none; padding: 15px 34px; font-weight: 700; border-radius: 4px; transition: background .2s; font-family: inherit; border: none; cursor: pointer; font-size: .95rem; }
+    .evo-btn:hover { background: #68A67A; }
+    .evo-phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .evo-phase-card { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; padding: 35px 30px; box-shadow: 0 4px 12px rgba(0,0,0,.02); display: flex; flex-direction: column; transition: border-color .3s, box-shadow .3s, background .3s; }
+    .evo-card-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .evo-phase-number { font-size: 1.1rem; font-weight: 700; color: #68A67A; border: 1px solid #68A67A; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50px; background: #f7fbf8; flex-shrink: 0; }
+    .evo-phase-role { font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 600; }
+    .evo-phase-card h3 { font-size: 1.3rem; font-weight: 700; margin: 0 0 12px; color: #111; }
+    .evo-phase-desc { font-size: .95rem; line-height: 1.6; color: #444; margin: 0; }
+    @media(min-width:769px) { .evo-phase-card:hover { border-color: #68A67A; box-shadow: 0 10px 25px rgba(104,166,122,.08); background: #fcfdfe; } }
+    .evo-faq-section { max-width: 900px; margin: 0 auto; }
+    .evo-faq-grid { display: flex; flex-direction: column; gap: 22px; }
+    .evo-faq-item { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; padding: 24px 28px; }
+    .evo-faq-item h3 { font-size: 1.15rem; font-weight: 700; color: #111; margin: 0 0 10px; display: flex; align-items: flex-start; gap: 10px; }
+    .evo-faq-item h3::before { content: "•"; color: #68A67A; font-size: 1.4rem; line-height: 1; }
+    .evo-faq-item p { font-size: .95rem; line-height: 1.6; color: #555; margin: 0; padding-left: 18px; }
+    .evo-faq-item p strong { color: #68A67A; }
+    .evo-trust-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 36px; }
+    .evo-trust-item h4 { font-size: 1.2rem; color: #111; margin: 0 0 10px; font-weight: 700; }
+    .evo-trust-item p { font-size: .95rem; line-height: 1.6; color: #555; margin: 0; }
+    .evo-section-h2 { text-align: center; font-size: 1.85rem; font-weight: 700; margin-bottom: 42px; color: #111; }
+    .evo-cta-center { text-align: center; padding: 20px 0; }
+    /* Offres page */
+    .evo-phase-block { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.02); overflow: hidden; transition: border-color .3s, box-shadow .3s; display: flex; flex-direction: column; }
+    .evo-phase-header { padding: 36px 28px; display: flex; flex-direction: column; align-items: flex-start; background: #fff; transition: background .3s; min-height: 160px; position: relative; cursor: default; }
+    .evo-phase-number-lg { font-size: 1.1rem; font-weight: 700; color: #68A67A; border: 1px solid #68A67A; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50px; background: #f7fbf8; margin-bottom: 18px; }
+    .evo-phase-header h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 6px; color: #111; line-height: 1.3; }
+    .evo-phase-role-lg { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: #666; font-weight: 600; }
+    .evo-phase-indicator { position: absolute; bottom: 18px; right: 22px; font-size: .88rem; color: #ccc; transition: transform .4s, color .4s; }
+    .evo-phase-content { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transition: max-height .6s cubic-bezier(.4,0,.2,1), opacity .4s, visibility .4s; background: #fafafa; }
+    @media(min-width:769px) {
+      .evo-phase-block:hover { border-color: #68A67A; box-shadow: 0 12px 30px rgba(104,166,122,.1); }
+      .evo-phase-block:hover .evo-phase-header { background: #fcfdfe; }
+      .evo-phase-block:hover .evo-phase-indicator { transform: rotate(180deg); color: #68A67A; }
+      .evo-phase-block:hover .evo-phase-content { max-height: 2000px; opacity: 1; visibility: visible; border-top: 1px solid #eaeaea; }
     }
-    .evo-lang-btn {
-      font-size: .78rem; font-weight: 700; padding: 5px 10px;
-      border: none; border-radius: 4px; cursor: pointer;
-      background: transparent; color: #666; transition: all .2s;
-      font-family: inherit; letter-spacing: .3px;
+    .evo-sub-col { display: flex; flex-direction: column; gap: 18px; padding: 26px 18px; }
+    .evo-spec-card { background: #fff; padding: 22px; border-radius: 6px; border: 1px solid #eef0ee; }
+    .evo-spec-title { font-size: 1.1rem; font-weight: 700; color: #111; margin: 0 0 4px; }
+    .evo-spec-ctx { font-size: .78rem; font-style: italic; color: #777; margin-bottom: 10px; }
+    .evo-spec-desc { font-size: .88rem; line-height: 1.55; color: #444; margin: 0 0 14px; }
+    .evo-spec-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .evo-tag { font-size: .7rem; font-weight: 600; background: #f2f7f4; color: #4e825e; padding: 2px 8px; border-radius: 4px; border: 1px solid #e1ebe5; }
+    /* Références */
+    .evo-ticker { border: 1px solid #eaeaea; border-radius: 8px; padding: 32px 28px; background: #fafafa; margin-bottom: 48px; }
+    .evo-ticker-label { font-size: .88rem; color: #555; margin: 0 0 22px; font-weight: 600; border-left: 3px solid #68A67A; padding-left: 14px; }
+    .evo-geo-rows { display: flex; flex-direction: column; gap: 18px; }
+    .evo-geo-row { display: flex; align-items: flex-start; gap: 16px; }
+    .evo-flag { font-size: 1.25rem; background: #fff; padding: 4px 9px; border-radius: 6px; border: 1px solid #eaeaea; line-height: 1; flex-shrink: 0; }
+    .evo-brands { font-size: .95rem; font-weight: 500; color: #444; line-height: 1.8; }
+    .evo-proj-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(310px,1fr)); gap: 22px; }
+    .evo-proj-card { background: #fff; padding: 26px; border-radius: 8px; border: 1px solid #eaeaea; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+    .evo-proj-card:hover { transform: translateY(-2px); box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+    .evo-proj-badge { align-self: flex-start; background: #eef6f1; color: #68A67A; font-size: .7rem; font-weight: 700; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; letter-spacing: .5px; margin-bottom: 12px; }
+    .evo-proj-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px; color: #111; line-height: 1.3; }
+    .evo-proj-scope { font-size: .84rem; color: #666; margin: 0 0 12px; }
+    .evo-proj-desc { font-size: .9rem; line-height: 1.6; color: #444; margin: 0 0 20px; flex-grow: 1; }
+    .evo-proj-tags { display: flex; flex-wrap: wrap; gap: 5px; border-top: 1px solid #f0f0f0; padding-top: 12px; }
+    .evo-tech-tag { font-size: .75rem; background: #f4f4f4; color: #555; padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+    /* Portrait */
+    .evo-profile-grid { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+    .evo-avatar { width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; border: 1px solid #eaeaea; }
+    .evo-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .evo-bio h2 { font-size: .82rem; text-transform: uppercase; letter-spacing: 1.5px; color: #68A67A; margin: 0 0 8px; }
+    .evo-bio p { font-size: 1.05rem; line-height: 1.65; color: #444; margin: 0 0 18px; }
+    .evo-skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 24px; }
+    .evo-skill-card { background: #f9f9f9; padding: 30px 26px; border-radius: 8px; border: 1px solid #eaeaea; }
+    .evo-skill-card h4 { font-size: 1.2rem; font-weight: 700; color: #111; margin: 0 0 12px; }
+    .evo-skill-card p { font-size: .95rem; line-height: 1.6; color: #444; margin: 0; }
+    .evo-skill-card ul { margin: 0; padding-left: 18px; color: #444; line-height: 1.7; font-size: .95rem; }
+    .evo-skill-card ul li { margin-bottom: 6px; }
+    .evo-testi-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 24px; }
+    .evo-testi-card { background: #fff; padding: 28px 24px; border-radius: 8px; border: 1px solid #eaeaea; box-shadow: 0 4px 12px rgba(0,0,0,.03); display: flex; flex-direction: column; }
+    .evo-testi-text { font-size: .9rem; line-height: 1.6; color: #555; font-style: italic; margin-bottom: 20px; flex-grow: 1; }
+    .evo-testi-author { font-weight: 700; color: #111; font-size: 1rem; margin-bottom: 3px; }
+    .evo-testi-role { font-size: .72rem; color: #68A67A; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }
+    /* Contact */
+    .evo-contact-wrap { max-width: 1000px; margin: 0 auto; padding: 70px 24px; }
+    .evo-contact-hero { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    .evo-contact-hero .sub { color: #68A67A; font-size: .73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
+    .evo-contact-hero h2 { font-size: 2.1rem; font-weight: 800; color: #1a202c; margin: 0; letter-spacing: -.4px; }
+    .evo-contact-layout { display: grid; grid-template-columns: 300px 1fr; gap: 36px; align-items: start; }
+    .evo-sidebar { background: #1a202c; color: #fff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 26px; }
+    .evo-sidebar h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 7px; }
+    .evo-sidebar p { font-size: .88rem; color: #cbd5e0; margin: 0; line-height: 1.5; }
+    .evo-step-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .evo-step-list li { display: flex; gap: 10px; font-size: .88rem; color: #cbd5e0; align-items: center; }
+    .evo-step-num { background: #4a5568; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; flex-shrink: 0; }
+    .evo-li-sep { border-top: 1px solid #2d3748; padding-top: 22px; }
+    .evo-li-sep h5 { font-size: .95rem; font-weight: 700; margin: 0 0 7px; color: #fff; }
+    .evo-li-btn { display: flex; align-items: center; justify-content: center; gap: 7px; background: transparent; color: #fff; text-decoration: none; padding: 11px; border-radius: 8px; font-weight: 600; font-size: .88rem; border: 1px solid #4a5568; margin-top: 12px; transition: all .2s; }
+    .evo-li-btn:hover { background: #2d3748; border-color: #718096; }
+    .evo-form-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 36px; box-shadow: 0 8px 24px rgba(0,0,0,.02); }
+    .evo-form-section { border-bottom: 1px solid #edf2f7; padding-bottom: 26px; margin-bottom: 26px; }
+    .evo-form-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 30px; }
+    .evo-form-section-label { display: block; font-size: 1.05rem; font-weight: 700; color: #1a202c; margin-bottom: 18px; }
+    .evo-badge-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 12px; }
+    .evo-badge-radio { cursor: pointer; position: relative; }
+    .evo-badge-radio input[type=checkbox] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .evo-badge-content { display: flex; flex-direction: column; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; transition: all .2s; height: 100%; position: relative; }
+    .evo-badge-chk { position: absolute; top: 9px; right: 9px; width: 18px; height: 18px; border: 2px solid #cbd5e0; border-radius: 4px; background: #fff; display: flex; align-items: center; justify-content: center; font-size: .7rem; color: transparent; transition: all .2s; font-weight: 700; }
+    .evo-badge-icon { font-size: 1.35rem; margin-bottom: 7px; }
+    .evo-badge-content strong { font-size: .9rem; color: #2d3748; margin-bottom: 3px; display: block; }
+    .evo-badge-content small { font-size: .77rem; color: #718096; line-height: 1.3; }
+    .evo-badge-radio:hover .evo-badge-content { border-color: #b0d4bc; background: #f1f5f9; }
+    .evo-badge-radio input[type=checkbox]:checked + .evo-badge-content { border-color: #68A67A; background: #f0f7f2; box-shadow: 0 0 0 1px #68A67A; }
+    .evo-badge-radio input[type=checkbox]:checked + .evo-badge-content .evo-badge-chk { background: #68A67A; border-color: #68A67A; color: #fff; }
+    .evo-fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .evo-field-grp label { display: block; font-size: .84rem; font-weight: 600; color: #4a5568; margin-bottom: 5px; }
+    .evo-form-card input[type=text], .evo-form-card input[type=email], .evo-form-card input[type=tel], .evo-form-card textarea { width: 100%; padding: 11px 14px; font-size: .9rem; border: 1px solid #cbd5e0; border-radius: 8px; color: #2d3748; background: #f8fafc; transition: all .2s; font-family: inherit; }
+    .evo-form-card input:focus, .evo-form-card textarea:focus { outline: none; border-color: #68A67A; background: #fff; box-shadow: 0 0 0 3px rgba(104,166,122,.1); }
+    .evo-field-err { font-size: .78rem; color: #e53e3e; margin-top: 4px; display: none; }
+    .evo-form-card input.invalid { border-color: #e53e3e; background: #fff5f5; }
+    .evo-submit-btn { background: #68A67A; color: #fff; border: none; padding: 13px 42px; font-size: .95rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background .2s, opacity .2s; font-family: inherit; }
+    .evo-submit-btn:hover { background: #568d66; }
+    .evo-submit-btn:disabled { opacity: .55; cursor: not-allowed; }
+    .evo-thankyou { display: none; font-size: .92rem; color: #2D3748; align-items: center; gap: 9px; background: #f0f7f2; padding: 13px 18px; border-radius: 8px; border: 1px solid #d2ebd9; font-weight: 500; width: 100%; }
+    .evo-check { color: #68A67A; font-weight: bold; font-size: 1.2rem; }
+    /* Prefilled highlight */
+    .evo-prefilled-notice { background: #f0f7f2; border: 1px solid #d2ebd9; border-radius: 8px; padding: 11px 16px; margin-bottom: 20px; font-size: .85rem; color: #2d6a3f; display: none; }
+    @media(max-width: 900px) {
+      .evo-contact-wrap { padding: 40px 16px; }
+      .evo-contact-layout { grid-template-columns: 1fr; gap: 24px; }
+      .evo-fields-grid { grid-template-columns: 1fr; gap: 12px; }
+      .evo-form-card { padding: 24px; }
     }
-    .evo-lang-btn.active { background: #111; color: #fff; }
-    .evo-lang-btn:hover:not(.active) { color: #111; }
+    @media(max-width: 768px) {
+      .evo-container { padding: 36px 15px; }
+      .evo-phase-grid { grid-template-columns: 1fr; gap: 14px; }
+      .evo-phase-card { padding: 24px; }
+      .evo-trust-grid { grid-template-columns: 1fr; gap: 24px; }
+      .evo-faq-item { padding: 18px; }
+      .evo-divider { margin: 40px auto; }
+      .evo-section-h2 { font-size: 1.65rem; }
+      .evo-proj-grid { grid-template-columns: 1fr; }
+      .evo-profile-grid { grid-template-columns: 1fr; gap: 28px; }
+      .evo-avatar { max-width: 220px; margin: 0 auto; }
+      .evo-skills-grid, .evo-testi-grid { grid-template-columns: 1fr; }
+      .evo-phase-block { grid-column: span 1; }
+      .evo-phase-content { max-height: none !important; opacity: 1 !important; visibility: visible !important; border-top: 1px solid #eaeaea; }
+      .evo-phase-indicator { display: none; }
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- OVERLAY -->
   <div class="evo-overlay" id="evoOverlay"></div>
-
-  <!-- DRAWER -->
   <div class="evo-drawer" id="evoDrawer">
     <div class="evo-drawer-head">
-      <a href="./index.html" onclick="window.location='./index.html';return false;"><img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting"></a>
+      <a href="./index.html"><img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting"></a>
       <button class="evo-drawer-close" onclick="closeDrawer()">✕</button>
     </div>
     <nav class="evo-drawer-nav">
       <a href="./offres.html">offres</a>
       <a href="./references.html">références</a>
       <a href="./portrait.html">portrait</a>
-      <a href="./diagnostic.html" style="color:#68A67A;font-weight:700;">⚡ Diagnostic IA</a>
+      <a href="./diagnostic.html" class="diag-link">⚡ Diagnostic IA</a>
     </nav>
   </div>
-
-  <!-- HEADER -->
   <header class="evo-header">
     <div class="evo-header-inner">
       <div class="evo-header-left">
-        <button class="evo-hamburger" onclick="openDrawer()" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="evo-hamburger" onclick="openDrawer()"><span></span><span></span><span></span></button>
       </div>
       <div class="evo-header-center">
-        <a href="./index.html" class="evo-logo" role="link" onclick="window.location='./index.html';return false;">
-          <img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting">
-        </a>
+        <a href="./index.html" class="evo-logo"><img src="https://www.hebergeur-image.fr/uploads/20260625/14082cc3184cfd15824880898d5f27cfcb7aaa6d.png" alt="evoshifting"></a>
       </div>
-      <div class="evo-header-right" style="gap:12px;">
+      <div class="evo-header-right">
         <div class="evo-lang-toggle">
-          <button class="evo-lang-btn active" onclick="window.location='./index.html'">FR</button>
+          <button class="evo-lang-btn active">FR</button>
           <button class="evo-lang-btn" onclick="window.location='./index-en.html'">EN</button>
         </div>
         <a href="./contact.html" class="evo-nav-contact">Contact</a>
@@ -337,23 +300,17 @@
 
 
   <div class="evo-container">
-    <section class="evo-hero">
-      <p class="evo-lead"><strong>evoshifting sécurise le cadrage de vos projets, orchestre vos écosystèmes SaaS et intègre l'IA au cœur de vos processus opérationnels.</strong></p>
-      <div class="evo-cta-wrapper"><a href="./contact.html" class="evo-btn">Échanger sur vos enjeux</a></div>
+    <section style="text-align:center;max-width:820px;margin:0 auto;padding-top:16px;">
+      <p style="font-size:1.45rem;font-weight:500;line-height:1.5;color:#68A67A;margin-bottom:22px;">
+        <strong>evoshifting sécurise le cadrage de vos projets, orchestre vos écosystèmes SaaS et intègre l'IA au cœur de vos processus opérationnels.</strong>
+      </p>
+      <a href="./contact.html" class="evo-btn">Échanger sur vos enjeux</a>
     </section>
-    <!-- DIAGNOSTIC CTA BANNER -->
-    <div style="margin:40px 0;background:linear-gradient(135deg,#111 0%,#1a202c 100%);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-      <div>
-        <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:#68A67A;font-weight:700;margin-bottom:8px;">⚡ Nouveau — Propulsé par Claude AI</div>
-        <div style="font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:6px;">Obtenez votre diagnostic IA gratuit</div>
-        <div style="font-size:.95rem;color:#a0aec0;">Posture recommandée, cas d'usage prioritaires et Quick Win en 2 minutes.</div>
-      </div>
-      <a href="./diagnostic.html" style="display:inline-block;background:#68A67A;color:#fff !important;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:.95rem;white-space:nowrap;flex-shrink:0;transition:background .2s;">Démarrer le diagnostic →</a>
-    </div>
 
     <hr class="evo-divider">
+
     <section class="evo-features">
-      <h2>Une approche de bout en bout pour vos projets IT</h2>
+      <h2 class="evo-section-h2">Une approche de bout en bout pour vos projets IT</h2>
       <div class="evo-phase-grid">
         <div class="evo-phase-card">
           <div class="evo-card-top"><div class="evo-phase-number">01</div><div class="evo-phase-role">Posture Conseil / AMOA</div></div>
@@ -371,39 +328,43 @@
           <p class="evo-phase-desc">Pilotage de projet de bout en bout (délais, budgets, risques), coordination des parties prenantes et des éditeurs, conduite du changement et acculturation IA.</p>
         </div>
       </div>
-      <div class="evo-cta-wrapper" style="text-align:center;margin-top:40px;">
+      <div style="text-align:center;margin-top:36px;">
         <a href="./offres.html" class="evo-btn">Découvrir nos solutions & cas d'usage</a>
       </div>
     </section>
+
     <hr class="evo-divider">
+
     <section class="evo-faq-section">
-      <h2>IA & Transformation : les enjeux clés</h2>
+      <h2 class="evo-section-h2">IA & Transformation : les enjeux clés</h2>
       <div class="evo-faq-grid">
         <div class="evo-faq-item">
           <h3>Comment intégrer l'IA sans déstabiliser notre SI existant ?</h3>
-          <p><strong>Notre approche :</strong> Pas de refonte globale coûteuse. Nous intervenons sur l'alignement de vos flux en connectant des briques d'IA pragmatiques (LLM, agents d'automatisation) directement sur vos outils SaaS actuels (ERP, CRM, DAM PIM, OMS, WMS...) via des architectures d'API sécurisées.</p>
+          <p><strong>Notre approche :</strong> Pas de refonte globale coûteuse. Nous connectons des briques d'IA pragmatiques (LLM, agents d'automatisation) directement sur vos outils SaaS actuels (ERP, CRM, DAM, PIM, OMS, WMS...) via des architectures d'API sécurisées.</p>
         </div>
         <div class="evo-faq-item">
           <h3>Quels sont les cas d'usage IA prioritaires pour nos équipes ?</h3>
-          <p><strong>Notre approche :</strong> Nous ciblons en priorité les tâches manuelles et répétitives qui font perdre un temps précieux à vos collaborateurs. Par exemple : la création et l'adaptation automatique de contenus, le tri et le traitement intelligent de vos documents ou demandes entrantes, ou la mise en place d'assistants internes connectés à vos bases de données.</p>
+          <p><strong>Notre approche :</strong> Nous ciblons les tâches manuelles et répétitives qui font perdre du temps : création automatique de contenus, traitement intelligent de documents, assistants internes connectés à vos bases de données.</p>
         </div>
         <div class="evo-faq-item">
-          <h3>Combien de temps faut-il pour obtenir des résultats concrets avec l'IA ?</h3>
-          <p><strong>Notre approche :</strong> Nous privilégions la culture du "Quick Win". Plutôt que de lancer des chantiers interminables, nous concevons un premier pilote sur un périmètre restreint en quelques semaines pour prouver la valeur métier sur le terrain.</p>
+          <h3>Combien de temps pour obtenir des résultats concrets ?</h3>
+          <p><strong>Notre approche :</strong> Nous privilégions la culture du "Quick Win". Un premier pilote sur un périmètre restreint en quelques semaines pour prouver la valeur métier sur le terrain.</p>
         </div>
         <div class="evo-faq-item">
           <h3>Pourquoi confier son projet IA à evoshifting plutôt qu'à une ESN classique ?</h3>
-          <p><strong>Notre approche :</strong> Parce que l'IA n'est qu'un outil au service d'un processus métier. Grâce à notre double culture technique et business, nous ne vendons pas de la technologie pour la technologie, mais un cadrage AMOA et un pilotage produit orientés exclusivement vers un ROI mesurable.</p>
+          <p><strong>Notre approche :</strong> Grâce à notre double culture technique et business, nous ne vendons pas de la technologie pour la technologie, mais un cadrage AMOA et un pilotage produit orientés vers un ROI mesurable.</p>
         </div>
       </div>
     </section>
+
     <hr class="evo-divider">
-    <section class="evo-trust">
-      <h2>Pourquoi <strong>evo</strong>shifting ?</h2>
+
+    <section>
+      <h2 class="evo-section-h2">Pourquoi <strong>evo</strong>shifting ?</h2>
       <div class="evo-trust-grid">
         <div class="evo-trust-item">
           <h4>Indépendance de conseil & Réseau étendu</h4>
-          <p>Une neutralité totale vis-à-vis des éditeurs pour garantir des choix technologiques objets, appuyée par un vaste réseau d'experts pour sourcer les meilleures solutions du marché.</p>
+          <p>Une neutralité totale vis-à-vis des éditeurs pour garantir des choix technologiques objectifs, appuyée par un vaste réseau d'experts pour sourcer les meilleures solutions du marché.</p>
         </div>
         <div class="evo-trust-item">
           <h4>Environnements complexes & Internationaux</h4>
@@ -411,129 +372,210 @@
         </div>
         <div class="evo-trust-item">
           <h4>Pragmatisme & Accélération</h4>
-          <p>Parce qu'il existe toujours une solution, j'utilise l'IA et les leviers technologiques non comme des finalités, mais comme des accélérateurs concrets de votre ROI opérationnel.</p>
+          <p>J'utilise l'IA et les leviers technologiques non comme des finalités, mais comme des accélérateurs concrets de votre ROI opérationnel.</p>
         </div>
       </div>
     </section>
+
     <hr class="evo-divider">
-    <section class="evo-bottom-cta">
-      <div class="evo-cta-wrapper"><a href="./contact.html" class="evo-btn">Échanger sur vos enjeux</a></div>
-    </section>
+
+    <div class="evo-cta-center">
+      <a href="./contact.html" class="evo-btn">Échanger sur vos enjeux</a>
+    </div>
   </div>
 
-
-  <!-- FOOTER -->
   <footer class="evo-footer">
     <div class="evo-footer-inner">
       <div class="evo-footer-links">
-        <a href="http://wa.me/33625544444" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
+        <a href="http://wa.me/33625544444" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/ma-clx/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
       </div>
       <p class="evo-footer-legal">evoshifting – SASU au capital de 1 500 € – RCS Bordeaux 992 753 632 – Conseil en systèmes et logiciels informatiques (APE 6202A)</p>
     </div>
   </footer>
 
-  <script>
-    const drawer  = document.getElementById('evoDrawer');
-    const overlay = document.getElementById('evoOverlay');
-    function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
-    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
-    overlay.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
-  </script>
+  <!-- DIAGNOSTIC PILL -->
+  <button id="evo-diag-pill" onclick="window.location='./diagnostic.html'">
+    <span class="pill-icon">⚡</span>
+    <span>Diagnostic IA gratuit</span>
+  </button>
 
-
-
-  <!-- CHATBOT -->
-  <div id="evo-chat-bubble" style="position:fixed;bottom:98px;right:28px;z-index:999;background:#111;color:#fff;font-family:'Nunito Sans',sans-serif;font-size:.85rem;padding:10px 14px;border-radius:12px 12px 0 12px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:opacity .4s;pointer-events:none;">Une question sur nos offres&nbsp;? 💬</div>
-  <button id="evo-chat-btn" aria-label="Assistant evoshifting" onclick="evoChatToggle()" style="position:fixed;bottom:28px;right:28px;z-index:1000;width:58px;height:58px;border-radius:50%;background:#111;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;">
+  <!-- CHATBOT BUTTON -->
+  <button id="evo-chat-btn" onclick="evoChatToggle()" aria-label="Assistant">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   </button>
-  <div id="evo-chat-window" style="position:fixed;bottom:98px;right:28px;z-index:1000;width:370px;height:520px;max-height:80vh;background:#fff;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;">
-    <div style="background:#111;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0;">
-      <div style="width:36px;height:36px;border-radius:50%;background:#68A67A;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">⚡</div>
-      <div style="flex:1;">
-        <div style="font-weight:700;font-size:.95rem;">Assistant evoshifting</div>
-        <div style="font-size:.75rem;color:#a0aec0;display:flex;align-items:center;gap:5px;"><span style="display:inline-block;width:7px;height:7px;background:#68A67A;border-radius:50%;"></span>En ligne</div>
+
+  <!-- CHATBOT WINDOW -->
+  <div id="evo-chat-window">
+    <div class="evo-chat-header">
+      <div class="evo-chat-avatar">⚡</div>
+      <div class="evo-chat-header-info">
+        <div class="evo-chat-header-name">Assistant evoshifting</div>
+        <div class="evo-chat-header-status">En ligne</div>
       </div>
-      <button onclick="evoChatToggle()" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:1.3rem;line-height:1;padding:2px 4px;">✕</button>
+      <button class="evo-chat-close" onclick="evoChatToggle()">✕</button>
     </div>
-    <div id="evoChatMessages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth;">
-      <div style="max-width:82%;align-self:flex-start;display:flex;flex-direction:column;gap:3px;">
-        <div style="padding:10px 14px;border-radius:14px 14px 14px 4px;font-size:.9rem;line-height:1.5;background:#f4f4f4;color:#1a1a1a;">Bonjour 👋 Je suis l'assistant d'evoshifting. Posez-moi vos questions sur nos offres, nos références ou notre approche IA.</div>
-        <div style="font-size:.7rem;color:#aaa;padding:0 4px;">maintenant</div>
+    <div class="evo-chat-messages" id="evoChatMessages">
+      <div class="evo-msg bot">
+        <div class="evo-msg-bubble">Bonjour 👋 Je suis l'assistant evoshifting. Posez-moi vos questions sur nos offres, références ou approche IA.</div>
+        <div class="evo-msg-time" id="evoChatWelcomeTime"></div>
       </div>
     </div>
-    <div id="evoChatTyping" style="align-self:flex-start;background:#f4f4f4;padding:12px 16px;border-radius:14px 14px 14px 4px;display:none;margin:0 16px 8px;">
-      <span style="display:inline-block;width:7px;height:7px;background:#aaa;border-radius:50%;margin:0 2px;animation:evoDot 1.2s infinite;"></span>
-      <span style="display:inline-block;width:7px;height:7px;background:#aaa;border-radius:50%;margin:0 2px;animation:evoDot 1.2s .2s infinite;"></span>
-      <span style="display:inline-block;width:7px;height:7px;background:#aaa;border-radius:50%;margin:0 2px;animation:evoDot 1.2s .4s infinite;"></span>
+    <div class="evo-typing" id="evoChatTyping">
+      <span></span><span></span><span></span>
     </div>
-    <div id="evoChatSuggestions" style="display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 12px;">
-      <button onclick="evoSuggest(this)" style="font-size:.78rem;padding:6px 11px;border-radius:20px;border:1px solid #e2e8f0;background:#f8fafc;color:#444;cursor:pointer;font-family:inherit;">Quelles sont vos offres ?</button>
-      <button onclick="evoSuggest(this)" style="font-size:.78rem;padding:6px 11px;border-radius:20px;border:1px solid #e2e8f0;background:#f8fafc;color:#444;cursor:pointer;font-family:inherit;">Intégrer l'IA sans tout refaire ?</button>
-      <button onclick="evoSuggest(this)" style="font-size:.78rem;padding:6px 11px;border-radius:20px;border:1px solid #e2e8f0;background:#f8fafc;color:#444;cursor:pointer;font-family:inherit;">Références clients ?</button>
-      <button onclick="evoSuggest(this)" style="font-size:.78rem;padding:6px 11px;border-radius:20px;border:1px solid #e2e8f0;background:#f8fafc;color:#444;cursor:pointer;font-family:inherit;">Délais &amp; tarifs ?</button>
+    <div class="evo-chat-suggestions" id="evoChatSuggestions">
+      <button class="evo-suggestion" onclick="evoSuggest(this)">Quelles sont vos offres ?</button>
+      <button class="evo-suggestion" onclick="evoSuggest(this)">Intégrer l'IA sans tout refaire ?</button>
+      <button class="evo-suggestion" onclick="evoSuggest(this)">Références clients ?</button>
+      <button class="evo-suggestion" onclick="evoSuggest(this)">Délais & tarifs ?</button>
+      <button class="evo-suggestion" onclick="window.location='./diagnostic.html'">Faire mon diagnostic IA</button>
     </div>
-    <div style="border-top:1px solid #eaeaea;padding:12px 14px;display:flex;gap:8px;align-items:flex-end;flex-shrink:0;">
-      <textarea id="evo-chat-input" placeholder="Votre question…" rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();evoChatSend();}" style="flex:1;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;outline:none;line-height:1.4;max-height:100px;overflow-y:auto;color:#1a1a1a;"></textarea>
-      <button id="evo-chat-send" onclick="evoChatSend()" style="width:38px;height:38px;border-radius:10px;border:none;background:#111;color:#fff;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      </button>
+    <!-- Email capture bar -->
+    <div class="evo-chat-email-bar" id="evoChatEmailBar">
+      <input type="email" id="evoChatEmailInput" placeholder="Votre email pour un suivi">
+      <button onclick="evoChatCaptureEmail()">Envoyer</button>
+    </div>
+    <div class="evo-chat-email-sent" id="evoChatEmailSent">✓ Reçu ! Marc-Antoine vous contactera sous 48h.</div>
+    <!-- Input -->
+    <div class="evo-chat-input-area">
+      <textarea id="evo-chat-input" placeholder="Votre question…" rows="1"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();evoChatSend();}"></textarea>
+      <button id="evo-chat-send" onclick="evoChatSend()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
     </div>
   </div>
 
   <script>
-    var EVO_SYSTEM="Tu es l'assistant IA d'evoshifting, le cabinet de conseil en syst\u00e8mes et logiciels informatiques de Marc-Antoine Cailloux.\n\nIDENTIT\u00c9 D'EVOSHIFTING :\n- Cabinet de conseil freelance bas\u00e9 \u00e0 Bordeaux et Paris\n- Fondateur : Marc-Antoine Cailloux, +10 ans d'exp\u00e9rience \u00e0 l'intersection des DSI et des directions m\u00e9tiers\n- Sp\u00e9cialit\u00e9s : cadrage de projets IT, orchestration d'\u00e9cosyst\u00e8mes SaaS, int\u00e9gration de l'IA dans les processus op\u00e9rationnels\n\n3 PILIERS D'INTERVENTION :\n1. Conseil / AMOA : \u00e9tudes d'opportunit\u00e9 IA, audit SI, recueil besoins m\u00e9tiers, aide au choix SaaS\n2. Product Owner : interface m\u00e9tiers/technique, conception fonctionnelle, gestion backlog, priorisation par valeur\n3. PMO : pilotage bout en bout, coordination parties prenantes, conduite du changement, acculturation IA\n\nEXPERTISES : PIM, DAM, ERP, CRM (Salesforce, Dynamics 365), OMS (IBM Sterling), eCommerce, Marketplace, paiement, IA g\u00e9n\u00e9rative, LLM, Agile, SAFe\n\nR\u00c9F\u00c9RENCES FR : Sephora, Les Mousquetaires, Electro D\u00e9p\u00f4t, Cdiscount, Vertbaudet, Ramsay Sant\u00e9, Rossignol, Salomon, Casino, Nexans, SAFT\nR\u00c9F\u00c9RENCES INTL : Carrier (USA), Manor, Longines, Tissot, VF International (CH), Lego (DK), Grupo \u00c9xito (CO), Marjane (MA)\n\nPHILOSOPHIE : Quick Win (pilotes en quelques semaines), neutralit\u00e9 \u00e9diteurs, double culture tech+business, ROI mesurable\n\nCONTACT : contact@evoshifting.com\n\nTON : professionnel et accessible, r\u00e9ponses concises 3-5 phrases, fran\u00e7ais par d\u00e9faut, anglais si sollicit\u00e9, orienter vers contact pour projets concrets, ne pas inventer prix ni r\u00e9f\u00e9rences.";
-    var EVO_WORKER="https://anthropic.evoshifting.workers.dev";
-    var EVO_HISTORY=[];
-    setTimeout(function(){var b=document.getElementById('evo-chat-bubble');if(b){b.style.opacity='0';setTimeout(function(){b.style.display='none';},400);}},4000);
-    function evoChatToggle(){
-      var w=document.getElementById('evo-chat-window');
-      var b=document.getElementById('evo-chat-bubble');
-      if(!w) return;
-      if(b) b.style.display='none';
-      if(w.style.display==='flex'){
-        w.style.display='none';
-      } else {
-        w.style.display='flex';
-        var inp=document.getElementById('evo-chat-input');
-        if(inp) inp.focus();
-      }
+    // ── Drawer ──
+    const _drawer = document.getElementById('evoDrawer');
+    const _overlay = document.getElementById('evoOverlay');
+    function openDrawer() { _drawer.classList.add('open'); _overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { _drawer.classList.remove('open'); _overlay.classList.remove('open'); document.body.style.overflow = ''; }
+    _overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // ── Chatbot state ──
+    const EVO_SYSTEM = "Tu es l'assistant IA d'evoshifting, cabinet de conseil IT de Marc-Antoine Cailloux. Sp\u00e9cialit\u00e9s : cadrage de projets IT, \u00e9cosyst\u00e8mes SaaS, int\u00e9gration IA. 3 piliers : AMOA (cadrage), Product Owner (pilotage), PMO (d\u00e9ploiement). Expertise : PIM, DAM, ERP, CRM (Salesforce, Dynamics 365), OMS (IBM Sterling), eCommerce, IA/LLM, Agile. R\u00e9f\u00e9rences : Sephora, Cdiscount, Rossignol, Lego, Longines, Carrier (USA), et +50 autres. Philosophie : Quick Win, neutralit\u00e9 \u00e9diteurs, ROI mesurable. Contact : contact@evoshifting.com. Ton : professionnel et accessible, 3-5 phrases max, fran\u00e7ais. Si le prospect mentionne un besoin concret, propose de le mettre en relation directe avec Marc-Antoine. Apr\u00e8s plusieurs \u00e9changes, tu peux proposer de laisser son email pour un suivi personnalis\u00e9.";
+    const EVO_WORKER = "https://anthropic.evoshifting.workers.dev";
+    const EVO_FORMSPREE = "https://formspree.io/f/xrewpqbb";
+    let EVO_HISTORY = [];
+    let evoChatMsgCount = 0;
+    let evoDiagContext = null; // contexte injecté depuis le diagnostic
+
+    // Welcome time
+    const _wt = document.getElementById('evoChatWelcomeTime');
+    if (_wt) _wt.textContent = new Date().toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit'});
+
+    // ── Toggle chat window ──
+    function evoChatToggle() {
+      const w = document.getElementById('evo-chat-window');
+      const isOpen = w.style.display === 'flex';
+      w.style.display = isOpen ? 'none' : 'flex';
+      if (!isOpen) document.getElementById('evo-chat-input').focus();
     }
-    function evoSuggest(btn){document.getElementById('evo-chat-input').value=btn.textContent;document.getElementById('evoChatSuggestions').style.display='none';evoChatSend();}
-    function evoTime(){return new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});}
-    function evoAddMsg(text,role){var c=document.getElementById('evoChatMessages');var d=document.createElement('div');d.className='evo-msg '+role;var f=text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');d.innerHTML='<div class="evo-msg-bubble">'+f+'</div><div class="evo-msg-time">'+evoTime()+'</div>';c.appendChild(d);c.scrollTop=c.scrollHeight;}
-    function evoSetTyping(show){var t=document.getElementById('evoChatTyping');t.style.display=show?'block':'none';if(show)document.getElementById('evoChatMessages').scrollTop=99999;}
-    async function evoChatSend(){
-      var input=document.getElementById('evo-chat-input');
-      var text=input.value.trim();if(!text)return;
-      input.value='';input.style.height='auto';
-      document.getElementById('evo-chat-send').disabled=true;
-      document.getElementById('evoChatSuggestions').style.display='none';
-      evoAddMsg(text,'user');
-      EVO_HISTORY.push({role:'user',content:text});
+
+    // ── Inject diagnostic context ──
+    function evojInjectDiagContext(ctx) {
+      evoDiagContext = ctx;
+      // Ajouter un message système invisible
+      EVO_HISTORY.push({ role: 'user', content: 'Contexte du diagnostic effectué par ce prospect (pour personnaliser ta réponse, ne pas mentionner explicitement que tu as ces infos sauf si on te le demande) : ' + JSON.stringify(ctx) });
+      EVO_HISTORY.push({ role: 'assistant', content: 'Bien noté, je vais adapter mes réponses à ce contexte.' });
+    }
+
+    // ── Suggestions ──
+    function evoSuggest(btn) {
+      document.getElementById('evo-chat-input').value = btn.textContent;
+      document.getElementById('evoChatSuggestions').style.display = 'none';
+      evoChatSend();
+    }
+
+    // ── Time ──
+    function evoTime() {
+      return new Date().toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit'});
+    }
+
+    // ── Add message ──
+    function evoAddMsg(text, role) {
+      const c = document.getElementById('evoChatMessages');
+      const d = document.createElement('div');
+      d.className = 'evo-msg ' + role;
+      const f = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+      d.innerHTML = '<div class="evo-msg-bubble">' + f + '</div><div class="evo-msg-time">' + evoTime() + '</div>';
+      c.appendChild(d);
+      c.scrollTop = c.scrollHeight;
+    }
+
+    // ── Typing ──
+    function evoSetTyping(show) {
+      const t = document.getElementById('evoChatTyping');
+      t.style.display = show ? 'block' : 'none';
+      if (show) document.getElementById('evoChatMessages').scrollTop = 99999;
+    }
+
+    // ── Send message ──
+    async function evoChatSend() {
+      const input = document.getElementById('evo-chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      input.style.height = 'auto';
+      document.getElementById('evo-chat-send').disabled = true;
+      document.getElementById('evoChatSuggestions').style.display = 'none';
+      evoAddMsg(text, 'user');
+      EVO_HISTORY.push({role:'user', content: text});
+      evoChatMsgCount++;
       evoSetTyping(true);
-      try{
-        var res=await fetch(EVO_WORKER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:EVO_SYSTEM,messages:EVO_HISTORY})});
-        var data=await res.json();
-        var reply=data.content&&data.content[0]?data.content[0].text:'Désolé, une erreur est survenue.';
-        evoSetTyping(false);evoAddMsg(reply,'bot');
-        EVO_HISTORY.push({role:'assistant',content:reply});
-      }catch(e){
+      try {
+        const res = await fetch(EVO_WORKER, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({model:'claude-sonnet-4-6', max_tokens:800, system:EVO_SYSTEM, messages:EVO_HISTORY})
+        });
+        const data = await res.json();
+        const reply = data.content && data.content[0] ? data.content[0].text : 'Désolé, une erreur est survenue.';
         evoSetTyping(false);
-        evoAddMsg('Je suis temporairement indisponible. Contactez-nous à contact@evoshifting.com','bot');
+        evoAddMsg(reply, 'bot');
+        EVO_HISTORY.push({role:'assistant', content: reply});
+      } catch(e) {
+        evoSetTyping(false);
+        evoAddMsg('Service temporairement indisponible. Contactez-nous à contact@evoshifting.com', 'bot');
       }
-      document.getElementById('evo-chat-send').disabled=false;
-      document.getElementById('evo-chat-input').focus();
+      document.getElementById('evo-chat-send').disabled = false;
+      const inp = document.getElementById('evo-chat-input');
+      if (inp) inp.focus();
     }
-    var _inp=document.getElementById('evo-chat-input');if(_inp){_inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px';});}
+
+    // ── Email capture ──
+    async function evoChatCaptureEmail() {
+      const emailInput = document.getElementById('evoChatEmailInput');
+      const email = emailInput.value.trim();
+      if (!email || !email.includes('@')) { emailInput.focus(); return; }
+
+      // Résumé des 6 derniers messages
+      const summary = EVO_HISTORY.slice(-6).map(m => m.role.toUpperCase() + ': ' + m.content).join('\n');
+
+      const fd = new FormData();
+      fd.append('_subject', '💬 Chatbot — evoshifting');
+      fd.append('email_prospect', email);
+      fd.append('source', 'Chatbot');
+      fd.append('langue', 'FR');
+      fd.append('resume_conversation', summary);
+      fd.append('_replyto', email);
+
+      try {
+        await fetch(EVO_FORMSPREE, {method:'POST', body:fd, headers:{'Accept':'application/json'}});
+      } catch(e) {}
+
+      document.getElementById('evoChatEmailBar').style.display = 'none';
+      document.getElementById('evoChatEmailSent').style.display = 'block';
+    }
+
+    // ── Auto-resize textarea ──
+    const _inp = document.getElementById('evo-chat-input');
+    if (_inp) _inp.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 90) + 'px';
+    });
   </script>
 </body>
 </html>
